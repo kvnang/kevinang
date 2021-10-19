@@ -38,8 +38,20 @@
 			</svg>
 		</nav> -->
 
-		<div class="corner">
-			<!-- TODO put something else here? github link? -->
+		<div class="links">
+			<ul>
+				<li>
+					<a href="https://github.com/kvnang" target="_blank" rel="noopener noreferrer">
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32.58 31.77" width="33" height="32"
+							><path
+								fill="#fff"
+								fill-rule="evenodd"
+								d="M16.29 0a16.29 16.29 0 0 0-5.15 31.75c.82.15 1.11-.36 1.11-.79v-2.77C7.7 29.18 6.74 26 6.74 26a4.36 4.36 0 0 0-1.81-2.39c-1.47-1 .12-1 .12-1a3.43 3.43 0 0 1 2.49 1.68 3.48 3.48 0 0 0 4.74 1.36 3.46 3.46 0 0 1 1-2.18c-3.62-.41-7.42-1.81-7.42-8a6.3 6.3 0 0 1 1.67-4.37 5.94 5.94 0 0 1 .16-4.31s1.37-.44 4.48 1.67a15.41 15.41 0 0 1 8.16 0c3.11-2.11 4.47-1.67 4.47-1.67a5.91 5.91 0 0 1 .2 4.28 6.3 6.3 0 0 1 1.67 4.37c0 6.26-3.81 7.63-7.44 8a3.85 3.85 0 0 1 1.11 3v4.47c0 .53.29.94 1.12.78A16.29 16.29 0 0 0 16.29 0Z"
+							/></svg
+						>
+					</a>
+				</li>
+			</ul>
 		</div>
 	</div>
 </header>
@@ -48,12 +60,8 @@
 	.container {
 		display: flex;
 		justify-content: space-between;
-	}
-
-	.corner {
-		/* width: 3em;
-		height: 3em; */
-		padding: 1rem 0;
+		padding-top: 1rem;
+		padding-bottom: 1rem;
 	}
 
 	.corner a {
@@ -79,7 +87,6 @@
 				transition: var(--transition);
 			}
 		}
-
 		&:hover {
 			path {
 				&:first-child {
@@ -88,6 +95,31 @@
 				&:last-child {
 					opacity: 1;
 				}
+			}
+		}
+	}
+
+	.links {
+		ul {
+			list-style: none;
+			display: flex;
+			margin: -0.625rem;
+
+			li {
+				padding: 0.625rem;
+			}
+		}
+		svg {
+			height: 1.5rem;
+			width: auto;
+		}
+
+		a {
+			opacity: 0.75;
+			transition: opacity var(--transition);
+
+			&:hover {
+				opacity: 1;
 			}
 		}
 	}

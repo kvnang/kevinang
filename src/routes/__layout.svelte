@@ -4,18 +4,21 @@
 	import '../app.scss';
 </script>
 
-<Header />
+<div class="site-content">
+	<Header />
 
-<main>
-	<slot />
-</main>
+	<main>
+		<slot />
+	</main>
 
-<Footer />
+	<Footer />
+</div>
 
 <style>
-	main {
+	.site-content {
 		flex: 1;
 		display: flex;
 		flex-direction: column;
+		overflow-x: hidden;
 	}
 </style>

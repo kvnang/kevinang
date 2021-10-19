@@ -92,6 +92,7 @@
 		width: 45%;
 		right: -7rem;
 		top: -15rem;
+		z-index: -1;
 
 		img {
 			width: 100%;

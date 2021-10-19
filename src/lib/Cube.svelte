@@ -1,29 +1,48 @@
 <script lang="ts">
+	import IntersectionObserver from './IntersectionObserver.svelte';
+	import { fly } from 'svelte/transition';
+
 	export let bg: string;
 	export let color: string = 'var(--color-bg)';
 	export let title: string;
 	export let top: number;
 	export let left: number;
 	export let right: number = 0;
+
+	let visible = false;
 </script>
 
-<div
-	class="cube"
-	style="top: {top * 80 + (left * 80) / 3 + right * -42}px; left: {left * 80 + right * 44}px"
->
-	<div class="side back" />
-	<div class="side top" />
-	<div class="side right" />
-	<div class="side front" style="background-color: {color}">
-		<img src={bg} alt={title} />
-	</div>
-</div>
+<IntersectionObserver let:intersecting top={100} once={true}>
+	{#if intersecting}
+		<div
+			class="cube"
+			style="top: {top * 80 + (left * 80) / 3 + right * -42}px; left: {left * 80 + right * 44}px; "
+			transition:fly={{
+				y: -100,
+				duration: 1000,
+				delay: Math.floor(Math.random() * 1000)
+			}}
+		>
+			<div class="inner">
+				<div class="side back" />
+				<div class="side top" />
+				<div class="side right" />
+				<div class="side front" style="background-color: {color}">
+					<img src={bg} alt={title} />
+				</div>
+			</div>
+		</div>
+	{/if}
+</IntersectionObserver>
 
 <style lang="scss">
 	.cube {
+		position: absolute;
+	}
+
+	.inner {
 		width: 80px;
 		height: 80px;
-		position: absolute;
 		transform-style: preserve-3d;
 		transform: rotateX(240deg) rotateY(0deg) rotateZ(-210deg);
 	}
