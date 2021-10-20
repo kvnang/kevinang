@@ -25,17 +25,17 @@
 
 	// setTimeout(nextSlide, 1000);
 
-	let timer: ReturnType<typeof setTimeout>;
+	let timer: ReturnType<typeof setInterval>;
 
-	function maybePlaySlider(pause: boolean, count) {
+	function maybePlaySlider(pause: boolean) {
 		if (!pause) {
-			timer = setTimeout(nextSlide, 5000);
+			timer = setInterval(nextSlide, 5000);
 		} else {
-			clearTimeout(timer);
+			clearInterval(timer);
 		}
 	}
 
-	$: maybePlaySlider(pause, count);
+	$: maybePlaySlider(pause);
 </script>
 
 <span class="counter">

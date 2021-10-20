@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { fly } from 'svelte/transition';
+	import IntersectionObserver from '../IntersectionObserver.svelte';
 	import Cube from '$lib/Cube.svelte';
 	import js from './js.svg';
 	import node from './node.svg';
@@ -11,26 +13,53 @@
 	import nextjs from './nextjs.svg';
 	import mongodb from './mongodb.svg';
 	import workers from './workers.svg';
+	import express from './express.svg';
+	import shopify from './shopify.svg';
+	import MoreCubes from './MoreCubes.svelte';
+
+	const delay = 2000;
+	let intersecting = false;
 </script>
 
 <section class="container section-m-t--lg section-m-b">
 	<h2 class="h1" style="text-align: center">My favorite stacks 🍪</h2>
-	<h3 class="h5">And more ...</h3>
+	<h3 class="h5">
+		{#if intersecting}
+			<span
+				style="display:inline-block"
+				transition:fly={{
+					y: -50,
+					duration: 500,
+					delay
+				}}>And more ...</span
+			>
+		{:else}
+			&nbsp;
+		{/if}
+	</h3>
 	<div class="stacks">
-		<Cube bg={wordpress} color="#21759b" title="WordPress" top={0} left={0} />
-		<Cube bg={js} color="#F7DF1E" title="JavaScript" top={0} left={1} right={1} />
-		<Cube bg={php} color="#8993BE" title="JavaScript" top={0} left={1} />
-		<Cube bg={js} color="#F7DF1E" title="JavaScript" top={0} left={2} right={1} />
-		<Cube bg={node} color="#fff" title="Node.js" top={0} left={2} />
-		<Cube bg={sass} color="#CD6799" title="Sass" top={-1} left={1} />
-		<Cube bg={js} color="#F7DF1E" title="JavaScript" top={-1} left={2} />
-		<Cube bg={react} color="#20232a" title="JavaScript" top={-2} left={2} />
-		<Cube bg={js} color="#F7DF1E" title="JavaScript" top={0} left={3} right={2} />
-		<Cube bg={mongodb} color="#061621" title="JavaScript" top={0} left={3} right={1} />
-		<Cube bg={gatsby} color="#663399" title="JavaScript" top={-1} left={3} right={1} />
-		<Cube bg={svelte} color="#fff" title="JavaScript" top={-2} left={3} right={1} />
-		<Cube bg={nextjs} color="#000" title="Next.js" top={0} left={4} right={2} />
-		<Cube bg={workers} color="#333333" title="Next.js" top={-1} left={4} right={2} />
+		<IntersectionObserver bind:intersecting top={100} once={true}>
+			{#if intersecting}
+				<Cube bg={shopify} color="#fbf7ed" title="Shopify" top={0} left={-1} right={0} {delay} />
+				<Cube bg={wordpress} color="#21759b" title="WordPress" top={0} left={0} />
+				<Cube bg={js} color="#F7DF1E" title="JavaScript" top={0} left={1} right={1} />
+				<Cube bg={php} color="#8993BE" title="JavaScript" top={0} left={1} />
+				<Cube bg={js} color="#F7DF1E" title="JavaScript" top={0} left={2} right={1} />
+				<Cube bg={node} color="#fff" title="Node.js" top={0} left={2} />
+				<Cube bg={sass} color="#CD6799" title="Sass" top={-1} left={1} />
+				<Cube bg={js} color="#F7DF1E" title="JavaScript" top={-1} left={2} />
+				<Cube bg={react} color="#20232a" title="JavaScript" top={-2} left={2} />
+				<Cube bg={js} color="#F7DF1E" title="JavaScript" top={0} left={3} right={2} />
+				<Cube bg={mongodb} color="#061621" title="JavaScript" top={0} left={3} right={1} />
+				<Cube bg={gatsby} color="#663399" title="JavaScript" top={-1} left={3} right={1} />
+				<Cube bg={svelte} color="#fff" title="JavaScript" top={-2} left={3} right={1} />
+				<Cube bg={nextjs} color="#000" title="Next.js" top={0} left={4} right={2} />
+				<Cube bg={workers} color="#333333" title="Next.js" top={-1} left={4} right={2} />
+				<Cube bg={express} color="#222" title="Express.js" top={0} left={5} right={2} {delay} />
+
+				<!-- <MoreCubes {delay} /> -->
+			{/if}
+		</IntersectionObserver>
 	</div>
 </section>
 
@@ -42,7 +71,7 @@
 	}
 	.stacks {
 		position: relative;
-		margin: 15rem 0;
+		margin: 15rem 0 8rem;
 		left: -15rem;
 	}
 </style>

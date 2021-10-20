@@ -244,7 +244,7 @@ button:focus:not(:focus-visible) {
 }
 
 .section-m-b {
-	margin-top: var(--section-spacing);
+	margin-bottom: var(--section-spacing);
 
 	&--lg {
 		margin-bottom: var(--section-spacing-lg);

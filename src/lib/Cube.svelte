@@ -1,5 +1,4 @@
 <script lang="ts">
-	import IntersectionObserver from './IntersectionObserver.svelte';
 	import { fly } from 'svelte/transition';
 
 	export let bg: string;
@@ -8,32 +7,27 @@
 	export let top: number;
 	export let left: number;
 	export let right: number = 0;
-
-	let visible = false;
+	export let delay: number = 0;
 </script>
 
-<IntersectionObserver let:intersecting top={100} once={true}>
-	{#if intersecting}
-		<div
-			class="cube"
-			style="top: {top * 80 + (left * 80) / 3 + right * -42}px; left: {left * 80 + right * 44}px; "
-			transition:fly={{
-				y: -100,
-				duration: 1000,
-				delay: Math.floor(Math.random() * 1000)
-			}}
-		>
-			<div class="inner">
-				<div class="side back" />
-				<div class="side top" />
-				<div class="side right" />
-				<div class="side front" style="background-color: {color}">
-					<img src={bg} alt={title} />
-				</div>
-			</div>
+<div
+	class="cube"
+	style="top: {top * 80 + (left * 80) / 3 + right * -42}px; left: {left * 80 + right * 44}px; "
+	transition:fly={{
+		y: -100,
+		duration: 1000,
+		delay: Math.floor(Math.random() * 1000) + delay
+	}}
+>
+	<div class="inner">
+		<div class="side back" />
+		<div class="side top" />
+		<div class="side right" />
+		<div class="side front" style="background-color: {color}">
+			<img src={bg} alt={title} />
 		</div>
-	{/if}
-</IntersectionObserver>
+	</div>
+</div>
 
 <style lang="scss">
 	.cube {

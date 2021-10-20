@@ -5,6 +5,7 @@
 <script lang="ts">
 	import Hero from '$lib/hero/Hero.svelte';
 	import Stacks from '$lib/stacks/Stacks.svelte';
+	import Projects from '$lib/projects/Projects.svelte';
 </script>
 
 <svelte:head>
@@ -13,3 +14,4 @@
 
 <Hero />
 <Stacks />
+<Projects />

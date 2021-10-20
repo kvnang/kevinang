@@ -20,11 +20,10 @@
 		</h1>
 		<div class="desc">
 			<p>
-				Currently, I'm working as a developer at <a
-					href="https://www.longbeard.com"
-					target="_blank"
-					rel="noopener noreferrer">Longbeard</a
-				>, a web design agency serving clients across the Americas and Europe. I've been here since
+				I'm a full-stack dev from <span role="img" aria-label="Indonesia">🇮🇩</span>, currently
+				working at
+				<a href="https://www.longbeard.com" target="_blank" rel="noopener noreferrer">Longbeard</a>,
+				a web design agency serving clients across the Americas and Europe. I've been here since
 				2019 and loving it.
 			</p>
 			<p>I love experimenting with new web technologies, but JS and PHP are my best pals so far.</p>
@@ -36,10 +35,12 @@
 <style lang="scss">
 	@import '../../styles/global-imports';
 
+	.wrapper {
+		position: relative;
+	}
 	.container {
 		display: flex;
 		flex-direction: column;
-		position: relative;
 	}
 
 	h1 {
@@ -51,11 +52,12 @@
 	}
 
 	.hero {
-		opacity: 0.25;
+		opacity: 0.35;
 		position: absolute;
 		width: 55%;
-		right: -1rem;
+		right: 0;
 		top: -6rem;
+		transform: translateX(5%);
 		z-index: -1;
 
 		@include breakpoint($tablet-sm) {
@@ -75,7 +77,6 @@
 
 		@include breakpoint($laptop-lg) {
 			width: 40%;
-			right: -5rem;
 		}
 
 		img {
