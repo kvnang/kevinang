@@ -13,11 +13,3 @@
 
 <Hero />
 <Stacks />
-
-<style lang="scss">
-	.container {
-		display: flex;
-		flex-direction: column;
-		position: relative;
-	}
-</style>

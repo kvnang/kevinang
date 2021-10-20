@@ -36,6 +36,12 @@
 <style lang="scss">
 	@import '../../styles/global-imports';
 
+	.container {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+	}
+
 	h1 {
 		display: inline-flex;
 		flex-flow: wrap;
