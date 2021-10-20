@@ -3,6 +3,7 @@
 @import '@fontsource/exo/400.css';
 @import '@fontsource/exo/700.css';
 @import '@fontsource/cabin/400.css';
+@import './global-imports';
 
 :root {
 	/* font-family: Arial, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
@@ -23,14 +24,63 @@
 	--color-error: #ad2831;
 	--color-p: var(--white);
 
-	--section-spacing: 5rem;
-	--section-spacing-lg: 8rem;
+	--font-size-h1: 1.802rem;
+	--font-size-h2: 1.602rem;
+	--font-size-h3: 1.424rem;
+	--font-size-h4: 1.266rem;
+	--font-size-h5: 1.125rem;
+	--font-size-h6: 1rem;
+
+	--section-spacing: 1.25rem;
+	--section-spacing-lg: 4rem;
 
 	--background-without-opacity: rgba(255, 255, 255, 0.7);
 	--column-width: 42rem;
 	--column-margin-top: 4rem;
 
 	--transition: 0.2s ease;
+
+	--container-padding: 1.25rem;
+
+	@include breakpoint($tablet-sm) {
+		--font-size-h1: 2.488rem;
+		--font-size-h2: 2.074rem;
+		--font-size-h3: 1.728rem;
+		--font-size-h4: 1.44rem;
+		--font-size-h5: 1.2rem;
+
+		--section-spacing: 2.5rem;
+		--section-spacing-lg: 8rem;
+
+		--container-padding: 6.25%;
+	}
+
+	@include breakpoint($laptop-sm) {
+		--font-size-h1: 3.052rem;
+		--font-size-h2: 2.441rem;
+		--font-size-h3: 1.953rem;
+		--font-size-h4: 1.563rem;
+		--font-size-h5: 1.25rem;
+
+		--section-spacing: 4.5rem;
+		--section-spacing-lg: 12rem;
+	}
+
+	@include breakpoint($laptop) {
+		--section-spacing: 7.5rem;
+		--section-spacing-lg: 14rem;
+	}
+
+	@include breakpoint($laptop-lg) {
+		--font-size-h1: 4.209rem;
+		--font-size-h2: 3.157rem;
+		--font-size-h3: 2.369rem;
+		--font-size-h4: 1.777rem;
+		--font-size-h5: 1.333rem;
+
+		--section-spacing: 10rem;
+		--section-spacing-lg: 16rem;
+	}
 }
 
 * {
@@ -120,29 +170,34 @@ a:hover {
 
 h1,
 .h1 {
-	font-size: 4.209rem;
+	font-size: var(--font-size-h1);
 	margin-bottom: 0.45em;
 }
 
 h2,
 .h2 {
-	font-size: 3.157rem;
+	font-size: var(--font-size-h2);
 	margin-bottom: 0.5em;
 }
 
 h3,
 .h3 {
-	font-size: 2.369rem;
+	font-size: var(--font-size-h3);
 }
 
 h4,
 .h4 {
-	font-size: 1.777rem;
+	font-size: var(--font-size-h4);
 }
 
 h5,
 .h5 {
-	font-size: 1.333rem;
+	font-size: var(--font-size-h5);
+}
+
+h6,
+.h6 {
+	font-size: var(--font-size-h6);
 }
 
 small,
@@ -174,6 +229,8 @@ button:focus:not(:focus-visible) {
 .container {
 	width: 100%;
 	max-width: 1600px;
+	padding-right: var(--container-padding);
+	padding-left: var(--container-padding);
 	margin-right: auto;
 	margin-left: auto;
 }

@@ -1,0 +1,19 @@
+/*********************************
+SIMPLE BREAKPOINT
+*********************************/
+
+@mixin breakpoint($point) {
+	@if $point == 'mobile-only' {
+		@media (max-width: #{$tablet-sm - 1px}) {
+			@content;
+		}
+	} @else if $point == 'tablet-only' {
+		@media (min-width: $tablet-sm) and (max-width: #{$laptop-sm - 1px}) {
+			@content;
+		}
+	} @else {
+		@media (min-width: $point) {
+			@content;
+		}
+	}
+}

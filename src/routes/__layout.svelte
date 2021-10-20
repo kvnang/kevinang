@@ -1,7 +1,7 @@
 <script lang="ts">
 	import Header from '$lib/header/Header.svelte';
 	import Footer from '$lib/footer/Footer.svelte';
-	import '../app.scss';
+	import '../styles/app.scss';
 </script>
 
 <div class="site-content">

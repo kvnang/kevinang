@@ -55,14 +55,16 @@
 		display: inline-flex;
 		vertical-align: baseline;
 		height: 100%;
+		max-width: 100%;
 	}
 
 	.counter-viewport {
 		width: 9em;
+		max-width: 100%;
 		height: 1.25em;
 		display: block;
 		overflow: hidden;
-		text-align: center;
+		text-align: left;
 		position: relative;
 	}
 
