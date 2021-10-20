@@ -6,7 +6,7 @@
 	import Counter from '$lib/Counter.svelte';
 	import Cube from '$lib/Cube.svelte';
 
-	import img from '/hero.jpg';
+	import img from './hero.jpg';
 
 	import js from '/stack/js.svg';
 	import node from '/stack/node.svg';
