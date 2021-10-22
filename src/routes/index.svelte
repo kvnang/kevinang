@@ -14,4 +14,4 @@
 
 <Hero />
 <Stacks />
-<Projects />
+<!-- <Projects /> -->

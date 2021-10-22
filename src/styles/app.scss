@@ -42,6 +42,8 @@
 
 	--container-padding: 1.25rem;
 
+	--cube-size: 60px;
+
 	@include breakpoint($tablet-sm) {
 		--font-size-h1: 2.488rem;
 		--font-size-h2: 2.074rem;
@@ -64,6 +66,8 @@
 
 		--section-spacing: 4.5rem;
 		--section-spacing-lg: 12rem;
+
+		--cube-size: 80px;
 	}
 
 	@include breakpoint($laptop) {
