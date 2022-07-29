@@ -26,7 +26,7 @@
 				a web design agency serving clients across the Americas and Europe. I've been here since
 				2019 and loving it.
 			</p>
-			<p>I love experimenting with new web technologies, but JS and PHP are my best pals so far.</p>
+			<p>I love experimenting with new web technologies, but anything JS is my current forte.</p>
 			<p>Spending quality time with my wife and kids makes me a happy man. 😊</p>
 		</div>
 	</div>
@@ -86,14 +86,6 @@
 	}
 
 	.desc {
-		max-width: 35em;
-
-		@include breakpoint($laptop-sm) {
-			max-width: 40em;
-		}
-
-		@include breakpoint($laptop-lg) {
-			max-width: 45em;
-		}
+		max-inline-size: 60ch;
 	}
 </style>

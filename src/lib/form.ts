@@ -31,7 +31,7 @@ export function enhance(
 				},
 				body
 			});
-
+			// console.log(res);
 			if (token !== current_token) return;
 
 			if (res.ok) {

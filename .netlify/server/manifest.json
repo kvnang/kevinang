@@ -1,0 +1,133 @@
+{
+  ".svelte-kit/build/index.js": {
+    "file": "index.js",
+    "src": ".svelte-kit/build/index.js",
+    "isEntry": true,
+    "imports": [
+      "_index-02beba75.js"
+    ],
+    "dynamicImports": [
+      "src/hooks.ts"
+    ]
+  },
+  "src/routes/todos/index.json.ts": {
+    "file": "entries/endpoints/todos/index.json.ts.js",
+    "src": "src/routes/todos/index.json.ts",
+    "isEntry": true,
+    "imports": [
+      "__api-59a032bd.js"
+    ]
+  },
+  "src/routes/contact/index.json.ts": {
+    "file": "entries/endpoints/contact/index.json.ts.js",
+    "src": "src/routes/contact/index.json.ts",
+    "isEntry": true
+  },
+  "src/routes/todos/[uid].json.ts": {
+    "file": "entries/endpoints/todos/_uid_.json.ts.js",
+    "src": "src/routes/todos/[uid].json.ts",
+    "isEntry": true,
+    "imports": [
+      "__api-59a032bd.js"
+    ]
+  },
+  "src/routes/__layout.svelte": {
+    "file": "entries/pages/__layout.svelte.js",
+    "src": "src/routes/__layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-02beba75.js"
+    ],
+    "css": [
+      "_app/immutable/assets/__layout-e7cc1ea5.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/logo-initials-37a11e21.svg",
+      "_app/immutable/assets/exo-all-400-normal-849a684b.woff",
+      "_app/immutable/assets/exo-latin-ext-400-normal-22261b04.woff2",
+      "_app/immutable/assets/exo-latin-400-normal-62db7afa.woff2",
+      "_app/immutable/assets/exo-all-700-normal-d8891b32.woff",
+      "_app/immutable/assets/exo-latin-ext-700-normal-6f66cfb5.woff2",
+      "_app/immutable/assets/exo-latin-700-normal-8b01e851.woff2",
+      "_app/immutable/assets/cabin-all-400-normal-72c0c395.woff",
+      "_app/immutable/assets/cabin-latin-ext-400-normal-12e1e483.woff2",
+      "_app/immutable/assets/cabin-latin-400-normal-fc26ff26.woff2",
+      "_app/immutable/assets/fira-mono-cyrillic-ext-400-normal-3df7909e.woff2",
+      "_app/immutable/assets/fira-mono-all-400-normal-1e3b098c.woff",
+      "_app/immutable/assets/fira-mono-cyrillic-400-normal-c7d433fd.woff2",
+      "_app/immutable/assets/fira-mono-greek-ext-400-normal-9e2fe623.woff2",
+      "_app/immutable/assets/fira-mono-greek-400-normal-a8be01ce.woff2",
+      "_app/immutable/assets/fira-mono-latin-ext-400-normal-6bfabd30.woff2",
+      "_app/immutable/assets/fira-mono-latin-400-normal-e43b3538.woff2"
+    ]
+  },
+  ".svelte-kit/runtime/components/error.svelte": {
+    "file": "entries/fallbacks/error.svelte.js",
+    "src": ".svelte-kit/runtime/components/error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-02beba75.js"
+    ]
+  },
+  "src/routes/about.svelte": {
+    "file": "entries/pages/about.svelte.js",
+    "src": "src/routes/about.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-02beba75.js"
+    ],
+    "css": [
+      "_app/immutable/assets/about-5770d689.css"
+    ]
+  },
+  "src/routes/index.svelte": {
+    "file": "entries/pages/index.svelte.js",
+    "src": "src/routes/index.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-02beba75.js"
+    ],
+    "css": [
+      "_app/immutable/assets/index-542f9152.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/hero-f65e8460.jpg",
+      "_app/immutable/assets/js-697ce78d.svg",
+      "_app/immutable/assets/node-c08e2ccd.svg",
+      "_app/immutable/assets/php-821cb3db.svg",
+      "_app/immutable/assets/typescript-bd412956.svg",
+      "_app/immutable/assets/react-ad6f4fa8.svg",
+      "_app/immutable/assets/svelte-87df40b8.svg",
+      "_app/immutable/assets/wordpress-be6a997d.svg",
+      "_app/immutable/assets/gatsby-f4a74fad.svg",
+      "_app/immutable/assets/nextjs-c248c5a9.svg",
+      "_app/immutable/assets/mongodb-4fcdf774.svg",
+      "_app/immutable/assets/github-4b5be516.svg",
+      "_app/immutable/assets/workers-8d8e44e2.svg",
+      "_app/immutable/assets/express-ed52d8e9.svg",
+      "_app/immutable/assets/shopify-2a3f3ff3.svg"
+    ]
+  },
+  "src/routes/todos/index.svelte": {
+    "file": "entries/pages/todos/index.svelte.js",
+    "src": "src/routes/todos/index.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index-02beba75.js"
+    ],
+    "css": [
+      "_app/immutable/assets/index-2e3aa284.css"
+    ]
+  },
+  "_index-02beba75.js": {
+    "file": "_app/immutable/chunks/index-02beba75.js"
+  },
+  "__api-59a032bd.js": {
+    "file": "_app/immutable/chunks/_api-59a032bd.js"
+  },
+  "src/hooks.ts": {
+    "file": "_app/immutable/chunks/hooks-6f546453.js",
+    "src": "src/hooks.ts",
+    "isDynamicEntry": true
+  }
+}

@@ -24,7 +24,7 @@
 </script>
 
 <section class="container section-m-t--lg section-m-b">
-	<h2 class="h1" style="text-align: center">My favorite stacks 🍪</h2>
+	<h2 class="h2" style="text-align: center">My favorite stacks 🍪</h2>
 	<h3 class="h5">
 		{#if intersecting}
 			<span

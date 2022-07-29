@@ -57,7 +57,7 @@
 
 	.top {
 		transform: translateZ(calc(var(--cube-size) * -1));
-		background: hsl(256, 46%, 30%);
+		background: var(--color-bg-tint-2);
 	}
 
 	.front {
@@ -81,7 +81,7 @@
 		width: var(--cube-size);
 		transform: translateZ(0) rotateY(90deg);
 		transform-origin: left;
-		background: hsl(256, 46%, 20%);
+		background: var(--color-bg-tint);
 	}
 
 	.back {
