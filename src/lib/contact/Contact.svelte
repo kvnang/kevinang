@@ -52,8 +52,7 @@
 				data-netlify="true"
 				netlify-honeypot="company"
 				use:enhance={{
-					result: async (res, form) => {
-						console.log(res);
+					result: async ({ form }) => {
 						form.reset();
 					}
 				}}
@@ -246,7 +245,8 @@
 			}
 		}
 
-		&:hover {
+		&:hover,
+		&:focus {
 			color: var(--color-accent);
 
 			.button-icon {

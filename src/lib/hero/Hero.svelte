@@ -9,7 +9,7 @@
 		<div class="hero">
 			<div class="hero-text">
 				<div class="hero-banner">
-					<div class="hero-chevron"></div>
+					<div class="hero-chevron" />
 				</div>
 				<div class="hero-text__inner">
 					<h1 class="h5" style="margin-bottom: 0.5rem"><code>> 👋 I'm Kevin Ang</code></h1>
@@ -25,19 +25,23 @@
 						<p>
 							I'm a full-stack dev from <span role="img" aria-label="Indonesia">🇮🇩</span>, currently
 							working at
-							<a href="https://www.longbeard.com" target="_blank" rel="noopener noreferrer">Longbeard</a>,
-							a web design agency serving clients across the Americas and Europe. I've been here since
-							2019 and loving it.
+							<a href="https://www.longbeard.com" target="_blank" rel="noopener noreferrer"
+								>Longbeard</a
+							>, a web design agency serving clients across the Americas and Europe. I've been here
+							since 2019 and loving it.
 						</p>
-						<p>I love tinkering with frontend development, IoT, and edge computing, but anything JS is my current forte.</p>
+						<p>
+							I love tinkering with frontend development, IoT, and edge computing, but anything JS
+							is my current forte.
+						</p>
 						<p>Spending quality time with my wife and kids makes my day.</p>
 					</div>
 				</div>
 			</div>
 			<div class="hero-img">
-				<div class="hero-chevron"></div>
+				<div class="hero-chevron" />
 				<div class="hero-img__inner">
-					<img src={img} alt="Kevin Ang" width="700" height="962" />
+					<img src={img} alt="Kevin Ang" width="700" height="962" loading="eager" />
 				</div>
 			</div>
 		</div>
@@ -49,11 +53,7 @@
 
 	.wrapper {
 		position: relative;
-		margin-top: var(--section-spacing);
-		
-		@include breakpoint($tablet-sm) {
-			margin-top: calc(var(--section-spacing) - 1.5rem);
-		}
+		margin-top: calc(var(--section-spacing) - 1.5rem);
 	}
 	.container {
 		position: relative;
@@ -82,11 +82,11 @@
 			background-color: var(--color-bg);
 			transform-origin: top left;
 		}
-		
+
 		&::before {
 			transform: skewX(15deg);
 		}
-		
+
 		&::after {
 			transform-origin: bottom left;
 			transform: skewX(-15deg);
@@ -122,10 +122,9 @@
 			display: flex;
 			flex-direction: column;
 			padding: 0 0 var(--section-spacing);
-			
+
 			@include breakpoint($tablet-sm) {
 				padding: 3rem 0;
-
 			}
 
 			@include breakpoint($laptop-lg) {
@@ -142,13 +141,13 @@
 		}
 
 		.hero-banner {
-			position: absolute;	
+			position: absolute;
 			height: 100%;
 			width: 100%;
 			right: calc(100%);
 			top: 0;
 			z-index: -1;
-			
+
 			&::before {
 				content: '';
 				position: absolute;
@@ -205,7 +204,7 @@
 			aspect-ratio: 16 / 9;
 			margin-left: -1rem;
 			margin-right: -1rem;
-			
+
 			@include breakpoint($tablet-sm) {
 				aspect-ratio: initial;
 				margin-left: 2rem;

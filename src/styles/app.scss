@@ -31,10 +31,10 @@
 
 	--gradient-1: linear-gradient(to bottom right, #536976, #292e49);
 
-	--section-spacing: 1.5rem;
+	--section-spacing: 2.5rem;
 	--section-spacing-lg: 4rem;
 	--form-field-gap: 0.625rem;
-	--input-padding-v: 1.25rem;
+	--input-padding-v: 1rem;
 	--input-padding-h: 0;
 
 	--background-without-opacity: rgba(255, 255, 255, 0.7);
@@ -347,9 +347,9 @@ textarea {
 				&.has-value {
 					padding-top: calc(var(--input-padding-v) * 1.33);
 					padding-bottom: calc(var(--input-padding-v) * 0.67);
+
 					+ .label {
-						top: 0.75em;
-						transform: translateY(0);
+						transform: translateY(calc(var(--input-padding-v) * -1));
 						font-size: 70%;
 						opacity: 0.75;
 					}
