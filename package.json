@@ -13,13 +13,9 @@
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"dependencies": {
-		"@fontsource/cabin": "^4.5.6",
-		"@fontsource/exo": "^4.5.8",
 		"@fontsource/fanwood-text": "^4.5.8",
-		"@fontsource/fira-mono": "^4.5.8",
 		"@fontsource/jetbrains-mono": "^4.5.9",
 		"@fontsource/league-spartan": "^4.5.10",
-		"cookie": "^0.5.0",
 		"normalize.css": "^8.0.1"
 	},
 	"devDependencies": {
