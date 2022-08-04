@@ -200,7 +200,7 @@
 		color: var(--color-p);
 		display: inline-flex;
 		align-items: center;
-		font-weight: 600;
+		font-weight: 700;
 		transition: color var(--transition);
 		border: 1px solid currentColor;
 		padding: 0.75rem 1.5rem;
@@ -209,9 +209,14 @@
 		letter-spacing: 0.2em;
 		font-size: var(--font-size-sm);
 
+		span {
+			transform: translateY(0.1em); // Font weirdness
+		}
+
 		.button-icon {
 			margin-left: 0.5rem;
 			width: 1rem;
+			height: 1rem;
 			position: relative;
 			height: inherit;
 
@@ -225,16 +230,18 @@
 				transition: var(--transition);
 
 				&:first-of-type {
+					--translateX: 0;
+
 					opacity: 1;
 					color: var(--color-p);
-					--translateX: 0;
 					transition-delay: 0.25s;
 				}
 
 				&:last-of-type {
+					--translateX: -100%;
+
 					opacity: 0;
 					color: var(--color-accent);
-					--translateX: -100%;
 				}
 			}
 		}
