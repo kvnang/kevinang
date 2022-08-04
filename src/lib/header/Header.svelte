@@ -78,7 +78,7 @@
 			width: auto;
 
 			path {
-				transition: var(--transition);
+				transition: fill var(--transition), opacity var(--transition);
 			}
 		}
 		&:hover {
@@ -87,6 +87,7 @@
 					fill: var(--color-accent);
 				}
 				&:last-child {
+					fill: var(--color-accent-2);
 					opacity: 1;
 				}
 			}
