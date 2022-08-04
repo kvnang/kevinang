@@ -95,6 +95,9 @@
 	}
 
 	.links {
+		display: flex;
+		align-items: center;
+
 		ul {
 			list-style: none;
 			display: flex;
@@ -110,6 +113,8 @@
 		}
 
 		a {
+			display: flex;
+			align-items: center;
 			opacity: 0.75;
 			transition: opacity var(--transition);
 

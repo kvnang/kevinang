@@ -2,7 +2,7 @@
 	import { fly } from 'svelte/transition';
 	export let pause: boolean;
 	
-	const words = ['full-stack web dev', 'father of two', 'coffee enthusiast'];
+	const words = ['full-stack dev', 'father of two', 'coffee enthusiast'];
 	let current = 0;
 
 	let timer: ReturnType<typeof setInterval>;
@@ -46,7 +46,7 @@
 	}
 
 	.counter-viewport {
-		width: 9em;
+		width: 13ch;
 		max-width: 100%;
 		height: 1.25em;
 		display: block;

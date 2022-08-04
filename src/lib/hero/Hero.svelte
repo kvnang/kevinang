@@ -29,8 +29,8 @@
 							a web design agency serving clients across the Americas and Europe. I've been here since
 							2019 and loving it.
 						</p>
-						<p>I love experimenting with new web technologies, but anything JS is my current forte.</p>
-						<p>Spending quality time with my wife and kids makes me a happy man. 😊</p>
+						<p>I love tinkering with frontend development, IoT, and edge computing, but anything JS is my current forte.</p>
+						<p>Spending quality time with my wife and kids makes my day.</p>
 					</div>
 				</div>
 			</div>

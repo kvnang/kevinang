@@ -70,6 +70,8 @@
 </section>
 
 <style lang="scss">
+	@import '../../styles/global-imports';
+
 	.container {
 		display: flex;
 		flex-direction: column;
@@ -77,8 +79,13 @@
 	}
 	.stacks {
 		position: relative;
-		margin: 14rem 0 8rem;
+		margin: 10rem 0 6rem;
 		left: calc(var(--cube-size) * -3);
+
+		@include breakpoint($laptop-sm) {
+			margin-top: 14rem;
+			margin-bottom: 8rem;
+		}
 
 		ul {
 			list-style: none;
