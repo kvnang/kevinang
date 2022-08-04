@@ -1,48 +1,46 @@
 <script lang="ts">
 	import TextRoll from './TextRoll.svelte';
-	import img from './hero.jpg';
+	import heroImage from './hero.jpg';
 	let pause = false;
 </script>
 
-<section class="wrapper section-m-b">
-	<div class="container">
-		<div class="hero">
-			<div class="hero-text">
-				<div class="hero-banner">
-					<div class="hero-chevron" />
-				</div>
-				<div class="hero-text__inner">
-					<h1 class="h5" style="margin-bottom: 0.5rem"><code>> 👋 I'm Kevin Ang</code></h1>
-					<h1
-						on:mouseover={() => (pause = true)}
-						on:focus={() => (pause = true)}
-						on:mouseout={() => (pause = false)}
-						on:blur={() => (pause = false)}
-					>
-						<span>I'm a</span>&nbsp;<TextRoll {pause} />
-					</h1>
-					<div class="desc">
-						<p>
-							I'm a full-stack dev from <span role="img" aria-label="Indonesia">🇮🇩</span>, currently
-							working at
-							<a href="https://www.longbeard.com" target="_blank" rel="noopener noreferrer"
-								>Longbeard</a
-							>, a web design agency serving clients across the Americas and Europe. I've been here
-							since 2019 and loving it.
-						</p>
-						<p>
-							I love tinkering with frontend development, IoT, and edge computing, but anything JS
-							is my current forte.
-						</p>
-						<p>Spending quality time with my wife and kids makes my day.</p>
-					</div>
+<section class="container section-m-b">
+	<div class="hero">
+		<div class="hero-text">
+			<div class="hero-banner">
+				<div class="hero-chevron" />
+			</div>
+			<div class="hero-text__inner">
+				<h1 class="h5" style="margin-bottom: 0.5rem"><code>> 👋 I'm Kevin Ang</code></h1>
+				<h1
+					on:mouseover={() => (pause = true)}
+					on:focus={() => (pause = true)}
+					on:mouseout={() => (pause = false)}
+					on:blur={() => (pause = false)}
+				>
+					<span>I'm a</span>&nbsp;<TextRoll {pause} />
+				</h1>
+				<div class="desc">
+					<p>
+						I'm a full-stack dev from <span role="img" aria-label="Indonesia">🇮🇩</span>, currently
+						working at
+						<a href="https://www.longbeard.com" target="_blank" rel="noopener noreferrer"
+							>Longbeard</a
+						>, a web design agency serving clients across the Americas and Europe. I've been here
+						since 2019 and loving it.
+					</p>
+					<p>
+						I love tinkering with frontend development, IoT, and edge computing, but anything JS is
+						my current forte.
+					</p>
+					<p>Spending quality time with my wife and kids makes my day.</p>
 				</div>
 			</div>
-			<div class="hero-img">
-				<div class="hero-chevron" />
-				<div class="hero-img__inner">
-					<img src={img} alt="Kevin Ang" width="700" height="962" loading="eager" />
-				</div>
+		</div>
+		<div class="hero-img">
+			<div class="hero-chevron" />
+			<div class="hero-img__inner">
+				<img src={heroImage} alt="Kevin Ang" width="700" height="962" loading="eager" />
 			</div>
 		</div>
 	</div>
@@ -51,12 +49,9 @@
 <style lang="scss">
 	@import '../../styles/global-imports';
 
-	.wrapper {
-		position: relative;
-		margin-top: calc(var(--section-spacing) - 1.5rem);
-	}
 	.container {
 		position: relative;
+		margin-top: calc(var(--section-spacing) - 1.5rem);
 	}
 
 	.hero {

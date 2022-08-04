@@ -34,15 +34,13 @@
 
 <div class="site-content">
 	<Header />
-
 	<main>
 		<slot />
 	</main>
-
 	<Footer />
 </div>
 
-<style>
+<style lang="scss">
 	.site-content {
 		flex: 1;
 		display: flex;
