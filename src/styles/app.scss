@@ -363,7 +363,6 @@ textarea {
 					}
 				}
 
-				&:invalid,
 				&[aria-invalid='true'] {
 					border-bottom-color: var(--color-error);
 				}
@@ -375,7 +374,6 @@ textarea {
 				top: var(--input-padding-v);
 				left: var(--input-padding-h);
 				pointer-events: none;
-				// transform: translateY(-50%);
 				transition: var(--transition);
 			}
 
