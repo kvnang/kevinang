@@ -1,25 +1,5 @@
 <script context="module" lang="ts">
 	import { enhance } from '$lib/form';
-	import type { Load } from '@sveltejs/kit';
-
-	// see https://kit.svelte.dev/docs#loading
-	export const load: Load = async ({ fetch }) => {
-		const res = await fetch('/todos.json');
-
-		if (res.ok) {
-			const todos = await res.json();
-
-			return {
-				props: { todos }
-			};
-		}
-
-		const { message } = await res.json();
-
-		return {
-			error: new Error(message)
-		};
-	};
 </script>
 
 <section class="container section-m-b">
@@ -54,6 +34,9 @@
 				use:enhance={{
 					result: async ({ form }) => {
 						form.reset();
+						form.querySelectorAll('.has-value')?.forEach((el) => {
+							el.classList.remove('has-value');
+						});
 					}
 				}}
 			>
@@ -114,7 +97,7 @@
 					</div>
 					<div class="form-field form-field--submit">
 						<button type="submit">
-							<span class="button-text">Send</span>
+							<span class="button-text h6">Send</span>
 							<div class="button-icon">
 								<svg
 									xmlns="http://www.w3.org/2000/svg"
@@ -199,14 +182,10 @@
 		color: var(--color-p);
 		display: inline-flex;
 		align-items: center;
-		font-weight: 700;
 		transition: color var(--transition);
 		border: 1px solid currentColor;
 		padding: 0.75rem 1.5rem;
 		border-radius: 1.5rem;
-		text-transform: uppercase;
-		letter-spacing: 0.2em;
-		font-size: var(--font-size-sm);
 
 		span {
 			transform: translateY(0.1em); // Font weirdness
@@ -252,13 +231,15 @@
 			.button-icon {
 				svg {
 					&:first-of-type {
-						opacity: 0;
 						--translateX: 100%;
+
+						opacity: 0;
 						transition-delay: 0s;
 					}
 					&:last-of-type {
-						opacity: 1;
 						--translateX: 0;
+
+						opacity: 1;
 						transition-delay: 0.25s;
 					}
 				}

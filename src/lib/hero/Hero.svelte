@@ -1,6 +1,6 @@
 <script lang="ts">
 	import TextRoll from './TextRoll.svelte';
-	import img from './hero-3.jpg';
+	import img from './hero.jpg';
 	let pause = false;
 </script>
 

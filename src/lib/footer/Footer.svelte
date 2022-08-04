@@ -4,7 +4,7 @@
 
 <footer>
 	<img src={logo} alt="Kevin Ang" />
-	<p>&copy; Kevin Ang {new Date().getFullYear()}</p>
+	<p class="h6">&copy; Kevin Ang {new Date().getFullYear()}</p>
 </footer>
 
 <style lang="scss">

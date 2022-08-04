@@ -328,6 +328,7 @@ textarea {
 			width: 100%;
 
 			input,
+			select,
 			textarea {
 				line-height: 1.5;
 				// height: 100%;
@@ -345,8 +346,8 @@ textarea {
 
 				&:focus,
 				&.has-value {
-					padding-top: calc(var(--input-padding-v) * 1.33);
-					padding-bottom: calc(var(--input-padding-v) * 0.67);
+					padding-top: calc(var(--input-padding-v) * 1.25);
+					padding-bottom: calc(var(--input-padding-v) * 0.75);
 
 					+ .label {
 						transform: translateY(calc(var(--input-padding-v) * -1));
@@ -360,6 +361,11 @@ textarea {
 						width: 100%;
 						opacity: 1;
 					}
+				}
+
+				&:invalid,
+				&[aria-invalid='true'] {
+					border-bottom-color: var(--color-error);
 				}
 			}
 
