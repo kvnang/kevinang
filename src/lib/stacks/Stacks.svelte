@@ -56,7 +56,7 @@
 					<Cube bg={typescript} color="#3178c6" title="Typescript" top={-1} left={1} />
 					<Cube bg={js} color="#F7DF1E" title="JavaScript" top={-1} left={2} />
 					<Cube bg={react} color="#20232a" title="JavaScript" top={-2} left={2} />
-					<Cube bg={js} color="#F7DF1E" title="JavaScript" top={0} left={3} right={2} />
+					<Cube bg={sass} color="#bf4080" title="JavaScript" top={0} left={3} right={2} />
 					<Cube bg={mongodb} color="#061621" title="JavaScript" top={0} left={3} right={1} />
 					<Cube bg={gatsby} color="#663399" title="JavaScript" top={-1} left={3} right={1} />
 					<Cube bg={svelte} color="#fff" title="JavaScript" top={-2} left={3} right={1} />

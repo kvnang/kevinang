@@ -68,7 +68,7 @@
 					<div class="form-field form-field--half">
 						<label for="name">
 							<input
-							  type="text"
+								type="text"
 								id="name"
 								name="name"
 								autocomplete="name"
@@ -199,22 +199,25 @@
 	button[type='submit'] {
 		color: var(--color-p);
 		display: inline-flex;
-		align-items: stretch;
-		font-weight: 700;
+		align-items: center;
+		font-weight: 600;
 		transition: color var(--transition);
 		border: 1px solid currentColor;
 		padding: 0.75rem 1.5rem;
 		border-radius: 1.5rem;
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		font-size: var(--font-size-sm);
 
 		.button-icon {
-			margin-left: 1rem;
-			width: 1.25rem;
+			margin-left: 0.5rem;
+			width: 1rem;
 			position: relative;
 			height: inherit;
 
 			svg {
-				height: 1.25rem;
-				width: 100%;
+				height: 1rem;
+				width: 1rem;
 				position: absolute;
 				top: 50%;
 				left: 0;

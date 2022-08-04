@@ -142,6 +142,11 @@ body {
 	flex-direction: column;
 }
 
+::selection {
+	background-color: var(--color-accent);
+	color: var(--color-bg);
+}
+
 h1,
 .h1,
 h2,
