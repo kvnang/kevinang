@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Header from '$lib/header/Header.svelte';
 	import Footer from '$lib/footer/Footer.svelte';
+	import Toast from '$lib/toast/Toast.svelte';
 	import '../styles/app.scss';
 	import { onMount } from 'svelte';
 
@@ -32,12 +33,15 @@
 	});
 </script>
 
+<svelte:head />
+
 <div class="site-content">
 	<Header />
 	<main>
 		<slot />
 	</main>
 	<Footer />
+	<Toast />
 </div>
 
 <style lang="scss">

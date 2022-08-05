@@ -22,12 +22,13 @@
 	--color-bg: hsl(var(--color-bg-hsl));
 	--color-bg-tint: hsl(256, 46%, 20%);
 	--color-bg-tint-2: hsl(256, 46%, 30%);
-	--color-primary: #048ba8;
+	// --color-primary: #048ba8;
 	--color-accent: #ffbc42;
 	--color-accent-2: #ffd890;
-	--color-success: #16db93;
-	--color-error: #ad2831;
+	--color-success: #10b981;
+	--color-error: #ef4444;
 	--color-p: var(--white);
+	--gray: hsl(0 0% 25%);
 
 	--gradient-1: linear-gradient(to bottom right, #536976, #292e49);
 
@@ -87,6 +88,22 @@
 	@include breakpoint($laptop-lg) {
 		--section-spacing: 6rem;
 		--section-spacing-lg: 12rem;
+	}
+
+	// Shadows
+	// --shadow-strength: 1%;
+	// --shadow-color: 220deg 3% 15%; // HSL
+	// @media (prefers-color-scheme: dark) {
+	--shadow-strength: 25%;
+	--shadow-color: 220deg 40% 2%; // HSL
+	// }
+	@for $i from 1 through 3 {
+		/* stylelint-disable-next-line custom-property-pattern */
+		--shadow-#{$i}: 0
+			#{(3px + (($i - 1) * 1px))}
+			#{(8px + (($i - 1) * 2px))}
+			#{(-3px - (($i - 1) * 1px))}
+			hsl(var(--shadow-color) / calc(var(--shadow-strength) + 9%));
 	}
 }
 

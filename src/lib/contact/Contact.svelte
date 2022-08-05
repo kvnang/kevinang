@@ -1,5 +1,6 @@
 <script context="module" lang="ts">
 	import { enhance } from '$lib/form';
+	import { notifications } from '../toast/notifications';
 </script>
 
 <section class="container section-m-b">
@@ -33,10 +34,15 @@
 				netlify-honeypot="company"
 				use:enhance={{
 					result: async ({ form }) => {
-						form.reset();
 						form.querySelectorAll('.has-value')?.forEach((el) => {
 							el.classList.remove('has-value');
 						});
+						form.reset();
+						notifications.success(
+							'Your message has been sent!',
+							'I will review your message and get back to you as soon as I can.',
+							6000
+						);
 					}
 				}}
 			>
