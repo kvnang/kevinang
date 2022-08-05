@@ -40,7 +40,7 @@
 						form.reset();
 						notifications.success(
 							'Your message has been sent!',
-							'I will review your message and get back to you as soon as I can.',
+							`Please don't expect instant reply, but will get back to you as soon as I can.`,
 							6000
 						);
 					}
