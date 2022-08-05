@@ -46,8 +46,7 @@ function createNotificationStore() {
 		send,
 		default: (msg: string, submsg?: string, timeout?: number) =>
 			send(msg, submsg, 'default', timeout),
-		danger: (msg: string, submsg?: string, timeout?: number) =>
-			send(msg, submsg, 'danger', timeout),
+		error: (msg: string, submsg?: string, timeout?: number) => send(msg, submsg, 'error', timeout),
 		warning: (msg: string, submsg?: string, timeout?: number) =>
 			send(msg, submsg, 'warning', timeout),
 		info: (msg: string, submsg?: string, timeout?: number) => send(msg, submsg, 'info', timeout),

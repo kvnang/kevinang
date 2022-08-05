@@ -33,11 +33,42 @@
 				data-netlify="true"
 				netlify-honeypot="company"
 				use:enhance={{
+					pending: ({ form }) => {
+						const { elements } = form;
+
+						for (let i = 0; i < elements.length; i++) {
+							const element = elements.item(i);
+							if (!element) continue;
+							element.setAttribute('disabled', 'true');
+						}
+					},
+					error: async ({ form, error, response }) => {
+						const { elements } = form;
+
+						for (let i = 0; i < elements.length; i++) {
+							const element = elements.item(i);
+							if (!element) continue;
+							element.removeAttribute('disabled');
+						}
+
+						notifications.error(
+							'There has been an error sending your message.',
+							`Error: ${error?.message || (await response?.text()) || 'Unknown error'}`,
+							6000
+						);
+					},
 					result: async ({ form }) => {
-						form.querySelectorAll('.has-value')?.forEach((el) => {
-							el.classList.remove('has-value');
-						});
+						const { elements } = form;
+
+						for (let i = 0; i < elements.length; i++) {
+							const element = elements.item(i);
+							if (!element) continue;
+							element.classList.remove('has-value');
+							element.removeAttribute('disabled');
+						}
+
 						form.reset();
+
 						notifications.success(
 							'Your message has been sent!',
 							`Please don't expect instant reply, but will get back to you as soon as I can.`,
@@ -250,6 +281,12 @@
 					}
 				}
 			}
+		}
+
+		&[disabled],
+		&:disabled {
+			opacity: 0.5;
+			pointer-events: none;
 		}
 	}
 </style>

@@ -16,6 +16,11 @@
 						/>
 					</svg>
 				{/if}
+				{#if notification.type === 'error'}
+					<svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" viewBox="0 0 48 48"
+						><path d="M22.5 29V10h3v19Zm0 9v-3h3v3Z" fill="currentColor" /></svg
+					>
+				{/if}
 			</div>
 			<div class="content">
 				<h5 class="message">{notification.message}</h5>
@@ -55,6 +60,10 @@
 
 		&--success {
 			--toast-color: var(--color-success);
+		}
+
+		&--error {
+			--toast-color: var(--color-error);
 		}
 	}
 

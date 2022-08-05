@@ -13,23 +13,15 @@ export async function api(formData?: FormData) {
 
 	const encodedFormData = encode(formData);
 
-	try {
-		const res = await fetch(`${base}`, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/x-www-form-urlencoded'
-			},
-			body: encodedFormData
-		});
-
-		return {
-			status: res.status
-		};
-	} catch (err) {
-		console.error(err);
-	}
+	const res = await fetch(`${base}`, {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/x-www-form-urlencoded'
+		},
+		body: encodedFormData
+	});
 
 	return {
-		status: 500
+		status: res.status
 	};
 }
