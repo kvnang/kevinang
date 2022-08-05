@@ -8,9 +8,7 @@ const config = {
 	preprocess: preprocess(),
 
 	kit: {
-		adapter: adapter({
-			edge: true
-		}),
+		adapter: adapter(),
 		// hydrate the <div id="svelte"> element in src/app.html
 		// target: '#svelte'
 		prerender: {
