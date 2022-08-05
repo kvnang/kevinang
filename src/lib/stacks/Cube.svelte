@@ -2,12 +2,12 @@
 	import { fly } from 'svelte/transition';
 
 	export let bg: string;
-	export let color: string = 'var(--color-bg)';
+	export let color = 'var(--color-bg)';
 	export let title: string;
 	export let top: number;
 	export let left: number;
-	export let right: number = 0;
-	export let delay: number = 0;
+	export let right = 0;
+	export let delay = 0;
 </script>
 
 <li

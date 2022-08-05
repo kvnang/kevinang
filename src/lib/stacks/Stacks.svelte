@@ -40,32 +40,59 @@
 		{/if}
 	</h3>
 	<div class="stacks">
-		<IntersectionObserver bind:intersecting top={100} once={true}>
-			{#if intersecting}
-				<ul>
-					<Cube bg={shopify} color="#fbf7ed" title="Shopify" top={0} left={-1} right={0} {delay} />
-					<!-- <Cube bg={auth0} color="#000" title="Auth0" top={-1} left={-1} right={0} {delay} /> -->
-					<!-- <Cube bg={shopify} color="#fbf7ed" title="Shopify" top={0} left={-1} right={-1} {delay} /> -->
-					<Cube bg={wordpress} color="#21759b" title="WordPress" top={0} left={0} />
-					<Cube bg={workers} color="#333333" title="Cloudflare Workers" top={-1} left={0} {delay} />
-					<Cube bg={js} color="#F7DF1E" title="JavaScript" top={0} left={1} right={1} />
-					<Cube bg={php} color="#8993BE" title="JavaScript" top={0} left={1} />
-					<Cube bg={js} color="#F7DF1E" title="JavaScript" top={0} left={2} right={1} />
-					<Cube bg={node} color="#fff" title="Node.js" top={0} left={2} />
-					<!-- <Cube bg={sass} color="#CD6799" title="Sass" top={-1} left={1} /> -->
-					<Cube bg={typescript} color="#3178c6" title="Typescript" top={-1} left={1} />
-					<Cube bg={js} color="#F7DF1E" title="JavaScript" top={-1} left={2} />
-					<Cube bg={react} color="#20232a" title="JavaScript" top={-2} left={2} />
-					<Cube bg={sass} color="#bf4080" title="JavaScript" top={0} left={3} right={2} />
-					<Cube bg={mongodb} color="#061621" title="JavaScript" top={0} left={3} right={1} />
-					<Cube bg={gatsby} color="#663399" title="JavaScript" top={-1} left={3} right={1} />
-					<Cube bg={svelte} color="#fff" title="JavaScript" top={-2} left={3} right={1} />
-					<Cube bg={nextjs} color="#000" title="Next.js" top={0} left={4} right={2} />
-					<Cube bg={github} color="#333333" title="Next.js" top={-1} left={4} right={2} />
-					<Cube bg={express} color="#222" title="Express.js" top={0} left={5} right={2} {delay} />
-				</ul>
-			{/if}
-		</IntersectionObserver>
+		<div class="stacks__inner">
+			<IntersectionObserver bind:intersecting top={100} once={true}>
+				{#if intersecting}
+					<div class="stacks__wrapper">
+						<ul>
+							<Cube
+								bg={shopify}
+								color="#fbf7ed"
+								title="Shopify"
+								top={0}
+								left={-1}
+								right={0}
+								{delay}
+							/>
+							<!-- <Cube bg={auth0} color="#000" title="Auth0" top={-1} left={-1} right={0} {delay} /> -->
+							<!-- <Cube bg={shopify} color="#fbf7ed" title="Shopify" top={0} left={-1} right={-1} {delay} /> -->
+							<Cube bg={wordpress} color="#21759b" title="WordPress" top={0} left={0} />
+							<Cube
+								bg={workers}
+								color="#333333"
+								title="Cloudflare Workers"
+								top={-1}
+								left={0}
+								{delay}
+							/>
+							<Cube bg={js} color="#F7DF1E" title="JavaScript" top={0} left={1} right={1} />
+							<Cube bg={php} color="#8993BE" title="JavaScript" top={0} left={1} />
+							<Cube bg={js} color="#F7DF1E" title="JavaScript" top={0} left={2} right={1} />
+							<Cube bg={node} color="#fff" title="Node.js" top={0} left={2} />
+							<!-- <Cube bg={sass} color="#CD6799" title="Sass" top={-1} left={1} /> -->
+							<Cube bg={typescript} color="#3178c6" title="Typescript" top={-1} left={1} />
+							<Cube bg={js} color="#F7DF1E" title="JavaScript" top={-1} left={2} />
+							<Cube bg={react} color="#20232a" title="JavaScript" top={-2} left={2} />
+							<Cube bg={sass} color="#bf4080" title="JavaScript" top={0} left={3} right={2} />
+							<Cube bg={mongodb} color="#061621" title="JavaScript" top={0} left={3} right={1} />
+							<Cube bg={gatsby} color="#663399" title="JavaScript" top={-1} left={3} right={1} />
+							<Cube bg={svelte} color="#fff" title="JavaScript" top={-2} left={3} right={1} />
+							<Cube bg={nextjs} color="#000" title="Next.js" top={0} left={4} right={2} />
+							<Cube bg={github} color="#333333" title="Next.js" top={-1} left={4} right={2} />
+							<Cube
+								bg={express}
+								color="#222"
+								title="Express.js"
+								top={0}
+								left={5}
+								right={2}
+								{delay}
+							/>
+						</ul>
+					</div>
+				{/if}
+			</IntersectionObserver>
+		</div>
 	</div>
 </section>
 
@@ -79,17 +106,39 @@
 	}
 	.stacks {
 		position: relative;
-		margin: 10rem 0 6rem;
-		left: calc(var(--cube-size) * -3);
+		width: calc(var(--cube-size) * 10);
+		margin-top: 1.5rem;
 
-		@include breakpoint($laptop-sm) {
-			margin-top: 14rem;
-			margin-bottom: 8rem;
+		&::before {
+			content: '';
+			width: 100%;
+			height: 0;
+			padding-bottom: 40%;
+			display: block;
+		}
+
+		&__inner {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		&__wrapper {
+			padding-left: calc(var(--cube-size) * 1.75);
+			padding-top: calc(var(--cube-size) * 2.45);
+			width: 100%;
+			height: 100%;
+			position: relative;
 		}
 
 		ul {
 			list-style: none;
 			padding: 0;
+			position: relative;
+			width: 100%;
+			height: 100%;
 		}
 	}
 </style>
