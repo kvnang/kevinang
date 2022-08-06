@@ -1,3 +1,3 @@
 export const config = {
-	siteUrl: 'https://www.kevinang.com'
+	siteUrl: import.meta.env.URL
 };
