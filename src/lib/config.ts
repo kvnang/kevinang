@@ -1,5 +1,6 @@
 import { browser } from '$app/env';
+import { removeTrailingSlash } from './utils';
 
 export const config = {
-	siteUrl: browser ? import.meta.env.URL : process.env.URL
+	siteUrl: browser ? removeTrailingSlash(import.meta.env.URL) : removeTrailingSlash(process.env.URL)
 };

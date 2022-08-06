@@ -1,9 +1,8 @@
 <script lang="ts">
 	import { page } from '$app/stores';
 	import { config } from '$lib/config';
-	import { removeTrailingSlash } from '$lib/utils';
 
-	const siteUrl = config.siteUrl ? removeTrailingSlash(config.siteUrl) : '';
+	const siteUrl = config;
 
 	export let title = 'Kevin Ang • Full-Stack Web Developer';
 	export let description = `I'm a full-stack web developer from Indonesia who enjoys tinkering with JS, IoT, and the edge.`;
