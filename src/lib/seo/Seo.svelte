@@ -7,7 +7,7 @@
 	export let title = 'Kevin Ang • Full-Stack Web Developer';
 	export let description = `I'm a full-stack web developer from Indonesia who enjoys tinkering with JS, IoT, and the edge.`;
 	export let socialCard = `${siteUrl}/social-card.jpg`;
-	export let canonical = $page.url.href;
+	export let canonical = `${siteUrl}/${$page.url.pathname}`;
 
 	const siteName = 'Kevin Ang';
 </script>
