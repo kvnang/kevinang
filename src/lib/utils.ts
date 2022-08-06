@@ -1,3 +1,3 @@
 export const removeTrailingSlash = (path?: string) => {
-	return path?.replace(/\/$/, '');
+	return path?.replace(/\/+$/, ''); // Also handles multiple slashes
 };

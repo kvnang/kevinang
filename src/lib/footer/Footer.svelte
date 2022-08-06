@@ -3,7 +3,7 @@
 </script>
 
 <footer>
-	<img src={logo} alt="Kevin Ang" />
+	<img src={logo} alt="Kevin Ang" width="80" height="72" />
 	<p class="h6">&copy; Kevin Ang {new Date().getFullYear()}</p>
 </footer>
 
