@@ -1,3 +1,5 @@
+import { browser } from '$app/env';
+
 export const config = {
-	siteUrl: process?.env.URL || import.meta.env.URL
+	siteUrl: browser ? import.meta.env.URL : process?.env.URL
 };
