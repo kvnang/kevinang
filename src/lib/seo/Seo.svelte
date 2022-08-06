@@ -1,9 +1,12 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import { config } from '$lib/config';
+
+	const { siteUrl } = config;
 
 	export let title = 'Kevin Ang • JavaScript Web Developer';
 	export let description = `I'm a full-stack web developer from Indonesia who enjoys tinkering with JS, IoT, and the edge.`;
-	export let socialCard = `${$page.url.protocol}//${$page.url.host}/social-card.jpg`;
+	export let socialCard = `${siteUrl}/social-card.jpg`;
 	export let canonical = $page.url.href;
 
 	const siteName = 'Kevin Ang';
