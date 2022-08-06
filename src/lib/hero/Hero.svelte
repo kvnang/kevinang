@@ -1,5 +1,6 @@
 <script lang="ts">
 	import TextRoll from './TextRoll.svelte';
+	import Typed from './Typed.svelte';
 	import heroImage from './hero.jpg';
 	let pause = false;
 </script>
@@ -11,7 +12,7 @@
 				<div class="hero-chevron" />
 			</div>
 			<div class="hero-text__inner">
-				<h1 class="h5" style="margin-bottom: 0.5rem"><code>> 👋 I'm Kevin Ang</code></h1>
+				<h1 class="h5" style="margin-bottom: 0.5rem"><code><Typed /></code></h1>
 				<h1
 					on:mouseover={() => (pause = true)}
 					on:focus={() => (pause = true)}
