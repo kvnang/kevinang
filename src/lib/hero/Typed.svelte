@@ -27,7 +27,7 @@
 	}
 
 	onMount(() => {
-		setTimeout(typeWriter, 100);
+		setTimeout(typeWriter, 1000);
 	});
 </script>
 
