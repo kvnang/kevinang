@@ -1,15 +1,11 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@fontsource/cabin': ^4.5.6
-  '@fontsource/exo': ^4.5.8
   '@fontsource/fanwood-text': ^4.5.8
-  '@fontsource/fira-mono': ^4.5.8
   '@fontsource/jetbrains-mono': ^4.5.9
   '@fontsource/league-spartan': ^4.5.10
   '@sveltejs/adapter-netlify': ^1.0.0-next.71
   '@sveltejs/kit': next
-  '@types/cookie': ^0.5.1
   '@typescript-eslint/eslint-plugin': ^5.31.0
   '@typescript-eslint/parser': ^5.31.0
   cookie: ^0.5.0
@@ -28,10 +24,7 @@ specifiers:
   vite: ^3.0.3
 
 dependencies:
-  '@fontsource/cabin': 4.5.6
-  '@fontsource/exo': 4.5.8
   '@fontsource/fanwood-text': 4.5.8
-  '@fontsource/fira-mono': 4.5.8
   '@fontsource/jetbrains-mono': 4.5.9
   '@fontsource/league-spartan': 4.5.10
   cookie: 0.5.0
@@ -39,8 +32,7 @@ dependencies:
 
 devDependencies:
   '@sveltejs/adapter-netlify': 1.0.0-next.71
-  '@sveltejs/kit': 1.0.0-next.402_svelte@3.49.0+vite@3.0.3
-  '@types/cookie': 0.5.1
+  '@sveltejs/kit': 1.0.0-next.405_svelte@3.49.0+vite@3.0.3
   '@typescript-eslint/eslint-plugin': 5.31.0_d5zwcxr4bwkhmuo464cb3a2puu
   '@typescript-eslint/parser': 5.31.0_he2ccbldppg44uulnyq4rwocfa
   eslint: 8.20.0
@@ -75,20 +67,8 @@ packages:
       - supports-color
     dev: true
 
-  /@fontsource/cabin/4.5.6:
-    resolution: {integrity: sha512-pEHzI71EUgqSDykKs/fZj+SaQJIU1mU/QEqYmD5rNRecTXNlcf5Wub47rbEWtNRIBsik0mNozhyxONBmSlfewA==}
-    dev: false
-
-  /@fontsource/exo/4.5.8:
-    resolution: {integrity: sha512-TAODFC6fqupPU8GxgSdvMlkk5IEUaD2jTZsOxzenljg+IfKbP1fGaPS1DDxOksSK/MeyEw27BSfPgQTAnxz9Rw==}
-    dev: false
-
   /@fontsource/fanwood-text/4.5.8:
     resolution: {integrity: sha512-X6E4CzBdSN5SY15wtLMSHykq+sbga2QzG52Wk6Yw4TkqixaADhc2ub3h7bMj5o4x6ABVhmdZw6tPSZUOXa1zcA==}
-    dev: false
-
-  /@fontsource/fira-mono/4.5.8:
-    resolution: {integrity: sha512-sFuSPB/Km8B1fy3CH0NqO5Nb4GmVMzp3XFaw6MwK293xhm3OnB68QJawwTTjLewcrS78wOTAhTUB058qxurJoQ==}
     dev: false
 
   /@fontsource/jetbrains-mono/4.5.9:
@@ -172,8 +152,8 @@ packages:
       tiny-glob: 0.2.9
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.402_svelte@3.49.0+vite@3.0.3:
-    resolution: {integrity: sha512-F0Mm+bTGOnl+vWKab5uwXsY+5YypC/uveGE0wKyYSE9a/pFQD20WwrvRKePGhUCepiHc7S82jxVZRwjCsToaNQ==}
+  /@sveltejs/kit/1.0.0-next.405_svelte@3.49.0+vite@3.0.3:
+    resolution: {integrity: sha512-jHSa74F7k+hC+0fof75g/xm/+1M5sM66Qt6v8eLLMSgjkp36Lb5xOioBhbl6w0NYoE5xysLsBWuu+yHytfvCBA==}
     engines: {node: '>=16.9'}
     hasBin: true
     requiresBuild: true
@@ -185,6 +165,7 @@ packages:
       chokidar: 3.5.3
       sade: 1.8.1
       svelte: 3.49.0
+      tiny-glob: 0.2.9
       vite: 3.0.3_sass@1.54.0
     transitivePeerDependencies:
       - diff-match-patch
@@ -212,10 +193,6 @@ packages:
       vite: 3.0.3_sass@1.54.0
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /@types/cookie/0.5.1:
-    resolution: {integrity: sha512-COUnqfB2+ckwXXSFInsFdOAWQzCCx+a5hq2ruyj+Vjund94RJQd4LG2u9hnvJrTgunKAaax7ancBYlDrNYxA0g==}
     dev: true
 
   /@types/json-schema/7.0.11:

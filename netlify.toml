@@ -8,5 +8,5 @@
 [build.environment]
   VITE_SITE_URL = "https://www.kevinang.com"
 
-# [context.production]
-#   environment = { VITE_SITE_URL = "https://www.kevinang.com" }
+# [context.production.environment]
+#   VITE_SITE_URL = "https://www.kevinang.com" 
