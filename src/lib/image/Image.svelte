@@ -4,9 +4,8 @@
 	export let src: string;
 	export let alt: string;
 
-	if (dev) {
-		src = src;
-	} else {
+	if (!dev) {
+		// TODO: add Cloudinary params
 		src = `https://res.cloudinary.com/kevinang/image/upload/ka${src}`;
 	}
 </script>
