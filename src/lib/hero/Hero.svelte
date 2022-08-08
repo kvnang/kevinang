@@ -1,7 +1,9 @@
 <script lang="ts">
 	import TextRoll from './TextRoll.svelte';
 	import Typed from './Typed.svelte';
+	import Image from '$lib/image/Image.svelte';
 	import heroImage from './hero.jpg';
+
 	let pause = false;
 </script>
 
@@ -41,7 +43,7 @@
 		<div class="hero-img">
 			<div class="hero-chevron" />
 			<div class="hero-img__inner">
-				<img src={heroImage} alt="Kevin Ang" width="700" height="962" loading="eager" />
+				<Image src={heroImage} alt="Kevin Ang" width="700" height="962" loading="eager" />
 			</div>
 		</div>
 	</div>
@@ -209,7 +211,7 @@
 			}
 		}
 
-		img {
+		:global(img) {
 			width: 100%;
 			height: 100%;
 			position: absolute;
@@ -224,7 +226,7 @@
 	}
 
 	.wrapper:hover {
-		.hero-img img {
+		.hero-img :global(img) {
 			filter: none;
 		}
 	}
