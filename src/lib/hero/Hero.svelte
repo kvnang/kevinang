@@ -225,7 +225,7 @@
 		}
 	}
 
-	.wrapper:hover {
+	.container:hover {
 		.hero-img :global(img) {
 			filter: none;
 		}
