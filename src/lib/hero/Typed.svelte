@@ -8,12 +8,13 @@
 	let speed = 100;
 
 	let blinker = true;
-	let blinkerBlink = false;
+	let blinkerBlink = true;
 
 	function typeWriter() {
 		const stringArray = [...string];
 
 		if (i < stringArray.length) {
+			blinkerBlink = false;
 			container.innerHTML += stringArray[i];
 			i++;
 			setTimeout(typeWriter, speed);
