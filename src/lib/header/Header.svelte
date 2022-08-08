@@ -97,10 +97,10 @@
 		}
 		&:hover {
 			path {
-				&:first-child {
+				&:first-of-type {
 					fill: var(--color-accent);
 				}
-				&:last-child {
+				&:last-of-type {
 					fill: var(--color-accent-2);
 					opacity: 1;
 				}
