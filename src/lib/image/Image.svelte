@@ -21,6 +21,6 @@
 	}
 </script>
 
-{#if src}
+{#if src || srcset}
 	<img {src} {srcset} {sizes} {alt} {...$$restProps} />
 {/if}
