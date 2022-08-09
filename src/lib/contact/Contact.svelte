@@ -171,6 +171,19 @@
 	.inner {
 		display: flex;
 		flex-flow: wrap;
+		background-color: var(--color-bg-tint-0);
+		padding: 1.5rem;
+		margin: 0 -1.5rem;
+
+		@include breakpoint($tablet-sm) {
+			padding: 2rem;
+			margin: 0 -2rem;
+		}
+
+		@include breakpoint($laptop-sm) {
+			padding: 4rem;
+			margin: 0;
+		}
 
 		.text {
 			flex: 0 0 100%;
@@ -180,6 +193,7 @@
 			@include breakpoint($tablet-sm) {
 				flex: 0 0 50%;
 				max-width: 50%;
+				margin-bottom: 0;
 			}
 
 			@include breakpoint($laptop-sm) {

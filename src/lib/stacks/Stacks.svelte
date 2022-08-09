@@ -41,7 +41,7 @@
 	</h3>
 	<div class="stacks">
 		<div class="stacks__inner">
-			<IntersectionObserver bind:intersecting top={0} once={true}>
+			<IntersectionObserver bind:intersecting top={-400} once={true}>
 				{#if intersecting}
 					<div class="stacks__wrapper">
 						<ul>
