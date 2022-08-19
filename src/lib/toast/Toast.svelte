@@ -86,6 +86,8 @@
 	}
 
 	.content {
+		--color-h: var(--black);
+
 		display: block;
 		color: var(--black);
 	}
