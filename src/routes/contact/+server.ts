@@ -7,11 +7,13 @@ export const POST: RequestHandler = async ({ request }) => {
 	try {
 		const res = await api(formData);
 
-		return res || {};
+		return new Response('{}', {
+			headers: {
+				'Content-Type': 'application/json; charset=utf-8'
+			},
+			status: res ? res.status : 500
+		});
 	} catch (err) {
-		return {
-			status: 500,
-			body: (err as Error).message
-		};
+		return new Response((err as Error).message, { status: 500 });
 	}
 };
