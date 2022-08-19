@@ -66,7 +66,6 @@
 
 	.wrapper {
 		position: relative;
-		margin-top: calc(var(--section-spacing) - 1.5rem);
 
 		&::before {
 			content: '';
@@ -88,6 +87,8 @@
 	}
 
 	.hero {
+		border-bottom: 2px solid var(--color-bg-tint);
+
 		@include breakpoint($laptop-sm) {
 			margin-left: 8.333%;
 			margin-right: 8.333%;
@@ -96,7 +97,8 @@
 		&__inner {
 			display: flex;
 			flex-flow: wrap;
-			padding-bottom: calc(var(--section-spacing) * 1);
+			padding-top: calc(var(--section-spacing-lg) - 1.5rem);
+			padding-bottom: calc(var(--section-spacing-lg) * 1);
 
 			@include breakpoint($tablet-sm) {
 				flex-flow: wrap row-reverse;
