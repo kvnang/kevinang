@@ -181,6 +181,7 @@
 		}
 
 		@include breakpoint($laptop-sm) {
+			border-radius: 2rem;
 			padding: 4rem;
 			margin: 0;
 		}

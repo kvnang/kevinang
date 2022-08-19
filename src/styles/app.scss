@@ -28,7 +28,8 @@
 	--color-accent-2: #ffd890;
 	--color-success: #10b981;
 	--color-error: #ef4444;
-	--color-p: var(--white);
+	--color-h: var(--white);
+	--color-p: hsl(256, 46%, 86%);
 	--gray: hsl(0 0% 25%);
 
 	--gradient-1: linear-gradient(to bottom right, #536976, #292e49);
@@ -66,6 +67,10 @@
 	--font-size-h4: var(--font-size-md);
 	--font-size-h5: var(--font-size-base);
 	--font-size-h6: var(--font-size-sm);
+
+	@include breakpoint($mobile-lg) {
+		--container-padding: 1.5rem;
+	}
 
 	@include breakpoint($tablet-sm) {
 		--section-spacing: 2.5rem;
@@ -181,6 +186,7 @@ h6,
 	font-weight: 400;
 	line-height: 1.25;
 	margin: 0;
+	color: var(--color-h);
 
 	&:last-child {
 		margin-bottom: 0;

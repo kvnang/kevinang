@@ -2,48 +2,51 @@
 	import TextRoll from './TextRoll.svelte';
 	import Typed from './Typed.svelte';
 	import Image from '$lib/image/Image.svelte';
-	import heroImage from './hero.jpg';
+	import heroSquare from './hero-square.jpg';
 
 	let pause = false;
 </script>
 
-<section class="container section-m-b">
-	<div class="hero">
-		<div class="hero-text">
-			<div class="hero-banner">
-				<div class="hero-chevron" />
-			</div>
-			<div class="hero-text__inner">
-				<h1 class="h5" style="margin-bottom: 0.5rem"><code><Typed /></code></h1>
-				<h1
-					on:mouseover={() => (pause = true)}
-					on:focus={() => (pause = true)}
-					on:mouseout={() => (pause = false)}
-					on:blur={() => (pause = false)}
-				>
-					<span>I'm a</span>&nbsp;<TextRoll {pause} />
-				</h1>
-				<div class="desc">
-					<p>
-						I'm a full-stack dev from <span role="img" aria-label="Indonesia">🇮🇩</span>, currently
-						working at
-						<a href="https://www.longbeard.com" target="_blank" rel="noopener noreferrer"
-							>Longbeard</a
-						>, a web design agency serving clients across the Americas and Europe. I've been here
-						since 2019 and loving it.
-					</p>
-					<p>
-						I love tinkering with frontend development, IoT, and edge computing, but anything JS is
-						my current forte.
-					</p>
-					<p>Spending quality time with my wife and kids makes my day.</p>
+<section class="wrapper section-m-b">
+	<div class="container">
+		<div class="hero">
+			<div class="hero__inner">
+				<div class="hero__row">
+					<div class="hero-img">
+						<div class="hero-img__inner">
+							<div class="hero-img__frame">
+								<Image src={heroSquare} alt="Kevin Ang" width="160" height="160" loading="eager" />
+							</div>
+						</div>
+					</div>
+					<div class="hero-text">
+						<div class="hero-text__inner">
+							<h1 class="h5" style="margin-bottom: 0.5rem"><code><Typed /></code></h1>
+							<h1
+								on:mouseover={() => (pause = true)}
+								on:focus={() => (pause = true)}
+								on:mouseout={() => (pause = false)}
+								on:blur={() => (pause = false)}
+							>
+								<span>I'm a</span>&nbsp;<TextRoll {pause} />
+							</h1>
+							<div class="desc">
+								<p>
+									I'm a full-stack dev from <span role="img" aria-label="Indonesia">🇮🇩</span>,
+									working at
+									<a href="https://www.longbeard.com" target="_blank" rel="noopener noreferrer"
+										>Longbeard</a
+									>.
+								</p>
+								<p>
+									I love tinkering with frontend development, IoT, and edge computing, but anything
+									JS is my current forte.
+								</p>
+								<p>Spending quality time with my wife and kids makes my day.</p>
+							</div>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-		<div class="hero-img">
-			<div class="hero-chevron" />
-			<div class="hero-img__inner">
-				<Image src={heroImage} alt="Kevin Ang" width="700" height="962" loading="eager" />
 			</div>
 		</div>
 	</div>
@@ -52,44 +55,67 @@
 <style lang="scss">
 	@import '../../styles/global-imports';
 
-	.container {
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	.wrapper {
 		position: relative;
 		margin-top: calc(var(--section-spacing) - 1.5rem);
+
+		&::before {
+			content: '';
+			width: 100%;
+			height: 400%;
+			position: absolute;
+			z-index: -2;
+			bottom: -200%;
+			left: 0;
+			background: linear-gradient(to bottom, transparent 50%, var(--color-bg) 50%),
+				radial-gradient(circle closest-side, hsl(256, 46%, 20%), var(--color-bg) 150%);
+			animation: fadeIn 3s ease-in-out;
+
+			@include breakpoint($laptop-sm) {
+				background: linear-gradient(to bottom, transparent 50%, var(--color-bg) 50%),
+					radial-gradient(circle closest-side, hsl(256, 46%, 20%), var(--color-bg) 90%);
+			}
+		}
 	}
 
 	.hero {
-		display: flex;
-		flex-flow: wrap;
-		margin: 0 -0.5rem;
-	}
-
-	.hero-chevron {
-		position: absolute;
-		height: calc(100% + 2px);
-		width: 10rem;
-
-		&::before,
-		&::after {
-			content: '';
-			position: absolute;
-			z-index: -1;
-			top: -1px;
-			right: -3rem;
-			height: calc(50% + 1px);
-			width: 6rem;
-			background-color: var(--color-bg);
-			transform-origin: top left;
+		@include breakpoint($laptop-sm) {
+			margin-left: 8.333%;
+			margin-right: 8.333%;
 		}
 
-		&::before {
-			transform: skewX(15deg);
+		&__inner {
+			display: flex;
+			flex-flow: wrap;
+			padding-bottom: calc(var(--section-spacing) * 1);
+
+			@include breakpoint($tablet-sm) {
+				flex-flow: wrap row-reverse;
+			}
+
+			@include breakpoint($laptop-sm) {
+				margin: 0 10%;
+			}
 		}
 
-		&::after {
-			transform-origin: bottom left;
-			transform: skewX(-15deg);
-			top: auto;
-			bottom: -1px;
+		&__row {
+			flex: 1;
+			display: flex;
+			flex-flow: wrap;
+			margin: 0 -0.5rem;
+
+			@include breakpoint($tablet-sm) {
+				flex-flow: wrap row-reverse;
+			}
 		}
 	}
 
@@ -106,14 +132,8 @@
 		}
 
 		@include breakpoint($laptop-sm) {
-			flex: 0 0 58.333%;
-			max-width: 58.333%;
-			margin-left: 8.333%;
-		}
-
-		@include breakpoint($laptop) {
-			flex: 0 0 50%;
-			max-width: 50%;
+			flex: 1;
+			max-width: 100%;
 		}
 
 		&__inner {
@@ -122,11 +142,11 @@
 			padding: 0 0 var(--section-spacing);
 
 			@include breakpoint($tablet-sm) {
-				padding: 3rem 0;
+				padding: 0;
 			}
 
-			@include breakpoint($laptop-lg) {
-				padding: 5rem 0;
+			@include breakpoint($laptop-sm) {
+				padding-right: 4.5rem;
 			}
 		}
 
@@ -137,78 +157,68 @@
 				display: inline-block;
 			}
 		}
-
-		.hero-banner {
-			position: absolute;
-			height: 100%;
-			width: 100%;
-			right: calc(100%);
-			top: 0;
-			z-index: -1;
-
-			&::before {
-				content: '';
-				position: absolute;
-				height: 100%;
-				width: 100%;
-				right: 3rem;
-				background-color: var(--color-accent);
-			}
-
-			.hero-chevron {
-				top: 0;
-				right: 0;
-				z-index: 1;
-				transform: rotate(180deg) translateX(-100%);
-				display: none;
-
-				@include breakpoint($tablet-sm) {
-					display: block;
-				}
-			}
-		}
 	}
 
 	.hero-img {
 		flex: 0 0 100%;
 		max-width: 100%;
-		padding: 0 0.5rem;
 		position: relative;
 		z-index: 0;
+		padding: 0 0.5rem;
+		margin-bottom: 1.5rem;
 
 		@include breakpoint($tablet-sm) {
+			display: flex;
+			justify-content: flex-end;
+			align-items: flex-end;
 			flex: 0 0 33.333%;
 			max-width: 33.333%;
+			margin-bottom: 0;
 		}
 
-		@include breakpoint($laptop) {
-			flex: 0 0 41.667%;
-			max-width: 41.667%;
-		}
-
-		.hero-chevron {
-			top: 0;
-			right: -0.5rem;
-			z-index: 1;
-
-			@include breakpoint($tablet-sm) {
-				left: -10rem;
-				right: auto;
-			}
+		@include breakpoint($laptop-sm) {
+			flex: initial;
 		}
 
 		&__inner {
+			--image-border-offset: 0.5rem;
+			--image-border-size: 2px;
+			--image-size: 6rem;
+
 			position: relative;
-			aspect-ratio: 16 / 9;
-			margin-left: -1rem;
-			margin-right: -1rem;
+			height: var(--image-size);
+			width: var(--image-size);
 
 			@include breakpoint($tablet-sm) {
-				aspect-ratio: initial;
-				margin-left: 2rem;
-				margin-right: -50%;
-				height: 100%;
+				--image-border-offset: 1rem;
+				--image-border-size: 4px;
+				--image-size: 8rem;
 			}
+
+			@include breakpoint($laptop-sm) {
+				--image-size: 10rem;
+			}
+
+			&::before {
+				content: '';
+				position: absolute;
+				top: calc(var(--image-border-offset) * -1 - calc(var(--image-border-size) * 0.5));
+				right: calc(var(--image-border-offset) * -1 - calc(var(--image-border-size) * 0.5));
+				height: calc(100% + var(--image-border-offset) * 2);
+				width: calc(100% + var(--image-border-offset) * 2);
+				border-radius: 50%;
+				border-top: var(--image-border-size) solid hsl(256, 46%, 33%);
+				border-right: var(--image-border-size) solid hsl(256, 46%, 33%);
+				animation: fadeIn 3s ease-in-out;
+			}
+		}
+		&__frame {
+			position: relative;
+			aspect-ratio: 1;
+			border-radius: 50%;
+			overflow: hidden;
+			height: 100%;
+			width: 100%;
 		}
 
 		:global(img) {
@@ -218,16 +228,12 @@
 			top: 0;
 			left: 0;
 			object-fit: cover;
-			object-position: 20% 50%;
-			filter: grayscale(50%);
+			object-position: center center;
+			filter: grayscale(100%);
 			transition: filter var(--transition);
 			transition-duration: 3s;
-		}
-	}
-
-	.container:hover {
-		.hero-img :global(img) {
-			filter: none;
+			user-select: none;
+			-webkit-user-drag: none;
 		}
 	}
 
