@@ -6,8 +6,8 @@
 <section class="container section-m-b">
 	<div class="inner">
 		<div class="text">
-			<h2 class="h2">Contact</h2>
-			<p>Feel free to reach out to me!</p>
+			<h2 class="h2">Reach out</h2>
+			<p>Don't hesitate to send me a message, but no spam please.</p>
 			<div class="email">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -172,18 +172,18 @@
 		display: flex;
 		flex-flow: wrap;
 		background-color: var(--color-bg-tint-0);
-		padding: 1.5rem;
+		padding: var(--section-spacing) 1.5rem;
 		margin: 0 -1.5rem;
 
 		@include breakpoint($tablet-sm) {
-			padding: 2rem;
+			padding: var(--section-spacing) 2rem;
 			margin: 0 -2rem;
 		}
 
 		@include breakpoint($laptop-sm) {
 			border-radius: 2rem;
 			padding: 4rem;
-			margin: 0;
+			margin: 0 8.333%;
 		}
 
 		.text {
@@ -195,11 +195,12 @@
 				flex: 0 0 50%;
 				max-width: 50%;
 				margin-bottom: 0;
+				padding-right: 2.5em;
 			}
 
 			@include breakpoint($laptop-sm) {
-				flex: 0 0 40%;
-				max-width: 40%;
+				flex: 0 0 50%;
+				max-width: 50%;
 			}
 		}
 
@@ -213,8 +214,8 @@
 			}
 
 			@include breakpoint($laptop-sm) {
-				flex: 0 0 60%;
-				max-width: 60%;
+				flex: 0 0 50%;
+				max-width: 50%;
 			}
 		}
 	}

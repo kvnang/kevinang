@@ -139,11 +139,6 @@
 		&__inner {
 			display: flex;
 			flex-direction: column;
-			padding: 0 0 var(--section-spacing);
-
-			@include breakpoint($tablet-sm) {
-				padding: 0;
-			}
 
 			@include breakpoint($laptop-sm) {
 				padding-right: 4.5rem;
