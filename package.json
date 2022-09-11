@@ -12,29 +12,29 @@
 		"format": "prettier --write --plugin-search-dir=. ."
 	},
 	"dependencies": {
-		"@fontsource/fanwood-text": "^4.5.8",
-		"@fontsource/jetbrains-mono": "^4.5.9",
-		"@fontsource/league-spartan": "^4.5.10",
+		"@fontsource/fanwood-text": "^4.5.9",
+		"@fontsource/jetbrains-mono": "^4.5.10",
+		"@fontsource/league-spartan": "^4.5.11",
 		"cookie": "^0.5.0",
 		"normalize.css": "^8.0.1"
 	},
 	"devDependencies": {
-		"@sveltejs/adapter-netlify": "^1.0.0-next.71",
-		"@sveltejs/kit": "1.0.0-next.427",
-		"@typescript-eslint/eslint-plugin": "^5.31.0",
-		"@typescript-eslint/parser": "^5.31.0",
-		"eslint": "^8.20.0",
+		"@sveltejs/adapter-netlify": "^1.0.0-next.76",
+		"@sveltejs/kit": "1.0.0-next.480",
+		"@typescript-eslint/eslint-plugin": "^5.36.2",
+		"@typescript-eslint/parser": "^5.36.2",
+		"eslint": "^8.23.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"prettier": "^2.7.1",
 		"prettier-plugin-svelte": "^2.7.0",
-		"sass": "^1.54.0",
-		"svelte": "^3.49.0",
-		"svelte-check": "^2.8.0",
+		"sass": "^1.54.9",
+		"svelte": "^3.50.1",
+		"svelte-check": "^2.9.0",
 		"svelte-preprocess": "^4.10.7",
 		"tslib": "^2.4.0",
-		"typescript": "^4.7.4",
-		"vite": "^3.0.3"
+		"typescript": "^4.8.3",
+		"vite": "^3.1.0"
 	},
 	"type": "module"
 }
