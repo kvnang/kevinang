@@ -30,8 +30,6 @@
 				method="POST"
 				enctype="application/x-www-form-urlencoded"
 				name="contact"
-				data-netlify="true"
-				netlify-honeypot="company"
 				use:enhance={{
 					pending: ({ form }) => {
 						const { elements } = form;
