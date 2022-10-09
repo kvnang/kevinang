@@ -1,7 +1,15 @@
 .DS_Store
-node_modules
+
+**/*/node_modules
 /build
-/.svelte-kit
-/package
-.env*
-.netlify/
+
+# Svelte Kit
+**/*/.svelte-kit
+**/*/build
+
+# Platform-specific
+**/*/.netlify
+**/*/.vercel
+
+# Secrets
+**/*/.env

@@ -13,7 +13,7 @@ export async function api(formData?: FormData) {
 
 	const encodedFormData = encode(formData);
 
-	const res = await fetch(`${base}`, {
+	const res = await fetch(import.meta.env.VITE_CLOUDFLARE_WORKER_URL, {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/x-www-form-urlencoded'
