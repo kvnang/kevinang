@@ -14,6 +14,7 @@ export const POST: RequestHandler = async ({ request }) => {
 			status: res ? res.status : 500
 		});
 	} catch (err) {
+		console.error(err);
 		return new Response((err as Error).message, { status: 500 });
 	}
 };

@@ -424,7 +424,7 @@ textarea {
 					border-bottom-color: var(--color-error);
 				}
 
-				&[disabled] {
+				&:disabled {
 					cursor: not-allowed;
 					opacity: 0.5;
 
