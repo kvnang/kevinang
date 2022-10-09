@@ -25,7 +25,7 @@
 
 <section class="container section-m-b">
 	<h2 class="h1" style="text-align: center">Favorite stacks 🍔</h2>
-	<h3 class="h4">
+	<h3 class="h4 mt-0 mb-0">
 		{#if intersecting}
 			<span
 				style="display:inline-block;font-style:italic;"

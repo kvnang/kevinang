@@ -23,6 +23,7 @@
 						<div class="hero-text__inner">
 							<h1 class="h5" style="margin-bottom: 0.5rem"><code><Typed /></code></h1>
 							<h1
+								class="mt-0"
 								on:mouseover={() => (pause = true)}
 								on:focus={() => (pause = true)}
 								on:mouseout={() => (pause = false)}
@@ -97,7 +98,7 @@
 		&__inner {
 			display: flex;
 			flex-flow: wrap;
-			padding-top: calc(var(--section-spacing-lg) - 1.5rem);
+			padding-top: calc(var(--section-spacing-lg) - 3rem);
 			padding-bottom: calc(var(--section-spacing-lg) * 1);
 
 			@include breakpoint($tablet-sm) {

@@ -18,7 +18,7 @@
 	--white: #fff;
 	--black: #000;
 
-	--color-bg-hsl: 256, 46%, 11%;
+	--color-bg-hsl: 256 46% 11%;
 	--color-bg: hsl(var(--color-bg-hsl));
 	--color-bg-tint-0: hsl(256, 46%, 16%);
 	--color-bg-tint: hsl(256, 46%, 20%);
@@ -30,6 +30,7 @@
 	--color-error: #ef4444;
 	--color-h: var(--white);
 	--color-p: hsl(256, 46%, 86%);
+	--color-p-0: hsl(256, 46%, 72%);
 	--gray: hsl(0 0% 25%);
 
 	--gradient-1: linear-gradient(to bottom right, #536976, #292e49);
@@ -53,13 +54,13 @@
 
 	--cube-size: 60px;
 
-	--font-size-sm: clamp(0.8rem, 0.11vw + 0.77rem, 0.84rem);
-	--font-size-base: clamp(1rem, 0.32vw + 0.92rem, 1.13rem);
-	--font-size-md: clamp(1.25rem, 0.64vw + 1.09rem, 1.5rem);
-	--font-size-lg: clamp(1.56rem, 1.12vw + 1.28rem, 2rem);
-	--font-size-xl: clamp(1.95rem, 1.82vw + 1.5rem, 2.66rem);
-	--font-size-xxl: clamp(2.44rem, 2.84vw + 1.73rem, 3.55rem);
-	--font-size-xxxl: clamp(3.05rem, 4.31vw + 1.97rem, 4.73rem);
+	--font-size-sm: clamp(0.8rem, 0.25vw + 0.74rem, 0.94rem);
+	--font-size-base: clamp(1rem, 0.45vw + 0.89rem, 1.25rem);
+	--font-size-md: clamp(1.25rem, 0.76vw + 1.06rem, 1.67rem);
+	--font-size-lg: clamp(1.56rem, 1.2vw + 1.26rem, 2.22rem);
+	--font-size-xl: clamp(1.95rem, 1.83vw + 1.5rem, 2.96rem);
+	--font-size-xxl: clamp(2.44rem, 2.74vw + 1.76rem, 3.95rem);
+	--font-size-xxxl: clamp(3.05rem, 4.02vw + 2.05rem, 5.26rem);
 
 	--font-size-h1: var(--font-size-xxl);
 	--font-size-h2: var(--font-size-xl);
@@ -67,6 +68,8 @@
 	--font-size-h4: var(--font-size-md);
 	--font-size-h5: var(--font-size-base);
 	--font-size-h6: var(--font-size-sm);
+
+	--li-break: 1rem;
 
 	@include breakpoint($mobile-lg) {
 		--container-padding: 1.5rem;
@@ -188,7 +191,13 @@ h6,
 	margin: 0;
 	color: var(--color-h);
 
-	&:last-child {
+	&:first-child,
+	&.mt-0 {
+		margin-top: 0;
+	}
+
+	&:last-child,
+	&.mb-0 {
 		margin-bottom: 0;
 	}
 }
@@ -214,23 +223,29 @@ a:hover {
 h1,
 .h1 {
 	font-size: var(--font-size-h1);
+	margin-top: 0.5em;
 	margin-bottom: 0.25em;
 }
 
 h2,
 .h2 {
 	font-size: var(--font-size-h2);
+	margin-top: 0.75em;
 	margin-bottom: 0.5em;
 }
 
 h3,
 .h3 {
 	font-size: var(--font-size-h3);
+	margin-top: 0.75em;
+	margin-bottom: 0.5em;
 }
 
 h4,
 .h4 {
 	font-size: var(--font-size-h4);
+	margin-top: 0.75em;
+	margin-bottom: 0.5em;
 }
 
 h5,
@@ -238,8 +253,8 @@ h5,
 	font-family: var(--font-secondary);
 	font-weight: 600;
 	font-size: var(--font-size-h5);
-	// text-transform: uppercase;
-	// letter-spacing: 0.16em;
+	margin-top: 0.75em;
+	margin-bottom: 0.5em;
 }
 
 h6,
@@ -286,6 +301,7 @@ button:focus:not(:focus-visible) {
 code {
 	font-family: var(--font-mono);
 	font-weight: 400;
+	display: inline-block;
 }
 
 .container {
@@ -422,4 +438,11 @@ textarea {
 			}
 		}
 	}
+}
+
+img,
+figure,
+video,
+audio {
+	max-width: 100%;
 }
