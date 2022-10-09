@@ -48,6 +48,7 @@
 	}
 
 	.counter-viewport {
+		width: 13ch;
 		max-width: 100%;
 		height: 1.25em;
 		display: block;
