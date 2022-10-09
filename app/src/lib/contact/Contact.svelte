@@ -111,7 +111,7 @@
 										? e.currentTarget.classList.add('has-value')
 										: e.currentTarget.classList.remove('has-value')}
 							/>
-							<span class="label">Email</span>
+							<span class="label">Email <abbr title="required">*</abbr></span>
 							<div class="underline" />
 						</label>
 					</div>
@@ -126,7 +126,7 @@
 										? e.currentTarget.classList.add('has-value')
 										: e.currentTarget.classList.remove('has-value')}
 							/>
-							<span class="label">Message</span>
+							<span class="label">Message <abbr title="required">*</abbr></span>
 							<div class="underline" />
 						</label>
 					</div>

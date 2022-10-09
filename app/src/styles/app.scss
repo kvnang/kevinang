@@ -463,3 +463,8 @@ video,
 audio {
 	max-width: 100%;
 }
+
+abbr[title='required'] {
+	color: var(--color-error);
+	text-decoration: none;
+}
