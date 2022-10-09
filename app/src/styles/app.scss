@@ -173,6 +173,21 @@ body {
 	color: var(--color-bg);
 }
 
+// Focus styles
+*:not(:active):focus-visible {
+	outline-offset: 4px;
+	outline-color: var(--color-accent);
+
+	@media (prefers-reduced-motion: no-preference) {
+		transition-duration: 0.25s;
+	}
+}
+@media (prefers-reduced-motion: no-preference) {
+	*:focus-visible {
+		transition: outline-offset 145ms cubic-bezier(0.25, 0, 0.4, 1);
+	}
+}
+
 h1,
 .h1,
 h2,
@@ -397,6 +412,8 @@ textarea {
 				}
 
 				&:focus {
+					outline-offset: 0.5rem;
+
 					~ .underline {
 						width: 100%;
 						opacity: 1;

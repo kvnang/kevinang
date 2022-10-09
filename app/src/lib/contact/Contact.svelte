@@ -227,6 +227,10 @@
 			width: auto;
 			margin-right: 1rem;
 		}
+
+		a {
+			margin: 0;
+		}
 	}
 
 	button[type='submit'] {
