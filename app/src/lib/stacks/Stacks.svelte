@@ -24,11 +24,11 @@
 </script>
 
 <section class="container section-m-b">
-	<h2 class="h1" style="text-align: center">Favorite stacks 🍔</h2>
+	<h2 class="h2" style="text-align: center">Favorite stacks 🍔</h2>
 	<h3 class="h4 mt-0 mb-0">
 		{#if intersecting}
 			<span
-				style="display:inline-block;font-style:italic;"
+				style="display:inline-block;"
 				transition:fly={{
 					y: -50,
 					duration: 500,

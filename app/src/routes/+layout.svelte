@@ -2,8 +2,11 @@
 	import Header from '$lib/header/Header.svelte';
 	import Footer from '$lib/footer/Footer.svelte';
 	import Toast from '$lib/toast/Toast.svelte';
-	import '../styles/app.scss';
 	import { onMount } from 'svelte';
+	import '@fontsource/jetbrains-mono';
+	import '@fontsource/bitter/variable.css';
+	import 'normalize.css';
+	import '../styles/app.scss';
 
 	// Accessibility Features
 	// Let the document know when the mouse is being used

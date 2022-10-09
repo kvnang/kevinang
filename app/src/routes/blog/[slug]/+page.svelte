@@ -23,9 +23,7 @@
 			<div class="meta">
 				<time datetime={dateYmd}><code>{dateString}</code></time>
 			</div>
-			<div class="title">
-				<h1>{title}</h1>
-			</div>
+			<h1 class="title mt-0">{title}</h1>
 			<div class="content">
 				<svelte:component this={content} />
 			</div>
@@ -49,12 +47,17 @@
 		}
 	}
 
-	.title {
-		margin-bottom: 2.5rem;
-	}
+	/* .title {
+		em {
+			color: var(--color-accent);
+		}
+	} */
 
 	.content {
 		:global {
+			strong {
+				color: var(--color-h);
+			}
 			img {
 				@include breakpoint($laptop-sm) {
 					margin-left: -4rem;
@@ -194,6 +197,16 @@
 					}
 					&.string {
 						color: #86efac;
+					}
+				}
+
+				&.language-yaml {
+					color: #86efac;
+					.token {
+						&.key,
+						&.punctuation {
+							color: #f87171;
+						}
 					}
 				}
 			}

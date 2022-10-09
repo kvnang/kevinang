@@ -1,11 +1,11 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
-	let string = `👋 I'm Kevin Ang`;
+	let string = `👋 My name is Kevin Ang`;
 	let container: HTMLSpanElement;
 
 	let i = 0;
-	let speed = 100;
+	let speed = 50;
 
 	let blinker = true;
 	let blinkerBlink = true;

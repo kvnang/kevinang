@@ -33,8 +33,7 @@
 							</h1>
 							<div class="desc">
 								<p>
-									I'm a full-stack dev from <span role="img" aria-label="Indonesia">🇮🇩</span>,
-									working at
+									I'm a full-stack dev from <strong>Indonesia</strong>, working at
 									<a href="https://www.longbeard.com" target="_blank" rel="noopener noreferrer"
 										>Longbeard</a
 									>.
@@ -153,6 +152,7 @@
 			flex-flow: wrap;
 			span {
 				display: inline-block;
+				font-weight: 400;
 			}
 		}
 	}

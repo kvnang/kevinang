@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
 	export let pause: boolean;
-	
+
 	const words = ['full-stack dev', 'father of two', 'coffee enthusiast'];
 	let current = 0;
 
@@ -9,8 +9,8 @@
 
 	function maybePlaySlider(pause: boolean) {
 		if (!pause) {
-			timer = setInterval(()=>{
-				current = (current + 1 === words.length) ? 0 : current+1;
+			timer = setInterval(() => {
+				current = current + 1 === words.length ? 0 : current + 1;
 			}, 2500);
 		} else {
 			clearInterval(timer);
@@ -18,15 +18,17 @@
 	}
 
 	$: maybePlaySlider(pause);
-
-	
 </script>
 
 <span class="counter">
 	<span class="counter-viewport">
-		{#each words as word,i}
+		{#each words as word, i}
 			{#if i === current}
-			<strong class="words" in:fly="{{ y: -30, duration: 500, delay: 500 }}" out:fly="{{ y: 30, duration: 500, delay: 500 }}">{word}</strong>
+				<strong
+					class="words"
+					in:fly={{ y: -30, duration: 500, delay: 500 }}
+					out:fly={{ y: 30, duration: 500, delay: 500 }}>{word}</strong
+				>
 			{/if}
 		{/each}
 	</span>
@@ -46,7 +48,6 @@
 	}
 
 	.counter-viewport {
-		width: 13ch;
 		max-width: 100%;
 		height: 1.25em;
 		display: block;
@@ -56,6 +57,7 @@
 	}
 
 	.counter-viewport strong {
+		font-weight: 600;
 		position: absolute;
 		display: flex;
 		width: 100%;
@@ -67,8 +69,8 @@
 		justify-content: flex-start;
 		white-space: nowrap;
 		color: var(--color-accent);
-		font-weight: normal;
-		font-style: italic;
+		/* font-weight: normal; */
+		/* font-style: italic; */
 	}
 
 	/* .counter-digits {

@@ -1,9 +1,8 @@
 lockfileVersion: 5.4
 
 specifiers:
-  '@fontsource/fanwood-text': ^4.5.9
+  '@fontsource/bitter': ^4.5.9
   '@fontsource/jetbrains-mono': ^4.5.10
-  '@fontsource/league-spartan': ^4.5.11
   '@sveltejs/adapter-auto': 1.0.0-next.80
   '@sveltejs/kit': 1.0.0-next.480
   '@typescript-eslint/eslint-plugin': ^5.36.2
@@ -27,9 +26,8 @@ specifiers:
   vite: ^3.1.0
 
 dependencies:
-  '@fontsource/fanwood-text': 4.5.9
+  '@fontsource/bitter': 4.5.9
   '@fontsource/jetbrains-mono': 4.5.10
-  '@fontsource/league-spartan': 4.5.11
   cookie: 0.5.0
   normalize.css: 8.0.1
 
@@ -86,16 +84,12 @@ packages:
       - supports-color
     dev: true
 
-  /@fontsource/fanwood-text/4.5.9:
-    resolution: {integrity: sha512-Upt832TA50OIAxm6Q9X4B/aP3qCHdaqgp8EZaWcyY2og/kBZhohQT1Ky7/qdQtHcSW2nvNlYW/iwZ/upXT5/Rg==}
+  /@fontsource/bitter/4.5.9:
+    resolution: {integrity: sha512-PRjwCTN7n+WaWD6R+Uy+YS4DHLQvFMQ1BSy+1d2FBiW2W5OPIDAhZobk6k8eIsfrR03uxG5m0HgaQB8tt2Pe+g==}
     dev: false
 
   /@fontsource/jetbrains-mono/4.5.10:
     resolution: {integrity: sha512-dylbkBmAWL0fkjDpDoDbQCwTQ/W3DzLtVXmwGyAyttfKliPGSP2WpAmmMFYp9NpqFMF7CLprFyzppe8u39Orkw==}
-    dev: false
-
-  /@fontsource/league-spartan/4.5.11:
-    resolution: {integrity: sha512-qxvMB9p919lYrPRClkthCqfUpDqbrrApM82Zw8C1MDT7yjc7hvfOcQU/yyX3SZIrgGPM86YSj9ehCxB8fiQy3A==}
     dev: false
 
   /@humanwhocodes/config-array/0.10.4:
