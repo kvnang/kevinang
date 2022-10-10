@@ -230,17 +230,6 @@ a {
 	}
 }
 
-.prose {
-	a {
-		&:hover {
-			background-image: linear-gradient(to right, var(--color-accent) 50%, transparent 50%);
-			background-position: 0 1.05em;
-			background-repeat: repeat-x;
-			background-size: 6px 2px;
-		}
-	}
-}
-
 h1,
 .h1 {
 	font-size: var(--font-size-h1);
@@ -526,6 +515,14 @@ abbr[title='required'] {
 				67.5rem
 			)
 			[narrow-end] 3.75rem [standard-end] minmax(1.5rem, 1fr) [wide-end] minmax(1.5rem, 1fr) [full-end];
+	}
+}
+
+.prose {
+	a {
+		&:hover {
+			border-bottom: 1px dashed var(--color-accent);
+		}
 	}
 }
 
