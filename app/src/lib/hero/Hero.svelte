@@ -14,7 +14,14 @@
 				<div class="hero-img">
 					<div class="hero-img__inner">
 						<div class="hero-img__frame">
-							<Image src={heroSquare} alt="Kevin Ang" width="160" height="160" loading="eager" />
+							<Image
+								src={heroSquare}
+								alt="Kevin Ang"
+								width="160"
+								height="160"
+								loading="eager"
+								sizes="(min-width: 1025px) 160px, (min-width: 768px) 128px, 96px"
+							/>
 						</div>
 					</div>
 				</div>

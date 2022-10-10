@@ -25,6 +25,7 @@
 					`https://res.cloudinary.com/kevinang/image/upload/f_auto,w_${size}/ka/${src} ${size}w`
 			)
 			.join(', ');
+
 		src = null;
 		sizes = `(min-width: 1440px) 50vw, (min-width: 768px) 25vw, 100vw`;
 	}
