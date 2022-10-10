@@ -1,4 +1,6 @@
 <script>
+	import Seo from '$lib/seo/Seo.svelte';
+
 	export let data;
 
 	const {
@@ -8,7 +10,7 @@
 	const frontmatter = post.metadata;
 	const content = post.default;
 
-	const { title, date } = frontmatter;
+	const { title, date, excerpt } = frontmatter;
 	const dateString = new Date(date).toLocaleString('en-US', {
 		year: 'numeric',
 		month: 'long',
@@ -17,6 +19,7 @@
 	const dateYmd = new Date(date).toISOString().slice(0, 10);
 </script>
 
+<Seo {title} description={excerpt} />
 <article>
 	<section class="section section-m-t--sm section-m-b">
 		<div class="wrapper">
