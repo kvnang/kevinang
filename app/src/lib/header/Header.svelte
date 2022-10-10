@@ -32,10 +32,10 @@
 			<nav>
 				<ul>
 					<li class:active={$page.url.pathname === '/blog'}>
-						<a sveltekit:prefetch href="/blog" class="h6">Blog</a>
+						<a data-sveltekit-prefetch href="/blog" class="h6">Blog</a>
 					</li>
 					<li>
-						<a sveltekit:prefetch href="/#contact" class="h6">Contact</a>
+						<a data-sveltekit-prefetch href="/#contact" class="h6">Contact</a>
 					</li>
 					<li class:active={$page.url.pathname === '/projects'}>
 						<span class="h6 coming-soon">
@@ -82,8 +82,6 @@
 
 <style lang="scss">
 	.section {
-		/* grid-area: full; */
-
 		.inner {
 			grid-column: wide;
 			display: flex;

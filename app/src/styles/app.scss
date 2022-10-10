@@ -521,3 +521,8 @@ abbr[title='required'] {
 			[narrow-end] 3.75rem [standard-end] minmax(1.5rem, 1fr) [wide-end] minmax(1.5rem, 1fr) [full-end];
 	}
 }
+
+// NProgress
+#nprogress .bar {
+	background: var(--color-accent);
+}

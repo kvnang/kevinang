@@ -1,12 +1,21 @@
 <script lang="ts">
+	import { navigating } from '$app/stores';
+	import NProgress from 'nprogress';
 	import Header from '$lib/header/Header.svelte';
 	import Footer from '$lib/footer/Footer.svelte';
 	import Toast from '$lib/toast/Toast.svelte';
-	import { onMount } from 'svelte';
+	import { onDestroy, onMount } from 'svelte';
 	import '@fontsource/jetbrains-mono/400.css';
 	import '@fontsource/bitter/variable.css';
 	import 'normalize.css';
+	import 'nprogress/nprogress.css';
 	import '../styles/app.scss';
+	import { browser } from '$app/environment';
+
+	NProgress.configure({
+		// Full list: https://github.com/rstacruz/nprogress#configuration
+		minimum: 0.16
+	});
 
 	// Accessibility Features
 	// Let the document know when the mouse is being used
@@ -24,16 +33,30 @@
 	};
 
 	onMount(() => {
-		document.body.addEventListener('mousedown', mousedownListener);
-		document.body.addEventListener('touchstart', mousedownListener);
-		document.body.addEventListener('keydown', keydownListener, true);
+		if (browser) {
+			document.body.addEventListener('mousedown', mousedownListener);
+			document.body.addEventListener('touchstart', mousedownListener);
+			document.body.addEventListener('keydown', keydownListener, true);
+		}
+	});
 
-		return () => {
+	onDestroy(() => {
+		if (browser) {
 			document.body.removeEventListener('mousedown', mousedownListener);
 			document.body.removeEventListener('touchstart', mousedownListener);
 			document.body.removeEventListener('keydown', keydownListener, true);
-		};
+		}
 	});
+
+	$: {
+		console.log($navigating);
+		if ($navigating) {
+			NProgress.start();
+		}
+		if (!$navigating) {
+			NProgress.done();
+		}
+	}
 </script>
 
 <svelte:head />
