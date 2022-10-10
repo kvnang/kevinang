@@ -7,7 +7,10 @@
 	export let src: string | null | undefined;
 	export let alt = '';
 	export let srcset: string | null | undefined = null;
-	export let sizes: string | null | undefined = null;
+	export let sizes:
+		| string
+		| null
+		| undefined = `(min-width: 1440px) 50vw, (min-width: 768px) 25vw, 100vw`;
 
 	if (!dev && src) {
 		const { siteUrl } = config;
@@ -28,7 +31,6 @@
 			.join(', ');
 
 		src = null;
-		sizes = `(min-width: 1440px) 50vw, (min-width: 768px) 25vw, 100vw`;
 	}
 </script>
 
