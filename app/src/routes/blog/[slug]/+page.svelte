@@ -23,7 +23,7 @@
 <article>
 	<section class="section section-m-t--sm section-m-b">
 		<div class="wrapper">
-			<div class="inner">
+			<div class="inner prose">
 				<div class="meta">
 					<time datetime={dateYmd}><code>{dateString}</code></time>
 				</div>
@@ -153,6 +153,12 @@
 							content: none;
 						}
 					}
+				}
+			}
+
+			a {
+				&[target='_blank'] {
+					@include external-link;
 				}
 			}
 

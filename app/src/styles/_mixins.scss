@@ -17,3 +17,19 @@ SIMPLE BREAKPOINT
 		}
 	}
 }
+
+@mixin external-link {
+	&::after {
+		content: ' ↗';
+		font-size: var(--font-size-sm);
+		margin: 0 0.25em 0 0;
+		color: var(--color-accent);
+		transition: color var(--transition);
+	}
+
+	&:hover {
+		&::after {
+			color: var(--color-accent-2);
+		}
+	}
+}

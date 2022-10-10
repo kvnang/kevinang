@@ -37,7 +37,7 @@
 						>
 							<span>I'm a</span>&nbsp;<TextRoll {pause} />
 						</h1>
-						<div class="desc">
+						<div class="desc prose">
 							<p>
 								I'm a full-stack dev from <strong>Indonesia</strong>, working at
 								<a href="https://www.longbeard.com" target="_blank" rel="noopener noreferrer"

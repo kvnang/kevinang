@@ -47,7 +47,7 @@
 
 <section id="contact" class="section section-m-b">
 	<div class="inner">
-		<div class="text">
+		<div class="text prose">
 			<h2 class="h2">Reach out</h2>
 			<p>Don't hesitate to send me a message!</p>
 			<div class="email">

@@ -14,7 +14,7 @@
 
 <article>
 	<div class="wrapper">
-		<div class="inner">
+		<div class="inner prose">
 			<span class="date font-mono"><time datetime={dateYmd}>{dateString}</time></span>
 			<h4 class="title">
 				<a href={`/blog/${slug}`}>
@@ -82,6 +82,7 @@
 
 	a {
 		--color-link: var(--white);
+		--color-link-hover: var(--color-accent);
 
 		&::before {
 			content: '';

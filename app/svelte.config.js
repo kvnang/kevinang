@@ -4,6 +4,7 @@ import { mdsvex } from 'mdsvex';
 import svelteMdsvexImage from './plugins/svelteMdsvexImage.js';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import rehypeExternalLinks from 'rehype-external-links';
 
 const filePath = path.dirname(fileURLToPath(import.meta.url));
 const sassPath = `${filePath}/src/styles`;
@@ -21,7 +22,24 @@ const config = {
 		}),
 		mdsvex({
 			extensions: ['.md'],
-			remarkPlugins: [svelteMdsvexImage]
+			remarkPlugins: [svelteMdsvexImage],
+			rehypePlugins: [
+				[
+					rehypeExternalLinks,
+					{
+						target: (node) => {
+							if (node.tagName === 'a') {
+								const href = node.properties.href;
+								if (href.startsWith('/')) {
+									return '_self';
+								}
+
+								return '_blank';
+							}
+						}
+					}
+				]
+			]
 		})
 	],
 
