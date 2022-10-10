@@ -7,43 +7,41 @@
 	let pause = false;
 </script>
 
-<section class="wrapper section-m-b">
-	<div class="container">
-		<div class="hero">
-			<div class="hero__inner">
-				<div class="hero__row">
-					<div class="hero-img">
-						<div class="hero-img__inner">
-							<div class="hero-img__frame">
-								<Image src={heroSquare} alt="Kevin Ang" width="160" height="160" loading="eager" />
-							</div>
+<section class="section section-m-b">
+	<div class="hero">
+		<div class="hero__inner">
+			<div class="hero__row">
+				<div class="hero-img">
+					<div class="hero-img__inner">
+						<div class="hero-img__frame">
+							<Image src={heroSquare} alt="Kevin Ang" width="160" height="160" loading="eager" />
 						</div>
 					</div>
-					<div class="hero-text">
-						<div class="hero-text__inner">
-							<h1 class="h5" style="margin-bottom: 0.5rem"><code><Typed /></code></h1>
-							<h1
-								class="mt-0"
-								on:mouseover={() => (pause = true)}
-								on:focus={() => (pause = true)}
-								on:mouseout={() => (pause = false)}
-								on:blur={() => (pause = false)}
-							>
-								<span>I'm a</span>&nbsp;<TextRoll {pause} />
-							</h1>
-							<div class="desc">
-								<p>
-									I'm a full-stack dev from <strong>Indonesia</strong>, working at
-									<a href="https://www.longbeard.com" target="_blank" rel="noopener noreferrer"
-										>Longbeard</a
-									>.
-								</p>
-								<p>
-									I love tinkering with frontend development, IoT, and edge computing, but anything
-									JS is my current forte.
-								</p>
-								<p>Spending quality time with my wife and kids makes my day.</p>
-							</div>
+				</div>
+				<div class="hero-text">
+					<div class="hero-text__inner">
+						<h1 class="h5" style="margin-bottom: 0.5rem"><code><Typed /></code></h1>
+						<h1
+							class="mt-0"
+							on:mouseover={() => (pause = true)}
+							on:focus={() => (pause = true)}
+							on:mouseout={() => (pause = false)}
+							on:blur={() => (pause = false)}
+						>
+							<span>I'm a</span>&nbsp;<TextRoll {pause} />
+						</h1>
+						<div class="desc">
+							<p>
+								I'm a full-stack dev from <strong>Indonesia</strong>, working at
+								<a href="https://www.longbeard.com" target="_blank" rel="noopener noreferrer"
+									>Longbeard</a
+								>.
+							</p>
+							<p>
+								I love tinkering with frontend development, IoT, and edge computing, but anything JS
+								is my current forte.
+							</p>
+							<p>Spending quality time with my wife and kids makes my day.</p>
 						</div>
 					</div>
 				</div>
@@ -64,9 +62,7 @@
 		}
 	}
 
-	.wrapper {
-		position: relative;
-
+	.section {
 		&::before {
 			content: '';
 			width: 100%;
@@ -88,11 +84,7 @@
 
 	.hero {
 		border-bottom: 2px solid var(--color-bg-tint);
-
-		@include breakpoint($laptop-sm) {
-			margin-left: 8.333%;
-			margin-right: 8.333%;
-		}
+		grid-column: narrow;
 
 		&__inner {
 			display: flex;
@@ -102,10 +94,6 @@
 
 			@include breakpoint($tablet-sm) {
 				flex-flow: wrap row-reverse;
-			}
-
-			@include breakpoint($laptop-sm) {
-				margin: 0 10%;
 			}
 		}
 
@@ -236,6 +224,6 @@
 	}
 
 	.desc {
-		max-inline-size: 60ch;
+		max-inline-size: var(--size-content-3);
 	}
 </style>

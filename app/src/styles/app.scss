@@ -1,5 +1,6 @@
 // @import '@fontsource/league-spartan/400.css';
 @import './global-imports';
+@import './preflight';
 
 :root {
 	--font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
@@ -24,12 +25,16 @@
 	--color-success: #10b981;
 	--color-error: #ef4444;
 	--color-h: var(--white);
+	--color-p-hsl: 256 46% 80%;
 	--color-p: hsl(256, 46%, 86%);
 	--color-p-0: hsl(256, 46%, 72%);
 	--gray: hsl(0 0% 25%);
+	--color-link: var(--color-accent);
+	--color-link-hover: var(--color-accent);
 
 	--gradient-1: linear-gradient(to bottom right, #536976, #292e49);
 
+	--section-spacing-sm: 2rem;
 	--section-spacing: 2.5rem;
 	--section-spacing-lg: 4rem;
 	--form-field-gap: 0.625rem;
@@ -43,9 +48,6 @@
 	--border-radius: 0.5rem;
 
 	--transition: 0.3s cubic-bezier(0.29, 0.07, 0.25, 1);
-
-	--container-max-width: 1536px;
-	--container-padding: 1rem;
 
 	--cube-size: 60px;
 
@@ -64,20 +66,18 @@
 	--font-size-h5: var(--font-size-base);
 	--font-size-h6: var(--font-size-sm);
 
+	--size-content-3: 60ch;
+
 	--li-break: 1rem;
 
-	@include breakpoint($mobile-lg) {
-		--container-padding: 1.5rem;
-	}
-
 	@include breakpoint($tablet-sm) {
+		--section-spacing-sm: 2rem;
 		--section-spacing: 2.5rem;
 		--section-spacing-lg: 6rem;
-
-		--container-padding: 2rem;
 	}
 
 	@include breakpoint($laptop-sm) {
+		--section-spacing-sm: 2.5rem;
 		--section-spacing: 4.5rem;
 		--section-spacing-lg: 8rem;
 
@@ -90,6 +90,7 @@
 	}
 
 	@include breakpoint($laptop-lg) {
+		--section-spacing-sm: 3rem;
 		--section-spacing: 6rem;
 		--section-spacing-lg: 12rem;
 	}
@@ -122,7 +123,7 @@ html {
 }
 
 body {
-	color-adjust: economy;
+	print-color-adjust: economy;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	min-height: 100vh;
@@ -222,14 +223,15 @@ p {
 }
 
 a {
-	color: var(--color-accent);
+	color: var(--color-link);
 	text-decoration: none;
 
 	&:hover {
+		color: var(--color-link-hover);
 		text-decoration: underline;
 		text-decoration-style: dotted;
 		text-underline-offset: 0.2em;
-		text-decoration-color: var(--color-accent);
+		text-decoration-color: var(--color-link-hover);
 	}
 }
 
@@ -289,7 +291,6 @@ small,
 }
 
 pre {
-	font-size: 16px;
 	font-family: var(--font-tertiary);
 	background-color: rgba(255, 255, 255, 0.45);
 	border-radius: 3px;
@@ -297,6 +298,10 @@ pre {
 	padding: 0.5em;
 	overflow-x: auto;
 	color: var(--text-color);
+
+	code {
+		display: inline-block;
+	}
 }
 
 input,
@@ -318,20 +323,20 @@ button:focus:not(:focus-visible) {
 code {
 	font-family: var(--font-tertiary);
 	font-weight: 400;
-	display: inline-block;
+	word-break: break-all;
 }
 
-.container {
-	width: 100%;
-	max-width: var(--container-max-width);
-	padding-right: var(--container-padding);
-	padding-left: var(--container-padding);
-	margin-right: auto;
-	margin-left: auto;
+.font-mono {
+	font-family: var(--font-tertiary);
+	font-weight: 400;
 }
 
 .section-m-t {
 	margin-top: var(--section-spacing);
+
+	&--sm {
+		margin-top: var(--section-spacing-sm);
+	}
 
 	&--lg {
 		margin-top: var(--section-spacing-lg);
@@ -340,6 +345,10 @@ code {
 
 .section-m-b {
 	margin-bottom: var(--section-spacing);
+
+	&--sm {
+		margin-bottom: var(--section-spacing-sm);
+	}
 
 	&--lg {
 		margin-bottom: var(--section-spacing-lg);
@@ -480,4 +489,36 @@ audio {
 abbr[title='required'] {
 	color: var(--color-error);
 	text-decoration: none;
+}
+
+:target {
+	scroll-margin-top: 1rem;
+
+	@include breakpoint($tablet-sm) {
+		scroll-margin-top: 2rem;
+	}
+
+	@include breakpoint($laptop-sm) {
+		scroll-margin-top: 3rem;
+	}
+}
+
+.section {
+	display: grid;
+	position: relative;
+	grid-template-columns:
+		[full-start] minmax(1rem, 1fr) [wide-start] 0 [standard-start] 0 [narrow-start] minmax(
+			1rem,
+			67.5rem
+		)
+		[narrow-end] 0 [standard-end] 0 [wide-end] minmax(1rem, 1fr) [full-end];
+
+	@include breakpoint($mobile-lg) {
+		grid-template-columns:
+			[full-start] minmax(1.5rem, 1fr) [wide-start] minmax(1.5rem, 1fr) [standard-start] 3.75rem [narrow-start] minmax(
+				1rem,
+				67.5rem
+			)
+			[narrow-end] 3.75rem [standard-end] minmax(1.5rem, 1fr) [wide-end] minmax(1.5rem, 1fr) [full-end];
+	}
 }

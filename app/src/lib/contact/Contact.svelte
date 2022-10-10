@@ -9,7 +9,7 @@
 			if (el.dataset.widget) {
 				window.turnstile.reset(el.dataset.widget);
 			}
-
+			('');
 			const widget = window.turnstile.render(el, {
 				sitekey: `${import.meta.env.VITE_TURNSTILE_SITE_KEY}`
 			});
@@ -45,7 +45,7 @@
 	});
 </script>
 
-<section class="container section-m-b">
+<section id="contact" class="section section-m-b">
 	<div class="inner">
 		<div class="text">
 			<h2 class="h2">Reach out</h2>
@@ -219,21 +219,17 @@
 	@import '../../styles/global-imports';
 
 	.inner {
+		grid-column: standard;
 		display: flex;
 		flex-flow: wrap;
 		background-color: var(--color-bg-tint-0);
-		padding: var(--section-spacing) 1.5rem;
-		margin: 0 -1.5rem;
-
-		@include breakpoint($tablet-sm) {
-			padding: var(--section-spacing) 2rem;
-			margin: 0 -2rem;
-		}
+		padding: var(--section-spacing) 3rem;
+		margin: 0 -3rem;
 
 		@include breakpoint($laptop-sm) {
 			border-radius: 2rem;
 			padding: 4rem;
-			margin: 0 8.333%;
+			margin: 0;
 		}
 
 		.text {

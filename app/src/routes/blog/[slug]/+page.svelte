@@ -18,25 +18,31 @@
 </script>
 
 <article>
-	<div class="container">
+	<section class="section section-m-t--sm section-m-b">
 		<div class="wrapper">
-			<div class="meta">
-				<time datetime={dateYmd}><code>{dateString}</code></time>
-			</div>
-			<h1 class="title mt-0">{title}</h1>
-			<div class="content">
-				<svelte:component this={content} />
+			<div class="inner">
+				<div class="meta">
+					<time datetime={dateYmd}><code>{dateString}</code></time>
+				</div>
+				<h1 class="title mt-0">{title}</h1>
+				<div class="content">
+					<svelte:component this={content} />
+				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 </article>
 
 <style lang="scss">
 	@import '../../../styles/global-imports';
 
 	.wrapper {
-		max-width: 48rem;
-		margin: 2.5rem auto var(--section-spacing);
+		grid-column: standard;
+
+		.inner {
+			max-width: 48rem;
+			margin: 0 auto;
+		}
 	}
 
 	.meta {
