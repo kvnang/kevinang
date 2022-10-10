@@ -1,4 +1,4 @@
-import type { RequestHandler } from '@sveltejs/kit';
+import type { ActionResult, RequestHandler } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
 
 /**
@@ -73,29 +73,42 @@ export const POST: RequestHandler = async ({ request }) => {
 
 	const outcome = await turnstileVerify(request, body);
 
+	let actionResult: ActionResult;
+
 	if (!outcome.success) {
-		return new Response(JSON.stringify(outcome['error-codes']), { status: 400 });
+		actionResult = {
+			type: 'error',
+			error: new Error('Turnstile validation failed: ' + outcome['error-codes'].join(', '))
+		};
+	} else {
+		try {
+			const encodedFormData = encode(body);
+
+			const res = await fetch(env.CLOUDFLARE_WORKER_URL, {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				},
+				body: encodedFormData
+			});
+
+			actionResult = {
+				type: 'success',
+				status: res.status,
+				data: { body: await res.text() }
+			};
+		} catch (err) {
+			actionResult = {
+				type: 'error',
+				error: err
+			};
+		}
 	}
 
-	try {
-		const encodedFormData = encode(body);
-
-		const res = await fetch(env.CLOUDFLARE_WORKER_URL, {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/x-www-form-urlencoded'
-			},
-			body: encodedFormData
-		});
-
-		return new Response('{}', {
-			headers: {
-				'Content-Type': 'application/json; charset=utf-8'
-			},
-			status: res ? res.status : 500
-		});
-	} catch (err) {
-		console.error(err);
-		return new Response((err as Error).message, { status: 500 });
-	}
+	return new Response(JSON.stringify(actionResult), {
+		headers: {
+			'Content-Type': 'application/json; charset=utf-8'
+		},
+		status: actionResult.type === 'success' ? 200 : 500
+	});
 };

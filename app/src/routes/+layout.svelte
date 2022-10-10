@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { navigating } from '$app/stores';
 	import NProgress from 'nprogress';
 	import Header from '$lib/header/Header.svelte';
 	import Footer from '$lib/footer/Footer.svelte';
@@ -11,6 +10,8 @@
 	import 'nprogress/nprogress.css';
 	import '../styles/app.scss';
 	import { browser } from '$app/environment';
+	import { navigating } from '$app/stores';
+	// import { afterNavigate, beforeNavigate } from '$app/navigation';
 
 	NProgress.configure({
 		// Full list: https://github.com/rstacruz/nprogress#configuration
@@ -48,15 +49,16 @@
 		}
 	});
 
-	$: {
-		console.log($navigating);
-		if ($navigating) {
-			NProgress.start();
-		}
-		if (!$navigating) {
-			NProgress.done();
-		}
-	}
+	// beforeNavigate((navigation) => {
+	// 	console.log('before', navigation);
+	// 	NProgress.start();
+	// });
+
+	// afterNavigate((navigation) => {
+	// 	console.log('after', navigation);
+
+	// 	NProgress.done();
+	// });
 </script>
 
 <svelte:head />

@@ -1,5 +1,6 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
+	import { onMount, onDestroy } from 'svelte';
 
 	export let once = false;
 	export let top = 0;
@@ -9,12 +10,32 @@
 
 	export let intersecting = false;
 	let container: HTMLDivElement;
+	let observer: IntersectionObserver | null = null;
+
+	const scrollHandler = () => {
+		if (typeof IntersectionObserver === 'undefined') {
+			const bcr = container.getBoundingClientRect();
+			intersecting =
+				bcr.bottom + bottom > 0 &&
+				bcr.right + right > 0 &&
+				bcr.top - top < window.innerHeight &&
+				bcr.left - left < window.innerWidth;
+
+			if (intersecting && once) {
+				window.removeEventListener('scroll', scrollHandler);
+			}
+		}
+	};
 
 	onMount(() => {
+		if (!browser) {
+			intersecting = true;
+		}
+
 		if (typeof IntersectionObserver !== 'undefined') {
 			const rootMargin = `${bottom}px ${left}px ${top}px ${right}px`;
 
-			const observer = new IntersectionObserver(
+			observer = new IntersectionObserver(
 				(entries) => {
 					intersecting = entries[0].isIntersecting;
 					if (intersecting && once) {
@@ -27,10 +48,7 @@
 			);
 
 			observer.observe(container);
-			return () => observer.unobserve(container);
-		}
-
-		function handler() {
+		} else {
 			const bcr = container.getBoundingClientRect();
 			intersecting =
 				bcr.bottom + bottom > 0 &&
@@ -39,12 +57,18 @@
 				bcr.left - left < window.innerWidth;
 
 			if (intersecting && once) {
-				window.removeEventListener('scroll', handler);
+				window.removeEventListener('scroll', scrollHandler);
 			}
 		}
+	});
 
-		window.addEventListener('scroll', handler);
-		return () => window.removeEventListener('scroll', handler);
+	onDestroy(() => {
+		if (!browser) return;
+
+		if (observer) {
+			observer.unobserve(container);
+		}
+		window.removeEventListener('scroll', scrollHandler);
 	});
 </script>
 

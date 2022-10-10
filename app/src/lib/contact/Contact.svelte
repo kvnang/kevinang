@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { enhance } from '$lib/form';
+	import { enhance } from '$app/forms';
 	import { notifications } from '../toast/notifications';
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
@@ -72,49 +72,50 @@
 				method="POST"
 				enctype="application/x-www-form-urlencoded"
 				name="contact"
-				use:enhance={{
-					pending: ({ form }) => {
-						const { elements } = form;
+				use:enhance={({ form }) => {
+					// pending state
+					const { elements } = form;
 
-						for (let i = 0; i < elements.length; i++) {
-							const element = elements.item(i);
-							if (!element) continue;
-							element.setAttribute('disabled', 'true');
-						}
-					},
-					error: async ({ form, error, response }) => {
-						const { elements } = form;
-
-						for (let i = 0; i < elements.length; i++) {
-							const element = elements.item(i);
-							if (!element) continue;
-							element.removeAttribute('disabled');
-						}
-
-						notifications.error(
-							'There has been an error sending your message.',
-							`Error: ${error?.message || (await response?.text()) || 'Unknown error'}`,
-							6000
-						);
-					},
-					result: async ({ form }) => {
-						const { elements } = form;
-
-						for (let i = 0; i < elements.length; i++) {
-							const element = elements.item(i);
-							if (!element) continue;
-							element.classList.remove('has-value');
-							element.removeAttribute('disabled');
-						}
-
-						form.reset();
-
-						notifications.success(
-							'Your message has been sent!',
-							`Please don't expect instant reply, but will get back to you as soon as I can.`,
-							6000
-						);
+					for (let i = 0; i < elements.length; i++) {
+						const element = elements.item(i);
+						if (!element) continue;
+						element.setAttribute('disabled', 'true');
 					}
+
+					return async ({ form, result }) => {
+						if (result.type === 'success') {
+							const { elements } = form;
+
+							for (let i = 0; i < elements.length; i++) {
+								const element = elements.item(i);
+								if (!element) continue;
+								element.classList.remove('has-value');
+								element.removeAttribute('disabled');
+							}
+
+							form.reset();
+
+							notifications.success(
+								'Your message has been sent!',
+								`Please don't expect instant reply, but will get back to you as soon as I can.`,
+								6000
+							);
+						} else if (result.type === 'error') {
+							const { elements } = form;
+
+							for (let i = 0; i < elements.length; i++) {
+								const element = elements.item(i);
+								if (!element) continue;
+								element.removeAttribute('disabled');
+							}
+
+							notifications.error(
+								'There has been an error sending your message.',
+								`Error: ${result.error?.message || 'Unknown error'}`,
+								6000
+							);
+						}
+					};
 				}}
 			>
 				<input type="hidden" name="form-name" value="contact" />
