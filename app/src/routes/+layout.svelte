@@ -11,7 +11,7 @@
 	import '../styles/app.scss';
 	import { browser } from '$app/environment';
 	import { navigating } from '$app/stores';
-	// import { afterNavigate, beforeNavigate } from '$app/navigation';
+	import { afterNavigate, beforeNavigate } from '$app/navigation';
 
 	NProgress.configure({
 		// Full list: https://github.com/rstacruz/nprogress#configuration
@@ -39,26 +39,23 @@
 			document.body.addEventListener('touchstart', mousedownListener);
 			document.body.addEventListener('keydown', keydownListener, true);
 		}
+
+		return () => {
+			if (browser) {
+				document.body.removeEventListener('mousedown', mousedownListener);
+				document.body.removeEventListener('touchstart', mousedownListener);
+				document.body.removeEventListener('keydown', keydownListener, true);
+			}
+		};
 	});
 
-	onDestroy(() => {
-		if (browser) {
-			document.body.removeEventListener('mousedown', mousedownListener);
-			document.body.removeEventListener('touchstart', mousedownListener);
-			document.body.removeEventListener('keydown', keydownListener, true);
-		}
+	beforeNavigate((navigation) => {
+		NProgress.start();
 	});
 
-	// beforeNavigate((navigation) => {
-	// 	console.log('before', navigation);
-	// 	NProgress.start();
-	// });
-
-	// afterNavigate((navigation) => {
-	// 	console.log('after', navigation);
-
-	// 	NProgress.done();
-	// });
+	afterNavigate((navigation) => {
+		NProgress.done();
+	});
 </script>
 
 <svelte:head />

@@ -13,7 +13,7 @@
 <li
 	class="cube"
 	style="--top:{top};--right:{right};--left:{left}"
-	transition:fly={{
+	transition:fly|local={{
 		y: -100,
 		duration: 1000,
 		delay: Math.floor(Math.random() * 1000) + delay

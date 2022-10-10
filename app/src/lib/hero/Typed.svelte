@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount } from 'svelte';
 
 	let string = `👋 My name is Kevin Ang`;
 	let container: HTMLSpanElement;
@@ -32,11 +32,11 @@
 
 	onMount(() => {
 		timeout = setTimeout(typeWriter, 1000);
-	});
 
-	onDestroy(() => {
-		clearTimeout(timeout);
-		clearTimeout(timeout2);
+		return () => {
+			clearTimeout(timeout);
+			clearTimeout(timeout2);
+		};
 	});
 </script>
 

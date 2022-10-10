@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { browser } from '$app/environment';
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount } from 'svelte';
 
 	export let once = false;
 	export let top = 0;
@@ -10,7 +10,6 @@
 
 	export let intersecting = false;
 	let container: HTMLDivElement;
-	let observer: IntersectionObserver | null = null;
 
 	const scrollHandler = () => {
 		if (typeof IntersectionObserver === 'undefined') {
@@ -30,7 +29,10 @@
 	onMount(() => {
 		if (!browser) {
 			intersecting = true;
+			return;
 		}
+
+		let observer: IntersectionObserver | null = null;
 
 		if (typeof IntersectionObserver !== 'undefined') {
 			const rootMargin = `${bottom}px ${left}px ${top}px ${right}px`;
@@ -60,15 +62,16 @@
 				window.removeEventListener('scroll', scrollHandler);
 			}
 		}
-	});
 
-	onDestroy(() => {
-		if (!browser) return;
+		return () => {
+			if (!browser) return;
 
-		if (observer) {
-			observer.unobserve(container);
-		}
-		window.removeEventListener('scroll', scrollHandler);
+			if (observer) {
+				observer.unobserve(container);
+			}
+
+			window.removeEventListener('scroll', scrollHandler);
+		};
 	});
 </script>
 

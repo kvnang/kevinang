@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
-	import { onDestroy } from 'svelte';
+	import { onMount } from 'svelte';
 	export let pause: boolean;
 
 	const words = ['full-stack dev', 'father of two', 'coffee enthusiast'];
@@ -18,10 +18,12 @@
 		}
 	}
 
-	$: maybePlaySlider(pause);
+	onMount(() => {
+		maybePlaySlider(pause);
 
-	onDestroy(() => {
-		clearInterval(timer);
+		return () => {
+			clearInterval(timer);
+		};
 	});
 </script>
 
@@ -31,8 +33,8 @@
 			{#if i === current}
 				<strong
 					class="words"
-					in:fly={{ y: -30, duration: 500, delay: 500 }}
-					out:fly={{ y: 30, duration: 500, delay: 500 }}>{word}</strong
+					in:fly|local={{ y: -30, duration: 500, delay: 500 }}
+					out:fly|local={{ y: 30, duration: 500, delay: 500 }}>{word}</strong
 				>
 			{/if}
 		{/each}

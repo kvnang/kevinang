@@ -30,7 +30,7 @@
 			{#if intersecting}
 				<span
 					style="display:inline-block;"
-					transition:fly={{
+					transition:fly|local={{
 						y: -50,
 						duration: 500,
 						delay
