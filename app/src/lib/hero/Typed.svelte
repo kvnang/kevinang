@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 
 	let string = `👋 My name is Kevin Ang`;
 	let container: HTMLSpanElement;
@@ -10,6 +10,9 @@
 	let blinker = true;
 	let blinkerBlink = true;
 
+	let timeout: ReturnType<typeof setTimeout>;
+	let timeout2: ReturnType<typeof setTimeout>;
+
 	function typeWriter() {
 		const stringArray = [...string];
 
@@ -17,18 +20,23 @@
 			blinkerBlink = false;
 			container.innerHTML += stringArray[i];
 			i++;
-			setTimeout(typeWriter, speed);
+			timeout = setTimeout(typeWriter, speed);
 		} else {
 			blinkerBlink = true;
 
-			setTimeout(() => {
+			timeout2 = setTimeout(() => {
 				blinker = false;
 			}, 5000);
 		}
 	}
 
 	onMount(() => {
-		setTimeout(typeWriter, 1000);
+		timeout = setTimeout(typeWriter, 1000);
+	});
+
+	onDestroy(() => {
+		clearTimeout(timeout);
+		clearTimeout(timeout2);
 	});
 </script>
 

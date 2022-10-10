@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { fly } from 'svelte/transition';
+	import { onDestroy } from 'svelte';
 	export let pause: boolean;
 
 	const words = ['full-stack dev', 'father of two', 'coffee enthusiast'];
@@ -18,6 +19,10 @@
 	}
 
 	$: maybePlaySlider(pause);
+
+	onDestroy(() => {
+		clearInterval(timer);
+	});
 </script>
 
 <span class="counter">
