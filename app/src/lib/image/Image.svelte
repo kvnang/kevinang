@@ -3,6 +3,7 @@
 	import { config } from '$lib/config';
 	import { removeLeadingSlash } from '$lib/utils';
 
+	export let priority = false;
 	export let src: string | null | undefined;
 	export let alt = '';
 	export let srcset: string | null | undefined = null;
@@ -31,6 +32,12 @@
 	}
 </script>
 
+<svelte:head>
+	{#if priority}
+		<link rel="preload" as="image" href={src} imagesrcset={srcset} imagesizes={sizes} />
+	{/if}
+</svelte:head>
+
 {#if src || srcset}
-	<img {src} {srcset} {sizes} {alt} {...$$restProps} />
+	<img {src} {srcset} {sizes} {alt} loading={priority ? 'eager' : 'lazy'} {...$$restProps} />
 {/if}

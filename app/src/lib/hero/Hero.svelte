@@ -19,8 +19,8 @@
 								alt="Kevin Ang"
 								width="160"
 								height="160"
-								loading="eager"
 								sizes="(min-width: 1025px) 160px, (min-width: 768px) 128px, 96px"
+								priority
 							/>
 						</div>
 					</div>
