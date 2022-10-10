@@ -5,16 +5,17 @@
 
 	const { siteUrl } = config;
 
-	export let title = 'Kevin Ang • Full-Stack Web Developer';
+	export let title = 'Full-Stack Web Developer';
 	export let description = `I'm a full-stack web developer from Indonesia who enjoys tinkering with JS, IoT, and the edge.`;
 	export let socialCard = `${siteUrl}/social-card.jpg`;
 	export let canonical = `${siteUrl}/${removeLeadingSlash($page.url.pathname)}`;
 
 	const siteName = 'Kevin Ang';
+	const isHome = $page.url.pathname === '/';
 </script>
 
 <svelte:head>
-	<title>{title}</title>
+	<title>{isHome ? `${siteName} • ${title}` : `${title} • ${siteName}`}</title>
 	<meta name="description" content={description} />
 
 	<!-- Favicons -->
