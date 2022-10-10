@@ -7,7 +7,7 @@
 	<div class="inner">
 		<div class="text">
 			<h2 class="h2">Reach out</h2>
-			<p>Don't hesitate to send me a message, but no spam please.</p>
+			<p>Don't hesitate to send me a message!</p>
 			<div class="email">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -33,6 +33,7 @@
 				use:enhance={{
 					pending: ({ form }) => {
 						const { elements } = form;
+						console.log(elements);
 
 						for (let i = 0; i < elements.length; i++) {
 							const element = elements.item(i);
@@ -130,6 +131,7 @@
 							<div class="underline" />
 						</label>
 					</div>
+					<div class="cf-turnstile" data-sitekey={import.meta.env.VITE_TURNSTILE_SITE_KEY} />
 					<div class="form-field form-field--submit">
 						<button type="submit">
 							<span class="button-text h6">Send</span>
@@ -241,10 +243,6 @@
 		border: 1px solid currentColor;
 		padding: 0.75rem 1.5rem;
 		border-radius: 1.5rem;
-
-		span {
-			transform: translateY(0.1em); // Font weirdness
-		}
 
 		.button-icon {
 			margin-left: 0.5rem;
