@@ -54,18 +54,17 @@ const turnstileVerify = async (request: Request, formData: FormData) => {
 	turnstileFormData.append('response', token);
 	turnstileFormData.append('remoteip', ip);
 
-	// console.log(turnstileFormData.values());
-	// log the form data to the console
-	// console.log(encode(turnstileFormData));
-
 	const url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
 	const result = await fetch(url, {
-		body: turnstileFormData,
+		headers: {
+			'Content-Type': 'application/x-www-form-urlencoded'
+		},
+		body: encode(turnstileFormData),
 		method: 'POST'
 	});
 
 	const outcome = (await result.json()) as TurnstileResponse;
-	console.log(outcome);
+
 	return outcome;
 };
 

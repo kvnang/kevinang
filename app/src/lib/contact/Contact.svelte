@@ -75,7 +75,6 @@
 				use:enhance={{
 					pending: ({ form }) => {
 						const { elements } = form;
-						console.log(elements);
 
 						for (let i = 0; i < elements.length; i++) {
 							const element = elements.item(i);
