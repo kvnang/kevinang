@@ -364,6 +364,7 @@ textarea {
 	display: flex;
 	flex-flow: wrap;
 	margin: calc(var(--form-field-gap) * -1);
+	width: calc(100% + var(--form-field-gap) * 2);
 
 	.form-field {
 		padding: var(--form-field-gap);
@@ -375,8 +376,18 @@ textarea {
 			max-width: 50%;
 		}
 
+		&--inline {
+			flex: initial;
+		}
+
+		&--footer {
+			display: flex;
+			justify-content: space-between;
+		}
+
 		&--submit {
 			text-align: right;
+			margin-left: auto;
 		}
 
 		label {

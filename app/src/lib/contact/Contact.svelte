@@ -20,7 +20,7 @@
 
 	onMount(() => {
 		if (browser) {
-			const el = document.querySelector<HTMLElement>('.cf-turnstile');
+			const el = document.querySelector<HTMLElement>('#cf-turnstile');
 
 			if (typeof window.onloadTurnstileCallback !== 'function') {
 				window.onloadTurnstileCallback = () => {
@@ -172,33 +172,42 @@
 							<div class="underline" />
 						</label>
 					</div>
-					<div class="cf-turnstile" data-sitekey={import.meta.env.VITE_TURNSTILE_SITE_KEY} />
-					<div class="form-field form-field--submit">
-						<button type="submit">
-							<span class="button-text h6">Send</span>
-							<div class="button-icon">
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									height="24px"
-									viewBox="0 0 24 24"
-									width="24px"
-									fill="currentcolor"
-									><path d="M0 0h24v24H0z" fill="none" /><path
-										d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
-									/></svg
-								>
-								<svg
-									xmlns="http://www.w3.org/2000/svg"
-									height="24px"
-									viewBox="0 0 24 24"
-									width="24px"
-									fill="currentcolor"
-									><path d="M0 0h24v24H0z" fill="none" /><path
-										d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
-									/></svg
-								>
+
+					<div class="form-field form-field--footer">
+						<div class="form-fields">
+							<div class="form-field form-field--inline">
+								<div class="cf-turnstile-wrapper">
+									<div id="cf-turnstile" />
+								</div>
 							</div>
-						</button>
+							<div class="form-field form-field--inline form-field--submit">
+								<button type="submit">
+									<span class="button-text h6">Send</span>
+									<div class="button-icon">
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											height="24px"
+											viewBox="0 0 24 24"
+											width="24px"
+											fill="currentcolor"
+											><path d="M0 0h24v24H0z" fill="none" /><path
+												d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
+											/></svg
+										>
+										<svg
+											xmlns="http://www.w3.org/2000/svg"
+											height="24px"
+											viewBox="0 0 24 24"
+											width="24px"
+											fill="currentcolor"
+											><path d="M0 0h24v24H0z" fill="none" /><path
+												d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"
+											/></svg
+										>
+									</div>
+								</button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</form>
@@ -343,6 +352,17 @@
 		&:disabled {
 			opacity: 0.5;
 			pointer-events: none;
+		}
+	}
+
+	.cf-turnstile-wrapper {
+		position: relative;
+		width: 300px;
+		height: 65px;
+		max-width: 100%;
+
+		> div {
+			display: flex;
 		}
 	}
 </style>
