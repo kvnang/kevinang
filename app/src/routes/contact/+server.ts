@@ -54,7 +54,9 @@ const turnstileVerify = async (request: Request, formData: FormData) => {
 	turnstileFormData.append('response', token);
 	turnstileFormData.append('remoteip', ip);
 
-	console.log(token);
+	// console.log(turnstileFormData.values());
+	// log the form data to the console
+	// console.log(encode(turnstileFormData));
 
 	const url = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
 	const result = await fetch(url, {
@@ -70,12 +72,10 @@ const turnstileVerify = async (request: Request, formData: FormData) => {
 export const POST: RequestHandler = async ({ request }) => {
 	const body = await request.formData();
 
-	console.log('TEST', body.get('cf-turnstile-response'));
-
 	const outcome = await turnstileVerify(request, body);
 
 	if (!outcome.success) {
-		return new Response('Invalid token', { status: 400 });
+		return new Response(JSON.stringify(outcome['error-codes']), { status: 400 });
 	}
 
 	try {

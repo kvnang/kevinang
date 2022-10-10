@@ -1,6 +1,48 @@
-<script context="module" lang="ts">
+<script lang="ts">
 	import { enhance } from '$lib/form';
 	import { notifications } from '../toast/notifications';
+	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
+
+	const renderTurnstile = (el: HTMLElement) => {
+		if (typeof window.turnstile !== 'undefined') {
+			if (el.dataset.widget) {
+				window.turnstile.reset(el.dataset.widget);
+			}
+
+			const widget = window.turnstile.render(el, {
+				sitekey: `${import.meta.env.VITE_TURNSTILE_SITE_KEY}`
+			});
+
+			el.setAttribute('data-widget', widget);
+		}
+	};
+
+	onMount(() => {
+		if (browser) {
+			const el = document.querySelector<HTMLElement>('.cf-turnstile');
+
+			if (typeof window.onloadTurnstileCallback !== 'function') {
+				window.onloadTurnstileCallback = () => {
+					if (!el.dataset.widget) {
+						renderTurnstile(el);
+					}
+				};
+			}
+
+			if (!document.querySelector('#turnstile-script')) {
+				const script = document.createElement('script');
+				script.id = 'turnstile-script';
+				script.src =
+					'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onloadTurnstileCallback';
+				script.async = true;
+				script.defer = true;
+				document.body.appendChild(script);
+			}
+
+			renderTurnstile(el);
+		}
+	});
 </script>
 
 <section class="container section-m-b">
