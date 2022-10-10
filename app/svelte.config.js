@@ -1,5 +1,5 @@
 import preprocess from 'svelte-preprocess';
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-vercel';
 import { mdsvex } from 'mdsvex';
 import svelteMdsvexImage from './plugins/svelteMdsvexImage.js';
 import path from 'path';
@@ -44,7 +44,7 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter(),
+		adapter: adapter({ edge: true }),
 		// hydrate the <div id="svelte"> element in src/app.html
 		// target: '#svelte'
 		prerender: {

@@ -9,6 +9,8 @@
 	export let description = `I'm a full-stack web developer from Indonesia who enjoys tinkering with JS, IoT, and the edge.`;
 	export let socialCard = `${siteUrl}/social-card.jpg`;
 	export let canonical = `${siteUrl}/${removeLeadingSlash($page.url.pathname)}`;
+	export let ogType = 'website';
+	export let twitterCard = 'summary_large_image';
 
 	const siteName = 'Kevin Ang';
 	const isHome = $page.url.pathname === '/';
@@ -45,18 +47,18 @@
 	<link rel="canonical" href={canonical} />
 
 	<!-- Open Graph -->
-	<meta property="og:type" content="website" />
+	<meta property="og:type" content={ogType} />
 	<meta property="og:url" content={canonical} />
 	<meta property="og:image" content={socialCard} />
 	<meta property="og:title" content={title} />
 	<meta property="og:site_name" content={siteName} />
 	<meta property="og:description" content={description} />
-	<meta property="og:type" content="website" />
 
 	<!-- Twitter -->
 	<meta property="twitter:title" content={title} />
 	<meta property="twitter:url" content={canonical} />
 	<meta property="twitter:description" content={description} />
-	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:card" content={twitterCard} />
 	<meta property="twitter:image" content={socialCard} />
+	<meta property="twitter:creator" content="@kvn_ang" />
 </svelte:head>

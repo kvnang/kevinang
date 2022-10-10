@@ -19,7 +19,7 @@
 	const dateYmd = new Date(date).toISOString().slice(0, 10);
 </script>
 
-<Seo {title} description={excerpt} />
+<Seo {title} description={excerpt} ogType="article" />
 <article>
 	<section class="section section-m-t--sm section-m-b">
 		<div class="wrapper">
