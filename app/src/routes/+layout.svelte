@@ -3,7 +3,7 @@
 	import Footer from '$lib/footer/Footer.svelte';
 	import Toast from '$lib/toast/Toast.svelte';
 	import { onMount } from 'svelte';
-	import '@fontsource/jetbrains-mono';
+	import '@fontsource/jetbrains-mono/400.css';
 	import '@fontsource/bitter/variable.css';
 	import 'normalize.css';
 	import '../styles/app.scss';
@@ -44,8 +44,8 @@
 		<slot />
 	</main>
 	<Footer />
-	<Toast />
 </div>
+<Toast />
 
 <style lang="scss">
 	.site-content {

@@ -81,8 +81,6 @@
 </header>
 
 <style lang="scss">
-	@import '../../styles/global-imports';
-
 	.section {
 		/* grid-area: full; */
 

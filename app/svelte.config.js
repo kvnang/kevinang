@@ -2,6 +2,11 @@ import preprocess from 'svelte-preprocess';
 import adapter from '@sveltejs/adapter-auto';
 import { mdsvex } from 'mdsvex';
 import svelteMdsvexImage from './plugins/svelteMdsvexImage.js';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const filePath = path.dirname(fileURLToPath(import.meta.url));
+const sassPath = `${filePath}/src/styles`;
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -9,7 +14,11 @@ const config = {
 	// Consult https://github.com/sveltejs/svelte-preprocess
 	// for more information about preprocessors
 	preprocess: [
-		preprocess(),
+		preprocess({
+			scss: {
+				prependData: `@import '${sassPath}/_global-imports.scss';`
+			}
+		}),
 		mdsvex({
 			extensions: ['.md'],
 			remarkPlugins: [svelteMdsvexImage]

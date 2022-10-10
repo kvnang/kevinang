@@ -27,8 +27,6 @@
 </article>
 
 <style lang="scss">
-	@import '../../styles/global-imports';
-
 	article {
 		text-align: center;
 		display: flex;

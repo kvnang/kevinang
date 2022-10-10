@@ -58,8 +58,6 @@
 </section>
 
 <style lang="scss">
-	@import '../../styles/global-imports';
-
 	@keyframes fadeIn {
 		from {
 			opacity: 0;

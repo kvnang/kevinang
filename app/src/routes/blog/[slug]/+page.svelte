@@ -37,8 +37,6 @@
 </article>
 
 <style lang="scss">
-	@import '../../../styles/global-imports';
-
 	.wrapper {
 		grid-column: standard;
 

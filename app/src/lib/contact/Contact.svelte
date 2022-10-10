@@ -216,8 +216,6 @@
 </section>
 
 <style lang="scss">
-	@import '../../styles/global-imports';
-
 	.inner {
 		grid-column: standard;
 		display: flex;

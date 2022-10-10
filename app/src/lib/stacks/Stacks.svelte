@@ -99,8 +99,6 @@
 </section>
 
 <style lang="scss">
-	@import '../../styles/global-imports';
-
 	.inner {
 		grid-column: narrow;
 		display: flex;
