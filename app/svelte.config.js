@@ -44,7 +44,7 @@ const config = {
 	],
 
 	kit: {
-		adapter: adapter({ edge: true }),
+		adapter: adapter({ edge: false }),
 		inlineStyleThreshold: 1024,
 		// hydrate the <div id="svelte"> element in src/app.html
 		// target: '#svelte'
