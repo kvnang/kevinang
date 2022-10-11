@@ -74,11 +74,12 @@ export const GET: RequestHandler = async ({ url }) => {
 		console.log('init resvg wasm');
 		await initWasm(fetch(`${siteUrl}/wasm/index_bg.wasm`).then((res) => res.arrayBuffer()));
 	} catch (err) {
-		// console.error(err);
+		console.error(err);
 	}
 
 	// Init yoga wasm
 	try {
+		console.log('fetching yoga');
 		const yogaWasmBuffer = await fetch(`${siteUrl}/wasm/yoga.wasm`).then((res) =>
 			res.arrayBuffer()
 		);
