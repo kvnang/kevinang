@@ -74,13 +74,17 @@ export const GET: RequestHandler = async ({ url }) => {
 			fetch(`${siteUrl}/wasm/index_bg.wasm`).then((response) => response.arrayBuffer())
 		);
 	} catch (err) {
-		console.error(err);
+		// console.error(err);
 	}
 
 	// Init yoga wasm
-	await initYoga(await fetch(`${siteUrl}/wasm/yoga.wasm`).then((res) => res.arrayBuffer())).then(
-		(yoga) => init(yoga)
-	);
+	try {
+		await initYoga(await fetch(`${siteUrl}/wasm/yoga.wasm`).then((res) => res.arrayBuffer())).then(
+			(yoga) => init(yoga)
+		);
+	} catch (err) {
+		console.error(err);
+	}
 
 	const title = url.searchParams.get('title') || '';
 
