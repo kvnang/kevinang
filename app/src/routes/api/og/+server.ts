@@ -79,9 +79,12 @@ export const GET: RequestHandler = async ({ url }) => {
 
 	// Init yoga wasm
 	try {
-		await initYoga(await fetch(`${siteUrl}/wasm/yoga.wasm`).then((res) => res.arrayBuffer())).then(
-			(yoga) => init(yoga)
+		const yogaWasmBuffer = await fetch(`${siteUrl}/wasm/yoga.wasm`).then((res) =>
+			res.arrayBuffer()
 		);
+		const yogaWasmModule = new WebAssembly.Module(yogaWasmBuffer);
+
+		await initYoga(yogaWasmModule).then((yoga) => init(yoga));
 	} catch (err) {
 		console.error(err);
 	}
