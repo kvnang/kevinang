@@ -9,7 +9,10 @@ const config = {
 		sveltekit(),
 		// wasm(),
 		// topLevelAwait(),
-		copy([{ src: './node_modules/@resvg/resvg-wasm/index_bg.wasm', dest: 'static/wasm/' }])
+		copy([
+			{ src: './node_modules/@resvg/resvg-wasm/index_bg.wasm', dest: 'static/wasm/' },
+			{ src: './node_modules/yoga-wasm-web/dist/yoga.wasm', dest: 'static/wasm/' }
+		])
 	]
 };
 

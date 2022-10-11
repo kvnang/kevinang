@@ -1,4 +1,5 @@
-import satori from 'satori';
+import satori, { init } from 'satori/wasm';
+import initYoga from 'yoga-wasm-web';
 import camelCase from 'just-camel-case';
 import { Parser } from 'htmlparser2';
 import { DomHandler } from 'domhandler';
@@ -8,7 +9,6 @@ import type { ReactElementLikeProps, TransformNode } from './types';
 import { Resvg, initWasm } from '@resvg/resvg-wasm';
 
 const { siteUrl } = config;
-const wasmUrl = `${siteUrl}/wasm/index_bg.wasm`;
 
 const bitterFont = fetch(`${siteUrl}/fonts/Bitter-Medium.ttf`).then((res) => res.arrayBuffer());
 const sfProFont = fetch(`${siteUrl}/fonts/SF-Pro-Text-Regular.otf`).then((res) =>
@@ -67,7 +67,20 @@ const transformNode: TransformNode = (node) => {
 };
 
 export const GET: RequestHandler = async ({ url }) => {
-	await initWasm(fetch(wasmUrl).then((response) => response.arrayBuffer()));
+	// Init resvg wasm
+	try {
+		// wrap this on a try/catch block as sometimes wasm has been initialized, and initWasm can't be called again
+		await initWasm(
+			fetch(`${siteUrl}/wasm/index_bg.wasm`).then((response) => response.arrayBuffer())
+		);
+	} catch (err) {
+		console.error(err);
+	}
+
+	// Init yoga wasm
+	await initYoga(await fetch(`${siteUrl}/wasm/yoga.wasm`).then((res) => res.arrayBuffer())).then(
+		(yoga) => init(yoga)
+	);
 
 	const title = url.searchParams.get('title') || '';
 

@@ -31,6 +31,7 @@ specifiers:
   unist-util-visit: ^4.1.1
   vite: ^3.1.7
   vite-plugin-copy: ^0.1.6
+  yoga-wasm-web: ^0.1.2
 
 dependencies:
   '@fontsource/bitter': 4.5.9
@@ -65,6 +66,7 @@ devDependencies:
   unist-util-visit: 4.1.1
   vite: 3.1.7_sass@1.55.0
   vite-plugin-copy: 0.1.6
+  yoga-wasm-web: 0.1.2
 
 packages:
 
@@ -2393,4 +2395,3 @@ packages:
 
   /yoga-wasm-web/0.1.2:
     resolution: {integrity: sha512-8SkgawHcA0RUbMrnhxbaQkZDBi8rMed8pQHixkFF9w32zGhAwZ9/cOHWlpYfr6RCx42Yp3siV45/jPEkJxsk6w==}
-    dev: false
