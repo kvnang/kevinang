@@ -1,3 +1,4 @@
+// @ts-expect-error satori/wasm is not typed
 import satori, { init } from 'satori/wasm';
 import initYoga from 'yoga-wasm-web';
 import camelCase from 'just-camel-case';
@@ -70,9 +71,12 @@ export const GET: RequestHandler = async ({ url }) => {
 	// Init resvg wasm
 	try {
 		// wrap this on a try/catch block as sometimes wasm has been initialized, and initWasm can't be called again
-		await initWasm(
-			fetch(`${siteUrl}/wasm/index_bg.wasm`).then((response) => response.arrayBuffer())
+		const resvgWasmBuffer = await fetch(`${siteUrl}/wasm/index_bg.wasm`).then((res) =>
+			res.arrayBuffer()
 		);
+		const resvgWasmModule = new WebAssembly.Module(resvgWasmBuffer);
+		console.log('init resvg');
+		await initWasm(resvgWasmModule);
 	} catch (err) {
 		// console.error(err);
 	}
@@ -84,7 +88,11 @@ export const GET: RequestHandler = async ({ url }) => {
 		);
 		const yogaWasmModule = new WebAssembly.Module(yogaWasmBuffer);
 
-		await initYoga(yogaWasmModule).then((yoga) => init(yoga));
+		console.log('init yoga');
+		await initYoga(yogaWasmModule).then(async (yoga) => {
+			console.log('init satori');
+			await init(yoga);
+		});
 	} catch (err) {
 		console.error(err);
 	}
