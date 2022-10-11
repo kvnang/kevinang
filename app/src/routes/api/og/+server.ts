@@ -73,6 +73,7 @@ export const GET: RequestHandler = async ({ url }) => {
 		// wrap this on a try/catch block as sometimes wasm has been initialized, and initWasm can't be called again
 		console.log('init resvg wasm');
 		await initWasm(fetch(`${siteUrl}/wasm/index_bg.wasm`).then((res) => res.arrayBuffer()));
+		console.log('done resvg wasm');
 	} catch (err) {
 		console.error(err);
 	}
@@ -83,13 +84,13 @@ export const GET: RequestHandler = async ({ url }) => {
 		const yogaWasmBuffer = await fetch(`${siteUrl}/wasm/yoga.wasm`).then((res) =>
 			res.arrayBuffer()
 		);
-		const yogaWasmModule = new WebAssembly.Module(yogaWasmBuffer);
 
 		console.log('init yoga');
-		await initYoga(yogaWasmModule).then(async (yoga) => {
+		await initYoga(yogaWasmBuffer).then(async (yoga) => {
 			console.log;
 			await init(yoga);
 		});
+		console.log('done yoga');
 	} catch (err) {
 		console.error(err);
 	}
