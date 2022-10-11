@@ -8,6 +8,8 @@
  * Learn more at https://developers.cloudflare.com/workers/
  */
 
+import { og } from "./og";
+
 export interface Env {
   // Example binding to KV. Learn more at https://developers.cloudflare.com/workers/runtime-apis/kv/
   // MY_KV_NAMESPACE: KVNamespace;
@@ -20,6 +22,13 @@ export interface Env {
 }
 
 async function handleRequest(request: Request) {
+  const url = new URL(request.url);
+  const path = url.pathname;
+
+  if (path === "/og") {
+    return await og({ url: request.url });
+  }
+
   let content = "";
 
   const contentType = request.headers.get("content-type") || "";
