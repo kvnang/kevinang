@@ -13,7 +13,8 @@ const config = {
 			{ src: './node_modules/@resvg/resvg-wasm/index_bg.wasm', dest: 'static/wasm/' },
 			{ src: './node_modules/yoga-wasm-web/dist/yoga.wasm', dest: 'static/wasm/' }
 		])
-	]
+	],
+	assetsInclude: ['static/wasm/*.wasm']
 };
 
 export default config;

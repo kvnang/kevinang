@@ -8,8 +8,10 @@ import { config } from '$lib/config';
 import type { RequestHandler } from '@sveltejs/kit';
 import type { ReactElementLikeProps, TransformNode } from './types';
 import { Resvg, initWasm } from '@resvg/resvg-wasm';
-import resvgWasm from '../../../../static/wasm/resvg.wasm?module';
+import resvgWasm from '../../../../static/wasm/index_bg.wasm?module';
 import yogaWasm from '../../../../static/wasm/yoga.wasm?module';
+
+console.log(yogaWasm);
 
 const { siteUrl } = config;
 
