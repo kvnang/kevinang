@@ -68,7 +68,7 @@
 		</div>
 		<div class="form">
 			<form
-				action="/contact"
+				action="/api/contact"
 				method="POST"
 				enctype="application/x-www-form-urlencoded"
 				name="contact"

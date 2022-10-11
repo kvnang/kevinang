@@ -14,9 +14,12 @@
 	"dependencies": {
 		"@fontsource/bitter": "^4.5.9",
 		"@fontsource/jetbrains-mono": "^4.5.11",
-		"cookie": "^0.5.0",
+		"@resvg/resvg-js": "^2.1.0",
+		"domhandler": "^5.0.3",
+		"htmlparser2": "^8.0.1",
 		"normalize.css": "^8.0.1",
-		"nprogress": "^0.2.0"
+		"nprogress": "^0.2.0",
+		"satori": "^0.0.38"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-vercel": "1.0.0-next.77",
