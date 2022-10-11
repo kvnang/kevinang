@@ -13,3 +13,8 @@
 
 # Secrets
 **/*/.env
+
+# Misc
+
+# wasm files will be copied using vite-plugin-copy
+/app/static/wasm/*.wasm 

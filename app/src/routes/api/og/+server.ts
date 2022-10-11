@@ -2,12 +2,14 @@ import satori from 'satori';
 import camelCase from 'just-camel-case';
 import { Parser } from 'htmlparser2';
 import { DomHandler } from 'domhandler';
-import { Resvg } from '@resvg/resvg-js';
 import { config } from '$lib/config';
 import type { RequestHandler } from '@sveltejs/kit';
 import type { ReactElementLikeProps, TransformNode } from './types';
+import { Resvg, initWasm } from '@resvg/resvg-wasm';
 
 const { siteUrl } = config;
+const wasmUrl = `${siteUrl}/wasm/index_bg.wasm`;
+
 const bitterFont = fetch(`${siteUrl}/fonts/Bitter-Medium.ttf`).then((res) => res.arrayBuffer());
 const sfProFont = fetch(`${siteUrl}/fonts/SF-Pro-Text-Regular.otf`).then((res) =>
 	res.arrayBuffer()
@@ -65,6 +67,8 @@ const transformNode: TransformNode = (node) => {
 };
 
 export const GET: RequestHandler = async ({ url }) => {
+	await initWasm(fetch(wasmUrl).then((response) => response.arrayBuffer()));
+
 	const title = url.searchParams.get('title') || '';
 
 	const html = `

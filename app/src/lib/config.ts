@@ -4,5 +4,5 @@ export const config = {
 	/**
 	 * Site URL without trailing slash
 	 */
-	siteUrl: removeTrailingSlash(import.meta.env.VITE_SITE_URL)
+	siteUrl: removeTrailingSlash(import.meta.env.VITE_SITE_URL || import.meta.env.VITE_VERCEL_URL)
 };
