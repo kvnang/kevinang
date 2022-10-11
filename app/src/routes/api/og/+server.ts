@@ -8,6 +8,8 @@ import { config } from '$lib/config';
 import type { RequestHandler } from '@sveltejs/kit';
 import type { ReactElementLikeProps, TransformNode } from './types';
 import { Resvg, initWasm } from '@resvg/resvg-wasm';
+import resvgWasm from '../../../../static/wasm/resvg.wasm?module';
+import yogaWasm from '../../../../static/wasm/yoga.wasm?module';
 
 const { siteUrl } = config;
 
@@ -72,7 +74,8 @@ export const GET: RequestHandler = async ({ url }) => {
 	try {
 		// wrap this on a try/catch block as sometimes wasm has been initialized, and initWasm can't be called again
 		console.log('init resvg wasm');
-		await initWasm(fetch(`${siteUrl}/wasm/index_bg.wasm`).then((res) => res.arrayBuffer()));
+		// await initWasm(fetch(`${siteUrl}/wasm/index_bg.wasm`).then((res) => res.arrayBuffer()));
+		await initWasm(resvgWasm as WebAssembly.Module);
 		console.log('done resvg wasm');
 	} catch (err) {
 		console.error(err);
@@ -80,17 +83,21 @@ export const GET: RequestHandler = async ({ url }) => {
 
 	// Init yoga wasm
 	try {
-		console.log('fetching yoga');
-		const yogaWasmBuffer = await fetch(`${siteUrl}/wasm/yoga.wasm`).then((res) =>
-			res.arrayBuffer()
-		);
+		// console.log('fetching yoga');
+		// const yogaWasmBuffer = await fetch(`${siteUrl}/wasm/yoga.wasm`).then((res) =>
+		// 	res.arrayBuffer()
+		// );
 
 		console.log('init yoga');
-		await initYoga(yogaWasmBuffer).then(async (yoga) => {
-			console.log;
+		// await initYoga(yogaWasmBuffer).then(async (yoga) => {
+		// 	console.log;
+		// 	await init(yoga);
+		// });
+		await initYoga(yogaWasm as WebAssembly.Module).then(async (yoga) => {
+			console.log('done yoga, init satori');
 			await init(yoga);
+			console.log('done satori');
 		});
-		console.log('done yoga');
 	} catch (err) {
 		console.error(err);
 	}
