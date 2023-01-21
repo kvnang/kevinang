@@ -3,7 +3,7 @@ import type { PageLoad } from './$types';
 
 export const prerender = true;
 
-export const fetchMarkdownPosts = async () => {
+const fetchMarkdownPosts = async () => {
 	const allPostFiles = import.meta.glob('/src/posts/**/*.md');
 	const iterablePostFiles = Object.entries(allPostFiles);
 

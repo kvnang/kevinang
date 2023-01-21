@@ -36,6 +36,16 @@ const config = {
 
 								return '_blank';
 							}
+						},
+						rel: (node) => {
+							if (node.tagName === 'a') {
+								const href = node.properties.href;
+								if (href.startsWith('/')) {
+									return null;
+								}
+
+								return ['nofollow', 'noopener', 'noreferrer'];
+							}
 						}
 					}
 				]
@@ -50,8 +60,8 @@ const config = {
 		// target: '#svelte'
 		prerender: {
 			crawl: true,
-			enabled: true,
-			onError: 'continue',
+			// enabled: true,
+			// onError: 'continue',
 			entries: ['*']
 		}
 	}
