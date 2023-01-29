@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell,
+    Noto Sans, sans-serif;
+  --font-serif: ui-serif, serif;
+  --font-mono: Dank Mono, Operator Mono, Inconsolata, Fira Mono, ui-monospace,
+    SF Mono, Monaco, Droid Sans Mono, Source Code Pro, monospace;
+
+  --font-primary: var(--font-bitter), var(--font-serif);
+  --font-secondary: var(--font-sans);
+  --font-tertiary: "Jetbrains Mono", var(--font-mono);
+  --white: #fff;
+  --black: #000;
+
+  --color-bg-hsl: 256 46% 11%;
+  --color-bg: hsl(var(--color-bg-hsl));
+  --color-bg-tint-0: hsl(256, 46%, 16%);
+  --color-bg-tint: hsl(256, 46%, 20%);
+  --color-bg-tint-2: hsl(256, 46%, 30%);
+  --color-accent: #ffbc42;
+  --color-accent-2: #ffd890;
+  --color-success: #10b981;
+  --color-error: #ef4444;
+  --color-h: var(--white);
+  --color-p-hsl: 256 46% 80%;
+  --color-p: hsl(256, 46%, 86%);
+  --color-p-0: hsl(256, 46%, 72%);
+  --gray: hsl(0 0% 25%);
+  --color-link: var(--color-accent);
+  --color-link-hover: var(--color-accent-2);
+
+  --gradient-1: linear-gradient(to bottom right, #536976, #292e49);
+
+  --section-spacing-sm: 2rem;
+  --section-spacing: 2.5rem;
+  --section-spacing-lg: 4rem;
+  --form-field-gap: 0.625rem;
+  --input-padding-v: 1rem;
+  --input-padding-h: 0;
+
+  --background-without-opacity: rgba(255, 255, 255, 0.7);
+  --column-width: 42rem;
+  --column-margin-top: 4rem;
+
+  --border-radius: 0.5rem;
+
+  --transition: 0.3s cubic-bezier(0.29, 0.07, 0.25, 1);
+
+  --cube-size: 60px;
+
+  --font-size-xs: clamp(0.75rem, 0.05vw + 0.71rem, 0.8rem);
+  --font-size-sm: clamp(0.8rem, 0.05vw + 0.79rem, 0.84rem);
+  --font-size-base: clamp(1rem, 0.13vw + 0.97rem, 1.13rem);
+  --font-size-md: clamp(1.25rem, 0.26vw + 1.18rem, 1.5rem);
+  --font-size-lg: clamp(1.56rem, 0.46vw + 1.45rem, 2rem);
+  --font-size-xl: clamp(1.95rem, 0.75vw + 1.77rem, 2.66rem);
+  --font-size-xxl: clamp(2.44rem, 1.17vw + 2.15rem, 3.55rem);
+  --font-size-xxxl: clamp(3.05rem, 1.77vw + 2.61rem, 4.73rem);
+
+  --font-size-h1: var(--font-size-xxl);
+  --font-size-h2: var(--font-size-xl);
+  --font-size-h3: var(--font-size-lg);
+  --font-size-h4: var(--font-size-md);
+  --font-size-h5: var(--font-size-base);
+  --font-size-h6: var(--font-size-sm);
+
+  --size-content-3: 60ch;
+
+  --li-break: 1rem;
+}
+
+@screen sm {
+  --section-spacing-sm: 2rem;
+  --section-spacing: 2.5rem;
+  --section-spacing-lg: 6rem;
+}
+
+@screen md {
+  --section-spacing-sm: 2.5rem;
+  --section-spacing: 4.5rem;
+  --section-spacing-lg: 8rem;
+
+  --cube-size: 80px;
+}
+
+@screen lg {
+  --section-spacing: 5rem;
+  --section-spacing-lg: 10rem;
+}
+
+@screen 2xl {
+  --section-spacing-sm: 3rem;
+  --section-spacing: 6rem;
+  --section-spacing-lg: 12rem;
+}
+
+@layer base {
+  h1,
+  .h1 {
+    font-size: var(--font-size-h1);
+    @apply font-serif font-semibold;
+  }
+
+  h2,
+  .h2 {
+    font-size: var(--font-size-h2);
+    @apply font-serif font-semibold;
+  }
+
+  h3,
+  .h3 {
+    font-size: var(--font-size-h3);
+    @apply font-serif font-semibold;
+  }
+
+  h4,
+  .h4 {
+    font-size: var(--font-size-h4);
+    @apply font-serif font-semibold;
+  }
+
+  h5,
+  .h5 {
+    font-size: var(--font-size-h5);
+    @apply font-sans font-semibold;
+  }
+
+  h6,
+  .h6 {
+    font-size: var(--font-size-h6);
+    @apply font-sans font-semibold;
+  }
+}
