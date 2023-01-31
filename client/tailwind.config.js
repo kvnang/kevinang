@@ -43,6 +43,8 @@ module.exports = {
         accent: "var(--color-accent)",
         "accent-2": "var(--color-accent-2)",
         error: "var(--color-error)",
+        success: "var(--color-success)",
+        "success-shade": "var(--color-success-shade)",
       },
     },
   },

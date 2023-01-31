@@ -23,6 +23,7 @@
   --color-accent: #ffbc42;
   --color-accent-2: #ffd890;
   --color-success: #10b981;
+  --color-success-shade: #047857;
   --color-error: #ef4444;
   --color-h: var(--white);
   --color-p-hsl: 256 46% 80%;

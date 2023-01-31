@@ -4,6 +4,7 @@ import { createClient } from "@/lib/supabaseServer";
 import { redirect } from "next/navigation";
 import { SideNav } from "@/components/SideNav";
 import { StandardGrid } from "@/components/Grid";
+import { Header } from "@/components/Header";
 
 export default async function AccountLayout({
   children,
@@ -22,6 +23,7 @@ export default async function AccountLayout({
 
   return (
     <>
+      <Header />
       <section className="py-16 border-b-2 border-b-bg-tint-1">
         <div className="container">
           <StandardGrid>

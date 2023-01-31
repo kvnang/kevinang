@@ -25,8 +25,7 @@ export async function HeaderAccountNav() {
 
   return (
     <span className="inline-flex px-2 py-2 font-mono text-sm">
-      {user.full_name} <span className="opacity-50 mx-4">/</span>{" "}
-      humanity2-0.org
+      {user.full_name}
     </span>
   );
 }

@@ -51,3 +51,10 @@ export async function getProductName(
 
   return product.name;
 }
+
+export async function createCustomerPortalSession(
+  props: Stripe.BillingPortal.SessionCreateParams
+) {
+  const session = await stripe.billingPortal.sessions.create(props);
+  return session;
+}

@@ -11,7 +11,7 @@ export default function LogoutPage() {
 
   const logout = async () => {
     const { error } = await supabase.auth.signOut();
-    router.push("/");
+    router.push("/?logout=true");
   };
 
   React.useEffect(() => {
@@ -20,7 +20,10 @@ export default function LogoutPage() {
 
   return (
     <main>
-      <LoadingSpinner />
+      <div className="flex items-center">
+        <LoadingSpinner />
+        <span className="ml-2 inline-block">Logging you out ...</span>
+      </div>
     </main>
   );
 }

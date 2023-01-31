@@ -1,4 +1,5 @@
 import { Login } from "@/components/Login";
+import { Logo } from "@/components/Logo";
 import { Service } from "@/components/Service";
 import { SideNav } from "@/components/SideNav";
 import { createClient } from "@/lib/supabaseServer";
@@ -18,7 +19,12 @@ export default async function Home() {
   return (
     <main>
       <div className="container py-16">
-        <Login />
+        <div className="max-w-xl mx-auto">
+          <div className="mb-6">
+            <Logo />
+          </div>
+          <Login />
+        </div>
       </div>
     </main>
   );

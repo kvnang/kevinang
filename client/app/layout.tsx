@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Bitter, JetBrains_Mono } from "@next/font/google";
 import { SupabaseListener, SupabaseProvider } from "@/components/Supabase";
 import { createClient } from "@/lib/supabaseServer";
+import { Footer } from "@/components/Footer";
 
 const bitter = Bitter({ subsets: ["latin"], variable: "--font-bitter" });
 const jetbrains = JetBrains_Mono({
@@ -34,9 +35,10 @@ export default async function RootLayout({
       <body className="bg-bg text-body">
         <SupabaseProvider>
           <SupabaseListener serverAccessToken={session?.access_token} />
-          <div className="flex flex-col">
-            <Header />
+          <div className="flex flex-col min-h-screen relative overflow-hidden">
+            {/* <Header /> */}
             <div className="flex-1">{children}</div>
+            <Footer />
           </div>
         </SupabaseProvider>
       </body>

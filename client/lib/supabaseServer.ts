@@ -5,4 +5,9 @@ export const createClient = () =>
   createServerComponentSupabaseClient({
     headers,
     cookies,
+    options: {
+      global: {
+        fetch: fetch.bind(globalThis),
+      },
+    },
   });

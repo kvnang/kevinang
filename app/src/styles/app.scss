@@ -68,6 +68,7 @@
 	--size-content-3: 60ch;
 
 	--li-break: 1rem;
+	--p-break: 1.5em;
 
 	@include breakpoint($tablet-sm) {
 		--section-spacing-sm: 2rem;

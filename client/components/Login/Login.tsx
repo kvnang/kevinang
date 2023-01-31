@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import { createClient } from "@/lib/supabaseBrowser";
-// import { Auth, ThemeSupa } from "@supabase/auth-ui-react";
 import {
   FormWrapper,
   FormField,
@@ -10,11 +9,13 @@ import {
   FormFooter,
   FormSubmitButton,
 } from "@/components/Forms";
+import { useSearchParams } from "next/navigation";
 
 export function Login() {
   const [loading, setLoading] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
   const supabase = createClient();
+  const searchParams = useSearchParams();
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -41,14 +42,21 @@ export function Login() {
   };
 
   return (
-    <div className="max-w-xl mx-auto">
-      <div className="bg-bg-tint-0 p-12 rounded-md shadow-md">
+    <div className="bg-bg-tint-0 rounded-lg shadow-md w-full relative overflow-hidden">
+      {searchParams.get("logout") == "true" && (
+        <div className="w-full text-center">
+          <div className="relative px-4 py-2 z-0 bg-success-shade w-full text-sm">
+            <p>You have been successfully logged out.</p>
+          </div>
+        </div>
+      )}
+      <div className="p-12">
         <h1 className="h4 mb-6">Sign in to your account</h1>
         {success ? (
           <div className="max-w-prose">
             <p>
-              We have sent you an email with a magic link. Please click the link
-              to sign in.
+              If your accoung exists, we have sent you an email with a magic
+              link. Please click the link to sign in.
             </p>
           </div>
         ) : (
