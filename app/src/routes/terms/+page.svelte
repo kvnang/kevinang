@@ -9,10 +9,10 @@
 					which are owned and operated by Kevin Ang (which may be referred to in the Terms as “we”,
 					“us”, KevinAng.com” or Kevin Ang”). By visiting the Site or by indicating during any
 					purchase on the Site that you agree to these terms and conditions of use, you are agreeing
-					to be legally bound by them and also by our Privacy Policy (collectively with these terms
-					and conditions of use referred to as the “Terms” or the “Agreement”), and are also
-					agreeing that while you use the Site or use anything that you purchase from the Site you
-					will comply with all applicable laws and regulations.
+					to be legally bound by them and also by our <a href="/privacy">Privacy Policy</a> (collectively
+					with these terms and conditions of use referred to as the “Terms” or the “Agreement”), and
+					are also agreeing that while you use the Site or use anything that you purchase from the Site
+					you will comply with all applicable laws and regulations.
 				</p>
 				<p>
 					If you do not agree with the Terms, you are prohibited from using or accessing the Site.
