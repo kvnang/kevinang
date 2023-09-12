@@ -3,7 +3,7 @@
 	import { onMount } from 'svelte';
 	export let pause: boolean;
 
-	const words = ['full-stack dev', 'father of two', 'coffee enthusiast'];
+	const words = ['full-stack dev', 'father of three', 'coffee enthusiast'];
 	let current = 0;
 
 	let timer: ReturnType<typeof setInterval>;

@@ -45,10 +45,18 @@
 								>.
 							</p>
 							<p>
-								I love tinkering with frontend development, IoT, and edge computing, but anything JS
-								is my current forte.
+								My current forte is JS / TS. Though profoundly proficient in React and Next.js, I
+								also love tinkering with other frameworks and server-side languages, from Svelte to
+								PHP.
 							</p>
-							<p>Spending quality time with my wife and kids makes my day.</p>
+							<p>
+								Lately, I've been working on <a
+									href="https://www.magisterium.com"
+									target="_blank"
+									rel="noopener noreferrer">Magisterium AI</a
+								>. It uses Next.js and takes advantage of many of its newest features, such as the
+								'app' router and Server Actions.
+							</p>
 						</div>
 					</div>
 				</div>
