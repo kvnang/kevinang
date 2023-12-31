@@ -26,10 +26,10 @@ export async function GET(
       </div>`,
           format: "A4",
           margin: {
-            left: "0cm",
-            top: "2cm",
-            right: "0cm",
-            bottom: "2cm",
+            left: "1cm",
+            top: "1.5cm",
+            right: "1cm",
+            bottom: "1.5cm",
           },
         },
         gotoOptions: {
