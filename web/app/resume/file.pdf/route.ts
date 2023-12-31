@@ -19,7 +19,7 @@ export async function GET(
         // setExtraHTTPHeaders: {
         //   "X-Applications-Auth": process.env.BROWSERLESS_API_KEY,
         // },
-        url: new URL(`/`, "https://www.kevinang.com").toString(),
+        url: new URL(`/resume`, "https://www.kevinang.com").toString(),
         options: {
           displayHeaderFooter: true,
           printBackground: true,
@@ -42,7 +42,7 @@ export async function GET(
         addStyleTag: [
           {
             content:
-              "body { height: 100vh; } main { padding: 0 32px; } nav { display: none; } form > div > * { break-inside: avoid } ",
+              "body { height: 100vh; } main { padding: 0 32px; } header, footer { display: none; } [data-resume-wrapper] { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; } [data-resume-nav] { display: none; } [data-resume-body] > * { break-inside: avoid } ",
           },
         ],
       }),
