@@ -7,7 +7,7 @@ import { ResumeActions } from "./ResumeActions";
 export default function Page() {
   return (
     <main>
-      <section className="border-b border-border">
+      <section data-resume-header className="border-b border-border">
         <div className="container border-l border-border">
           <div className="py-12 lg:py-24">
             <div className="prose">
@@ -18,7 +18,7 @@ export default function Page() {
         </div>
       </section>
       <section>
-        <div className="container border-x border-border">
+        <div data-resume-container className="container border-x border-border">
           <div
             data-resume-wrapper
             className="grid grid-cols-1 md:grid-cols-[3fr_1fr] gap-x-8"
