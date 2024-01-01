@@ -9,7 +9,8 @@ import { Analytics } from "@vercel/analytics/react";
 
 export const metadata: Metadata = {
   title: "Kevin Ang",
-  description: "Personal Website",
+  description:
+    "Welcome to Kevin Ang's personal website. Learn more about Kevin’s work, skillset, and interests.",
 };
 
 export default function RootLayout({

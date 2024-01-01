@@ -3,6 +3,13 @@ import profile from "./profile.jpg";
 import { MailIcon, MapPinIcon } from "lucide-react";
 import { ResumeEntry } from "./ResumeEntry";
 import { ResumeActions } from "./ResumeActions";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Kevin Ang’s Résumé",
+  description:
+    "Welcome to Kevin Ang's personal website. Learn more about Kevin’s work, skillset, and interests.",
+};
 
 export default function Page() {
   return (
