@@ -1,5 +1,5 @@
 import Image from "next/image";
-import profile from "./profile.jpg";
+import profile from "@/public/profile.jpg";
 import { MailIcon, MapPinIcon } from "lucide-react";
 import { ResumeEntry } from "./ResumeEntry";
 import { ResumeActions } from "./ResumeActions";
@@ -7,8 +7,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Kevin Ang’s Résumé",
-  description:
-    "Welcome to Kevin Ang's personal website. Learn more about Kevin’s work, skillset, and interests.",
+  description: "Browse my résumé or simply get a PDF copy.",
 };
 
 export default function Page() {
@@ -19,7 +18,9 @@ export default function Page() {
           <div className="py-12 lg:py-24">
             <div className="prose">
               <h1 className="mb-0">Résumé</h1>
-              <p className="font-mono">Browse / print my résumé.</p>
+              <p className="font-mono">
+                Browse my résumé or simply get a PDF copy.
+              </p>
             </div>
           </div>
         </div>
