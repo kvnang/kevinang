@@ -191,8 +191,8 @@ export default function Page() {
                 </div>
                 <ul className="grid items-center gap-2.5 max-w-prose">
                   <li>
-                    JavaScript, TypeScript, React, Cloudflare Workers (D1, R2,
-                    etc.), PostgreSQL, PHP, WordPress, Svelte / SvelteKit
+                    JavaScript / TypeScript, React, Node.js, Cloudflare Workers
+                    (D1, R2, etc.), PostgreSQL, PHP / WordPress
                   </li>
                   <li>
                     Piano{" "}
