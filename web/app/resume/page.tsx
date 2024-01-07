@@ -134,10 +134,19 @@ export default function Page() {
                   <p>
                     Indonesian by birth, I currently reside in Canada. I am
                     well-versed in the humanities and philology, but a
-                    self-taught web engineer by trade. In web development, I
-                    enjoy taking risks and assuming responsibilities for the
-                    sake of faster iteration and user satisfaction. Fast
-                    development cycles are key to a good end product.
+                    self-taught web engineer by trade.
+                  </p>
+                  <p>
+                    My web development projects comprise sites, apps, and dev
+                    tools; mostly frontends, with backends as needed. I code
+                    frontends to meticulously match the designer’s Figma, and
+                    design backends to be fast and maintainable. I love building
+                    CLIs to help my colleagues be more productive.
+                  </p>
+                  <p>
+                    I enjoy taking risks and assuming responsibilities for the
+                    sake of faster iteration, growth, and user satisfaction.
+                    Fast development cycles are key to a good end product.
                   </p>
                 </div>
               </div>
