@@ -123,6 +123,8 @@ export default function Page() {
                       alt="Kevin Ang"
                       fill
                       className="object-cover"
+                      priority
+                      sizes="128px"
                     />
                   </div>
                 </div>
