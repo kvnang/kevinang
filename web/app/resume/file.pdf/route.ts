@@ -56,14 +56,15 @@ export async function GET(
     return new Response(pdfRes, {
       headers: {
         "Content-Type": "application/pdf",
-        "Content-Disposition": `attachment; filename="resume.pdf"`,
+        "Content-Disposition": `attachment; filename="Kevin_Ang_resume.pdf"`,
       },
     });
   }
 
   return new Response(pdfRes, {
     headers: {
-      "Content-Type": "application/pdf",
+      "Content-Type": `application/pdf; name="Kevin_Ang_resume.pdf"`,
+      "Content-Disposition": `inline; filename="Kevin_Ang_resume.pdf"`,
     },
   });
 }
