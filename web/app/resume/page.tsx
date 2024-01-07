@@ -1,14 +1,35 @@
 import Image from "next/image";
 import profile from "@/public/profile.jpg";
-import { MailIcon, MapPinIcon } from "lucide-react";
+import { GlobeIcon, MailIcon, MapPinIcon } from "lucide-react";
 import { ResumeEntry } from "./ResumeEntry";
 import { ResumeActions } from "./ResumeActions";
 import { Metadata } from "next";
+import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Kevin Ang’s Résumé",
-  description: "Browse my résumé or simply get a PDF copy.",
+  description: "Browse my résumé or get a dynamically-generated PDF copy.",
 };
+
+const PROFILE_META = [
+  {
+    title: "Location",
+    icon: MapPinIcon,
+    content: "Canada",
+  },
+  {
+    title: "Website",
+    icon: GlobeIcon,
+    content: "kevinang.com",
+    href: "https://www.kevinang.com",
+  },
+  {
+    title: "Email",
+    icon: MailIcon,
+    content: "ka@kevinang.com",
+    href: "mailto:ka@kevinang.com",
+  },
+];
 
 export default function Page() {
   return (
@@ -18,8 +39,12 @@ export default function Page() {
           <div className="py-12 lg:py-24">
             <div className="prose">
               <h1 className="mb-0">Résumé</h1>
-              <p className="font-mono">
-                Browse my résumé or simply get a PDF copy.
+              <p>
+                Browse my résumé or simply get a{" "}
+                <Link href="/resume/file.pdf" target="_blank">
+                  dynamically-generated PDF copy
+                </Link>
+                .
               </p>
             </div>
           </div>
@@ -57,16 +82,36 @@ export default function Page() {
                     </p>
                     <div className="not-prose">
                       <ul className="flex flex-col">
-                        <li className="flex font-mono text-sm items-center mb-2 last:mb-0">
-                          <MapPinIcon className="w-4 h-4 mr-2" />
-                          <span className="text-muted-foreground">Canada</span>
-                        </li>
-                        <li className="flex font-mono text-sm items-center mb-2 last:mb-0">
-                          <MailIcon className="w-4 h-4 mr-2" />
-                          <span className="text-muted-foreground">
-                            ka@kevinang.com
-                          </span>
-                        </li>
+                        {PROFILE_META.map((meta) => {
+                          const Icon = meta.icon;
+                          return (
+                            <li
+                              key={meta.title}
+                              className="font-mono text-sm mb-2 last:mb-0"
+                            >
+                              <div className="flex items-center group">
+                                {meta.href ? (
+                                  <Link
+                                    href={meta.href}
+                                    className="flex items-center group"
+                                  >
+                                    <Icon className="w-4 h-4 mr-2" />
+                                    <span className="text-muted-foreground group-hover:underline">
+                                      {meta.content}
+                                    </span>
+                                  </Link>
+                                ) : (
+                                  <div className="flex items-center">
+                                    <Icon className="w-4 h-4 mr-2" />
+                                    <span className="text-muted-foreground">
+                                      {meta.content}
+                                    </span>
+                                  </div>
+                                )}
+                              </div>
+                            </li>
+                          );
+                        })}
                       </ul>
                     </div>
                   </div>
@@ -101,7 +146,7 @@ export default function Page() {
                 <div className="prose mb-6">
                   <h3>Languages</h3>
                 </div>
-                <ul className="grid items-center gap-2">
+                <ul className="grid items-center gap-2.5 max-w-prose">
                   <li>
                     Bahasa Indonesia{" "}
                     <span className="text-muted-foreground font-mono text-sm">
@@ -119,6 +164,30 @@ export default function Page() {
                     <span className="text-muted-foreground font-mono text-sm">
                       (Fluent)
                     </span>
+                  </li>
+                </ul>
+              </div>
+              {/* Skills */}
+              <div>
+                <div className="prose mb-6">
+                  <h3>Skills / Knowledge</h3>
+                </div>
+                <ul className="grid items-center gap-2.5 max-w-prose">
+                  <li>
+                    JavaScript, TypeScript, React, Cloudflare Workers (D1, R2,
+                    etc.), PostgreSQL, PHP, WordPress, Svelte / SvelteKit
+                  </li>
+                  <li>
+                    Piano{" "}
+                    <Link
+                      href="https://www.abrsm.org"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline"
+                    >
+                      ABRSM
+                    </Link>{" "}
+                    Grade 7
                   </li>
                 </ul>
               </div>
