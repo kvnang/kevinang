@@ -141,7 +141,7 @@ export default function Page() {
                   <p>
                     My web development projects comprise sites, apps, and dev
                     tools; mostly frontends, with backends as needed. I code
-                    frontends to meticulously match the designer’s Figma, and
+                    frontends to meticulously match the designer’s mock, and
                     design backends to be fast and maintainable. On the side, I
                     build CLIs to help my colleagues be more productive.
                   </p>
