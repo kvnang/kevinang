@@ -145,8 +145,8 @@ export default function Page() {
                   </p>
                   <p>
                     I enjoy taking risks and assuming responsibilities for the
-                    sake of faster iteration, growth, and user satisfaction.
-                    Fast development cycles are key to a good end product.
+                    sake of faster iteration, growth, and user’s joy. Fast
+                    development cycles are key to a good end product.
                   </p>
                 </div>
               </div>
