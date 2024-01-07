@@ -174,6 +174,12 @@ export default function Page() {
                       (Fluent)
                     </span>
                   </li>
+                  <li>
+                    Hebrew, Ancient Greek, Latin{" "}
+                    <span className="text-muted-foreground font-mono text-sm">
+                      (Reading)
+                    </span>
+                  </li>
                 </ul>
               </div>
               {/* Skills */}
