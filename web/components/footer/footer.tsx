@@ -5,16 +5,16 @@ export function Footer() {
     <footer className="border-t border-border">
       <div className="container">
         <div className="py-12 lg:py-24">
-          <div className="prose mb-6">
+          <div className="prose mb-2">
             <h3>Kevin Ang</h3>
           </div>
-          <div className="flex flex-wrap items-center space-x-4">
+          <div className="flex flex-wrap items-center -mx-3">
             <div>
               <a
                 href="https://www.github.com/kvnang"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-foreground hover:text-muted-foreground transition-colors"
+                className="inline-flex h-12 px-3 items-center justify-center text-foreground hover:text-muted-foreground transition-colors"
               >
                 <svg
                   width="32"
@@ -31,13 +31,13 @@ export function Footer() {
                 </svg>
               </a>
             </div>
-            <div className="self-stretch">
+            <div className="h-6 mx-2">
               <div className="inline-block border-l border-border w-0 h-full"></div>
             </div>
             <div className="inline-flex items-center">
               <a
                 href="mailto:ka@kevinang.com"
-                className="inline-flex items-center hover:underline font-mono text-sm"
+                className="h-12 px-3 inline-flex items-center hover:underline font-mono text-sm"
               >
                 <MailIcon className="w-5 h-5 mr-2" />
                 <span>ka@kevinang.com</span>

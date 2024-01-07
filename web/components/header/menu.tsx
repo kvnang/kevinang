@@ -1,5 +1,6 @@
 "use client";
 
+import { ArrowUpRightIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -8,15 +9,29 @@ export function Menu() {
 
   return (
     <nav className="flex items-center">
-      <div className="flex items-center flex-wrap">
-        <Link
-          href="/resume"
-          className="font-medium text-muted-foreground aria-[current=page]:text-foreground hover:text-foreground transition-colors"
-          aria-current={pathname === "/resume" ? "page" : undefined}
-        >
-          Résumé
-        </Link>
-      </div>
+      <ul className="flex items-center flex-wrap space-x-8">
+        <li>
+          <Link
+            href="/resume"
+            className="inline-flex items-center font-medium text-muted-foreground aria-[current=page]:text-foreground hover:text-foreground transition-colors"
+            aria-current={pathname === "/resume" ? "page" : undefined}
+          >
+            Résumé
+          </Link>
+        </li>
+        <li>
+          <Link
+            href="https://github.com/kvnang/kevinang/tree/main/web"
+            className="inline-flex items-center font-medium text-muted-foreground aria-[current=page]:text-foreground hover:text-foreground transition-colors"
+            // aria-current={pathname === "/resume" ? "page" : undefined}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            View Source
+            <ArrowUpRightIcon className="w-4 h-4 ml-1" />
+          </Link>
+        </li>
+      </ul>
     </nav>
   );
 }

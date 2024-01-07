@@ -9,7 +9,7 @@ export function Header() {
         <div className="py-4">
           <div className="flex items-center justify-between">
             <div>
-              <Link href="/">
+              <Link href="/" aria-label="Home">
                 <Logo className="w-12" />
               </Link>
             </div>
