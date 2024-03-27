@@ -62,9 +62,9 @@ export default function Page() {
           >
             <div
               data-resume-nav
-              className="border-b -mx-8 px-4 md:mx-0 md:px-0 md:border-b-0 md:order-1 md:border-l border-border max-md:sticky z-10 top-0 bg-background/80 backdrop-blur-md "
+              className="border-b -mx-container px-4 md:mx-0 md:px-0 md:border-b-0 md:order-1 md:border-l border-border max-md:sticky z-10 top-0 bg-background/80 backdrop-blur-md "
             >
-              <div className="md:pl-4 md:bg-background -mr-8 pr-8 h-full">
+              <div className="md:pl-4 md:bg-background -mr-container pr-container h-full">
                 <div className="py-4 md:py-12 lg:py-24 md:sticky top-0 left-0 z-10 ">
                   <ResumeActions />
                 </div>

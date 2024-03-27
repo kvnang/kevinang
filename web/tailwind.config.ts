@@ -9,11 +9,10 @@ const config: Config = {
     "./app/**/*.{ts,tsx}",
     "./src/**/*.{ts,tsx}",
   ],
-  prefix: "",
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: "var(--container-padding)",
       screens: {
         "2xl": "1280px",
       },
@@ -31,6 +30,9 @@ const config: Config = {
         xl: "var(--font-size-xl)",
         "2xl": "var(--font-size-2xl)",
         "3xl": "var(--font-size-3xl)",
+      },
+      spacing: {
+        container: "var(--container-padding)",
       },
       colors: {
         calypso: {
