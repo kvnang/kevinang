@@ -13,20 +13,22 @@ export function ResumeEntry({
 }) {
   return (
     <div className="grid items-center gap-2">
-      <div className="flex flex-wrap justify-between">
-        <div className="prose">
+      <div className="flex justify-between">
+        <div className="prose mr-4">
           <h4 className="mb-0">
-            {title}
             {variant === "current" ? (
               <div
-                className="inline-block w-2 h-2 ml-2 align-middle rounded-full bg-green-500 animate-pulse"
+                className="inline-block w-2 h-2 mr-2 align-middle rounded-full bg-green-500 animate-pulse"
                 aria-label="Current"
               />
             ) : null}
+            {title}
+            {subtitle ? (
+              <span className="inline-block font-normal text-muted-foreground">
+                &nbsp;&nbsp;/&nbsp;&nbsp;{subtitle}
+              </span>
+            ) : null}
           </h4>
-          {subtitle ? (
-            <h5 className="mb-0 text-muted-foreground">{subtitle}</h5>
-          ) : null}
         </div>
         {year ? (
           <div>

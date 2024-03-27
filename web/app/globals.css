@@ -86,14 +86,54 @@
   @media print {
     @page {
       margin: 0;
-      background-color: hsl(var(--background-true));
+      background-color: hsl(var(--background-true)) !important;
+    }
+
+    html {
+      font-size: 9pt;
     }
 
     html,
     body {
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
-      background-color: hsl(var(--background-true));
+      background-color: hsl(var(--background-true)) !important;
+    }
+
+    body {
+      height: 100vh;
+    }
+    main {
+      padding: 0 32px !important;
+    }
+    header,
+    footer {
+      display: none;
+    }
+    [data-resume-wrapper] {
+      grid-template-columns: 1fr !important;
+    }
+    [data-resume-header],
+    [data-resume-nav] {
+      display: none;
+    }
+    [data-resume-container] {
+      border: 0;
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+    }
+    [data-resume-body] > * {
+      padding-right: 0 !important;
+      padding-left: 0 !important;
+    }
+    [data-resume-body-container] {
+      max-width: none !important;
+    }
+    [data-resume-body-container] > * {
+      break-inside: avoid;
+    }
+    .prose {
+      max-width: none !important;
     }
   }
 }

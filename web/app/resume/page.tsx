@@ -71,7 +71,10 @@ export default function Page() {
             </div>
             <div data-resume-body className="">
               <div className="py-12 lg:py-24 md:pr-8">
-                <div className="grid items-center gap-12 lg:gap-16 max-w-4xl">
+                <div
+                  data-resume-body-container
+                  className="grid items-center gap-12 lg:gap-16 max-w-4xl"
+                >
                   {/* Header */}
                   <div className="flex justify-between">
                     <div className="flex-1 mr-6">
@@ -85,13 +88,13 @@ export default function Page() {
                           .
                         </p>
                         <div className="not-prose">
-                          <ul className="flex flex-col">
+                          <ul className="flex flex-wrap -m-2">
                             {PROFILE_META.map((meta) => {
                               const Icon = meta.icon;
                               return (
                                 <li
                                   key={meta.title}
-                                  className="font-mono text-sm mb-2 last:mb-0"
+                                  className="font-mono text-sm p-2"
                                 >
                                   <div className="flex items-center group">
                                     {meta.href ? (
@@ -164,35 +167,56 @@ export default function Page() {
                       </p>
                     </div>
                   </div>
+                  {/* Work */}
+                  <div>
+                    <div className="prose mb-6">
+                      <h3>Employment</h3>
+                    </div>
+                    <ul className="grid items-center gap-6">
+                      <li>
+                        <ResumeEntry
+                          title="Senior Web Engineer"
+                          subtitle="Longbeard"
+                          year="Since 2020"
+                          variant="current"
+                        >
+                          Full-stack web development (React, Next.js, PHP,
+                          WordPress, AI)
+                        </ResumeEntry>
+                      </li>
+                      <li>
+                        <ResumeEntry
+                          title="Data Coordinator"
+                          subtitle="Catholic Peoples Foundation (Gallup NM, USA)"
+                          year="2017 — 2018"
+                        >
+                          Graphic design and web development, donor management,
+                          fundraising
+                        </ResumeEntry>
+                      </li>
+                    </ul>
+                  </div>
                   {/* Languages */}
                   <div>
                     <div className="prose mb-6">
                       <h3>Languages</h3>
                     </div>
-                    <ul className="grid items-center gap-2.5 max-w-prose">
-                      <li>
+                    <ul className="flex flex-wrap -m-2">
+                      <li className="m-2 inline-block rounded-md px-2 py-1 border border-border">
                         Bahasa Indonesia{" "}
-                        <span className="text-muted-foreground font-mono text-sm">
-                          (Native)
-                        </span>
+                        <span className="text-muted-foreground">(Native)</span>
                       </li>
-                      <li>
+                      <li className="m-2 inline-block rounded-md px-2 py-1 border border-border">
                         English{" "}
-                        <span className="text-muted-foreground font-mono text-sm">
-                          (Fluent)
-                        </span>
+                        <span className="text-muted-foreground">(Fluent)</span>
                       </li>
-                      <li>
+                      <li className="m-2 inline-block rounded-md px-2 py-1 border border-border">
                         Spanish{" "}
-                        <span className="text-muted-foreground font-mono text-sm">
-                          (Fluent)
-                        </span>
+                        <span className="text-muted-foreground">(Fluent)</span>
                       </li>
-                      <li>
+                      <li className="m-2 inline-block rounded-md px-2 py-1 border border-border">
                         Hebrew, Ancient Greek, Latin{" "}
-                        <span className="text-muted-foreground font-mono text-sm">
-                          (Reading)
-                        </span>
+                        <span className="text-muted-foreground">(Reading)</span>
                       </li>
                     </ul>
                   </div>
@@ -252,35 +276,6 @@ export default function Page() {
                           year="2013 – 2016"
                         >
                           <em>Summa cum laude</em> (Average 89.8 / 100.0)
-                        </ResumeEntry>
-                      </li>
-                    </ul>
-                  </div>
-                  {/* Work */}
-                  <div>
-                    <div className="prose mb-6">
-                      <h3>Work Experience</h3>
-                    </div>
-                    <ul className="grid items-center gap-6">
-                      <li>
-                        <ResumeEntry
-                          title="Senior Web Engineer"
-                          subtitle="Longbeard"
-                          year="Since 2020"
-                          variant="current"
-                        >
-                          Full-stack web development (React, Next.js, PHP,
-                          WordPress, AI)
-                        </ResumeEntry>
-                      </li>
-                      <li>
-                        <ResumeEntry
-                          title="Data Coordinator"
-                          subtitle="Catholic Peoples Foundation (Gallup NM, USA)"
-                          year="2017 — 2018"
-                        >
-                          Graphic design and web development, donor management,
-                          fundraising
                         </ResumeEntry>
                       </li>
                     </ul>
