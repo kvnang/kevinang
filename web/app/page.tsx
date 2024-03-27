@@ -25,7 +25,7 @@ export default function Home() {
         </div>
       </section>
       <section className="border-b border-border">
-        <div className="container border-x border-border">
+        <div className="container border-x border-border bg-background-true">
           <div className="grid lg:grid-cols-3 gap-8 py-12 lg:py-0">
             <div className="lg:py-24 pr-8 lg:border-r border-border">
               <div className="prose">

@@ -49,8 +49,14 @@ const config: Config = {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        background: {
+          DEFAULT: "hsl(var(--background))",
+          true: "hsl(var(--background-true))",
+        },
+        foreground: {
+          DEFAULT: "hsl(var(--foreground))",
+          true: "hsl(var(--foreground-true))",
+        },
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
@@ -135,8 +141,12 @@ const config: Config = {
               marginBottom: "0.5em",
             },
             a: {
+              textDecoration: "none",
+              color: theme("colors.foreground.true"),
               "&:hover": {
-                color: "#000",
+                textDecoration: "underline",
+                textDecorationColor: theme("colors.foreground"),
+                textUnderlineOffset: "0.15em",
               },
             },
           },
