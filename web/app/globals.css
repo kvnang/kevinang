@@ -86,14 +86,14 @@
   @media print {
     @page {
       margin: 0;
-      background-color: hsl(var(--background));
+      background-color: hsl(var(--background-true));
     }
 
     html,
     body {
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
-      background-color: hsl(var(--background));
+      background-color: hsl(var(--background-true));
     }
   }
 }

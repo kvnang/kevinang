@@ -130,12 +130,11 @@ export default function Page() {
                           priority
                           sizes="128px"
                         />
-                        <Image
-                          src={profile}
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={profile.src}
                           alt="Kevin Ang"
-                          fill
-                          className="object-cover [@media_print]:block hidden"
-                          unoptimized
+                          className="absolute top-0 left-0 w-full h-full object-cover [@media_not_print]:hidden"
                         />
                       </div>
                     </div>
