@@ -5,6 +5,7 @@ import { ResumeEntry } from "./ResumeEntry";
 import { ResumeActions } from "./ResumeActions";
 import { Metadata } from "next";
 import Link from "next/link";
+import { ResumeList, ResumeListItem } from "./ResumeList";
 
 export const metadata: Metadata = {
   title: "Kevin Ang’s Résumé",
@@ -147,23 +148,14 @@ export default function Page() {
                     <div className="prose">
                       <h3>About</h3>
                       <p>
-                        Indonesian by birth, I currently reside in Canada. I am
-                        well-versed in the humanities and philology, but a
-                        self-taught web engineer by trade.
-                      </p>
-                      <p>
-                        My web development projects comprise sites, apps, and
-                        dev tools; mostly frontends, with backends as needed. I
-                        code frontends to meticulously match the designer’s
-                        mock, and beautifully animated for the users. On the
-                        side, I build CLIs to help my colleagues be more
-                        productive.
-                      </p>
-                      <p>
-                        I enjoy taking risks and assuming responsibilities for
-                        the sake of faster iteration, growth, and user’s joy.
-                        Having fast development cycles is key to a good end
-                        product.
+                        I am well-versed in the humanities and philology, and a
+                        self-taught web engineer by trade. My development
+                        projects include sites, apps, and dev tools; mostly
+                        frontends, with backends as needed. I code frontends to
+                        meticulously match the designer’s mock, and pleasing to
+                        the users. I take risks for the sake of faster
+                        iteration, growth, and user’s joy. Having fast
+                        development cycles is key to a good end product.
                       </p>
                     </div>
                   </div>
@@ -196,53 +188,74 @@ export default function Page() {
                       </li>
                     </ul>
                   </div>
+                  {/* Projects */}
+                  <div>
+                    <div className="prose mb-6">
+                      <h3>Projects</h3>
+                    </div>
+                    <ul className="grid items-center gap-6">
+                      <li>
+                        <ResumeEntry
+                          title="Magisterium AI"
+                          subtitle="magisterium.com"
+                          year="Since 2023"
+                          variant="current"
+                        >
+                          Generative AI for comprehensive theological research.
+                          I built the major part of the frontend & backend, from
+                          UI to user subscription journey, and continue
+                          optimizing performance of the LLMs. Powered by
+                          Next.js.
+                        </ResumeEntry>
+                      </li>
+                      <li>
+                        <ResumeEntry
+                          title="Videocast"
+                          subtitle="videocast.app"
+                          year="2021 — 2022"
+                        >
+                          Internal tool for Longbeard to automate the creation
+                          of video for social media, primarily as visual
+                          representation of podcasts. Powered by Remotion.dev +
+                          AWS Lambda.
+                        </ResumeEntry>
+                      </li>
+                    </ul>
+                  </div>
                   {/* Languages */}
                   <div>
                     <div className="prose mb-6">
                       <h3>Languages</h3>
                     </div>
-                    <ul className="flex flex-wrap -m-2">
-                      <li className="m-2 inline-block rounded-md px-2 py-1 border border-border">
-                        Bahasa Indonesia{" "}
-                        <span className="text-muted-foreground">(Native)</span>
-                      </li>
-                      <li className="m-2 inline-block rounded-md px-2 py-1 border border-border">
-                        English{" "}
-                        <span className="text-muted-foreground">(Fluent)</span>
-                      </li>
-                      <li className="m-2 inline-block rounded-md px-2 py-1 border border-border">
-                        Spanish{" "}
-                        <span className="text-muted-foreground">(Fluent)</span>
-                      </li>
-                      <li className="m-2 inline-block rounded-md px-2 py-1 border border-border">
-                        Hebrew, Ancient Greek, Latin{" "}
-                        <span className="text-muted-foreground">(Reading)</span>
-                      </li>
-                    </ul>
+                    <ResumeList>
+                      <ResumeListItem
+                        title="Bahasa Indonesia"
+                        subtitle="Native"
+                      />
+                      <ResumeListItem title="English" subtitle="Fluent" />
+                      <ResumeListItem title="Spanish" subtitle="Fluent" />
+                      <ResumeListItem
+                        title="Hebrew, Ancient Greek, Latin"
+                        subtitle="Reading"
+                      />
+                    </ResumeList>
                   </div>
                   {/* Skills */}
                   <div>
                     <div className="prose mb-6">
                       <h3>Skills / Knowledge</h3>
                     </div>
-                    <ul className="grid items-center gap-2.5 max-w-prose">
-                      <li>
-                        JavaScript / TypeScript, React, Node.js, Cloudflare
-                        Workers (D1, R2, etc.), PostgreSQL, PHP / WordPress
-                      </li>
-                      <li>
-                        Piano{" "}
-                        <Link
-                          href="https://www.abrsm.org"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="underline"
-                        >
-                          ABRSM
-                        </Link>{" "}
-                        Grade 7
-                      </li>
-                    </ul>
+                    <ResumeList>
+                      <ResumeListItem title="JavaScript / TypeScript" />
+                      <ResumeListItem title="React" subtitle="Next.js" />
+                      <ResumeListItem title="Node.js" />
+                      <ResumeListItem
+                        title="Cloudflare Workers"
+                        subtitle="KV, R2, Queue, etc."
+                      />
+                      <ResumeListItem title="PostgreSQL" />
+                      <ResumeListItem title="PHP / WordPress" />
+                    </ResumeList>
                   </div>
                   {/* Education */}
                   <div>
@@ -250,7 +263,7 @@ export default function Page() {
                       <h3>Education</h3>
                     </div>
                     <ul className="grid items-center gap-6">
-                      <li>
+                      {/* <li>
                         <ResumeEntry
                           title="Graduate Studies in Philology"
                           subtitle="Polis (Jerusalem)"
@@ -259,7 +272,7 @@ export default function Page() {
                           Languages studied: Ancient Greek, Modern Hebrew,
                           Biblical Hebrew, Spoken Arabic
                         </ResumeEntry>
-                      </li>
+                      </li> */}
                       <li>
                         <ResumeEntry
                           title="BA in Liberal Arts"
