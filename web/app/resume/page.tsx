@@ -126,9 +126,16 @@ export default function Page() {
                           src={profile}
                           alt="Kevin Ang"
                           fill
-                          className="object-cover"
+                          className="object-cover [@media_print]:hidden"
                           priority
                           sizes="128px"
+                        />
+                        <Image
+                          src={profile}
+                          alt="Kevin Ang"
+                          fill
+                          className="object-cover [@media_print]:block"
+                          unoptimized
                         />
                       </div>
                     </div>
