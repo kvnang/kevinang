@@ -22,7 +22,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={cn(GeistSans.variable, GeistMono.variable)}>
-      <body className="font-sans text-base antialiased">
+      <body className="font-sans text-base antialiased text-foreground bg-background">
         <Header />
         {children}
         <Footer />

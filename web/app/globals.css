@@ -82,7 +82,18 @@
   * {
     @apply border-border;
   }
-  body {
-    @apply bg-background text-foreground;
+
+  @media print {
+    @page {
+      margin: 0;
+      background-color: hsl(var(--background));
+    }
+
+    html,
+    body {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+      background-color: hsl(var(--background));
+    }
   }
 }

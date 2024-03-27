@@ -134,7 +134,7 @@ export default function Page() {
                           src={profile}
                           alt="Kevin Ang"
                           fill
-                          className="object-cover [@media_print]:block"
+                          className="object-cover [@media_print]:block hidden"
                           unoptimized
                         />
                       </div>
