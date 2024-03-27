@@ -22,6 +22,9 @@ const config: Config = {
         sans: ["var(--font-geist-sans)", ...defaultTheme.fontFamily.sans],
         mono: ["var(--font-geist-mono)"],
       },
+      fontWeight: {
+        semibold: `590`,
+      },
       fontSizes: {
         sm: "var(--font-size-sm)",
         base: "var(--font-size-base)",
@@ -114,18 +117,18 @@ const config: Config = {
             "--tw-prose-headings": theme("colors.foreground"),
             "--tw-prose-links": theme("colors.foreground"),
             h1: {
-              fontWeight: 600,
+              fontWeight: theme("fontWeight.semibold"),
               fontSize: theme("fontSizes.xl"),
               letterSpacing: "-.02em",
             },
             h2: {
-              fontWeight: 600,
+              fontWeight: theme("fontWeight.semibold"),
               fontSize: theme("fontSizes.lg"),
               letterSpacing: "-.02em",
               marginBottom: "0.5em",
             },
             h3: {
-              fontWeight: 600,
+              fontWeight: theme("fontWeight.semibold"),
               fontSize: theme("fontSizes.md"),
               letterSpacing: "-.02em",
               marginBottom: "0.5em",
