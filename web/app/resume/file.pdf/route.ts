@@ -39,7 +39,7 @@ export async function GET(
         addStyleTag: [
           {
             content:
-              "body { height: 100vh; background: white } main { padding: 0 32px; } header, footer { display: none; } [data-resume-wrapper] { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; } [data-resume-header], [data-resume-nav] { display: none; } [data-resume-container] { border: 0; padding-right: 0; padding-left: 0; } [data-resume-body] > * { break-inside: avoid } ",
+              "body { height: 100vh } main { padding: 0 32px; } header, footer { display: none; } [data-resume-wrapper] { grid-template-columns: repeat(1, minmax(0, 1fr)) !important; } [data-resume-header], [data-resume-nav] { display: none; } [data-resume-container] { border: 0; padding-right: 0; padding-left: 0; } [data-resume-body] > * { break-inside: avoid } ",
           },
         ],
       }),
