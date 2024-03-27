@@ -30,7 +30,7 @@ export default function Home() {
             <div className="lg:py-24 pr-8 lg:border-r border-border">
               <div className="prose">
                 <h2>My stack</h2>
-                <p>Tools I use, prefer, and have expertise on</p>
+                <p>Tools I use, prefer, and have expertise on:</p>
               </div>
             </div>
             <div className="lg:py-24 pr-8 lg:border-r border-border">
@@ -74,7 +74,7 @@ export default function Home() {
           <div className="pt-12 lg:pt-24 pb-8">
             <div className="prose max-w-xl">
               <h2>Projects</h2>
-              <p>What I’ve been working on recently</p>
+              <p>What I’ve been working on recently:</p>
             </div>
           </div>
         </div>

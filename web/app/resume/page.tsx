@@ -142,7 +142,7 @@ export default function Page() {
                     My web development projects comprise sites, apps, and dev
                     tools; mostly frontends, with backends as needed. I code
                     frontends to meticulously match the designer’s mock, and
-                    design backends to be easy to maintain. On the side, I build
+                    beautifully animated for the users. On the side, I build
                     CLIs to help my colleagues be more productive.
                   </p>
                   <p>

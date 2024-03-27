@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
-import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { Analytics } from "@vercel/analytics/react";
 import { BASE_URL } from "@/lib/constants";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Kevin Ang",

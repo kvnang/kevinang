@@ -13,7 +13,7 @@ export function Menu() {
         <li>
           <Link
             href="/resume"
-            className="inline-flex items-center font-medium text-muted-foreground aria-[current=page]:text-foreground hover:text-foreground transition-colors"
+            className="text-sm inline-flex items-center font-medium text-muted-foreground aria-[current=page]:text-foreground hover:text-foreground transition-colors"
             aria-current={pathname === "/resume" ? "page" : undefined}
           >
             Résumé
@@ -22,7 +22,7 @@ export function Menu() {
         <li>
           <Link
             href="https://github.com/kvnang/kevinang/tree/main/web"
-            className="inline-flex items-center font-medium text-muted-foreground aria-[current=page]:text-foreground hover:text-foreground transition-colors"
+            className="text-sm inline-flex items-center font-medium text-muted-foreground aria-[current=page]:text-foreground hover:text-foreground transition-colors"
             // aria-current={pathname === "/resume" ? "page" : undefined}
             target="_blank"
             rel="noopener noreferrer"

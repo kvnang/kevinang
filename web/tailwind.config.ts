@@ -33,6 +33,19 @@ const config: Config = {
         "3xl": "var(--font-size-3xl)",
       },
       colors: {
+        calypso: {
+          "50": "#f2f8f9",
+          "100": "#ddedf0",
+          "200": "#bfdbe2",
+          "300": "#92bfce",
+          "400": "#5e9cb2",
+          "500": "#438097",
+          "600": "#3c6d84",
+          "700": "#34576a",
+          "800": "#314a59",
+          "900": "#2d404c",
+          "950": "#1a2832",
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -89,6 +102,9 @@ const config: Config = {
       typography: ({ theme }: { theme: any }) => ({
         DEFAULT: {
           css: {
+            "--tw-prose-body": theme("colors.calypso.800"),
+            "--tw-prose-headings": theme("colors.foreground"),
+            "--tw-prose-links": theme("colors.foreground"),
             h1: {
               fontWeight: 600,
               fontSize: theme("fontSizes.xl"),
@@ -117,6 +133,11 @@ const config: Config = {
               fontSize: theme("fontSizes.base"),
               letterSpacing: "-.02em",
               marginBottom: "0.5em",
+            },
+            a: {
+              "&:hover": {
+                color: "#000",
+              },
             },
           },
         },
