@@ -13,8 +13,8 @@ export function ResumeEntry({
 }) {
   return (
     <div className="grid items-center gap-2">
-      <div className="flex justify-between">
-        <div className="prose mr-4">
+      <div className="flex flex-col sm:flex-row sm:justify-between">
+        <div className="prose mb-4 sm:mb-0 sm:mr-4">
           <h4 className="mb-0">
             {variant === "current" ? (
               <div
